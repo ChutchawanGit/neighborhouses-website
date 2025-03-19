@@ -35,6 +35,11 @@ git clone https://github.com/your-username/neighborhouses.git
 # Navigate to project directory
 cd neighborhouses
 
+# Install Package
+npm i
+
+# OR
+
 # Install dependencies
 npm install
 
