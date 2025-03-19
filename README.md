@@ -50,8 +50,11 @@ npm run dev
 ### 🌐 Deployment
 
 The project is configured for seamless deployment on Netlify. Just connect your GitHub repository, and you're good to go!
-In Loack Connect: http://localhost:3000
+
+In Local Connect: http://localhost:3000
+
 Or Connect Production Connect: http://neighborhouses.com/
+
 ### 📬 Contact
 
 **We Email And Contact?**
