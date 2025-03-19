@@ -54,5 +54,3 @@ Connect: http://neighborhouses.com/
 - GitHub: @NeighborHouses
 
 ---
-
-**Built with ❤️ for community connection**
