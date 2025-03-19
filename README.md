@@ -30,7 +30,7 @@ NeighborHouses is a cutting-edge web platform designed to revolutionize neighbor
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/neighborhouses.git
+git clone https://github.com/ChutchawanGit/neighborhouses-website.git
 
 # Navigate to project directory
 cd neighborhouses
