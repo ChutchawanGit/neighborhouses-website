@@ -54,8 +54,8 @@ The project is configured for seamless deployment on Netlify. Just connect your 
 Connect: http://neighborhouses.com/
 ### 📬 Contact
 
-**Have questions or suggestions?**
+**We Email And Contact?**
 - Email: connect@neighborhouses.com
-- GitHub: @NeighborHouses
+- GitHub: @ChutchawanGit
 
 ---
