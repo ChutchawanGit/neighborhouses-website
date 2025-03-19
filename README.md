@@ -46,6 +46,7 @@ npm run dev
 
 The project is configured for seamless deployment on Netlify. Just connect your GitHub repository, and you're good to go!
 
+Connect: http://neighborhouses.com/
 ### 📬 Contact
 
 **Have questions or suggestions?**
