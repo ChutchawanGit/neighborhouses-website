@@ -1,10 +1,4 @@
-# NeighborHouses 🏡
-
-## Connecting Communities, Empowering Neighborhoods
-
-### 🚀 Project Overview
-
-NeighborHouses is a cutting-edge web platform designed to revolutionize neighborhood connections and community engagement. Built with Next.js and TypeScript, we're bringing neighbors closer together.# NeighborHouses 🏡💡
+# NeighborHouses 🏡💡
 
 ## สวรรค์แห่งบ้านอัจฉริยะ - เชื่อมต่อชีวิตอัจฉริยะ
 
