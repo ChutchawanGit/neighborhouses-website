@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -42,10 +43,7 @@ const navItems = [
     ]
   },
   { name: "สินค้า", href: "/products" },
-  {
-    name: "ผลงาน",
-    href: "/projects",
-  },
+  { name: "ผลงาน", href: "/projects" },
   {
     name: "เกี่ยวกับเรา",
     href: "/about",
@@ -65,24 +63,38 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold">Smart Home</span>
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white">
+      <div className="container flex h-16 items-center">
+        <div className="flex items-center justify-between w-full">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.png"
+              alt="Neighbor House Logo"
+              width={160}
+              height={50}
+              priority
+            />
           </Link>
-          <nav className="hidden gap-6 md:flex">
-            {navItems.map((item) => (
+
+          <div className="hidden lg:flex items-center justify-center gap-8">
+            <Link
+              href="/"
+              className={`text-sm font-medium transition-colors hover:text-[#00bbb4] ${pathname === "/" ? "text-[#00bbb4]" : "text-muted-foreground"
+                }`}
+            >
+              หน้าแรก
+            </Link>
+
+            {navItems.slice(1).map((item) => (
               <React.Fragment key={item.href}>
                 {item.dropdown ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button className={`text-sm font-medium transition-colors hover:text-primary flex items-center ${
-                        pathname === item.href || pathname.startsWith(item.href + '/') ? "text-primary" : "text-muted-foreground"
-                      }`}>
+                      <button className={`text-sm font-medium transition-colors hover:text-[#00bbb4] flex items-center ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                        }`}>
                         {item.name}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 h-4 w-4">
-                          <path d="m6 9 6 6 6-6"/>
+                          <path d="m6 9 6 6 6-6" />
                         </svg>
                       </button>
                     </DropdownMenuTrigger>
@@ -102,75 +114,78 @@ export function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`text-sm font-medium transition-colors hover:text-primary ${
-                      pathname === item.href || pathname.startsWith(item.href + '/') ? "text-primary" : "text-muted-foreground"
-                    }`}
+                    className={`text-sm font-medium transition-colors hover:text-[#00bbb4] ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                      }`}
                   >
                     {item.name}
                   </Link>
                 )}
               </React.Fragment>
             ))}
-          </nav>
-        </div>
-        <div className="flex items-center gap-4">
-          <Button asChild variant="default" className="hidden md:flex bg-[#00bbb4] text-white hover:bg-[#e6ed4a]">
-            <Link href="/contact">ติดต่อเรา</Link>
-          </Button>
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="px-2 py-4">
-                <Link href="/" className="flex items-center mb-8" onClick={() => setIsOpen(false)}>
-                  <span className="text-xl font-bold">Smart Home</span>
-                </Link>
-                <div className="flex flex-col space-y-4">
-                  {navItems.map((item) => (
-                    <div key={item.href}>
-                      {item.dropdown ? (
-                        <>
-                          <div className={`text-base font-medium mb-2 ${
-                            pathname === item.href || pathname.startsWith(item.href + '/') ? "text-primary" : "text-muted-foreground"
-                          }`}>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <Button asChild variant="default" className="hidden lg:flex bg-[#00bbb4] text-white hover:bg-[#e6ed4a]">
+              <Link href="/contact">ติดต่อเรา</Link>
+            </Button>
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="outline" size="icon">
+                  <Menu className="h-5 w-5" />
+                  <span className="sr-only">Toggle Menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <div className="px-2 py-4">
+                  <Link href="/" className="flex items-center mb-8" onClick={() => setIsOpen(false)}>
+                    <Image
+                      src="/images/logo.png"
+                      alt="Neighbor House Logo"
+                      width={160}
+                      height={50}
+                      className="h-auto w-auto"
+                    />
+                  </Link>
+                  <div className="flex flex-col space-y-4">
+                    {navItems.map((item) => (
+                      <div key={item.href}>
+                        {item.dropdown ? (
+                          <>
+                            <div className={`text-base font-medium mb-2 ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                              }`}>
+                              {item.name}
+                            </div>
+                            <div className="pl-4 flex flex-col space-y-2 mb-2">
+                              {item.items?.map((subItem) => (
+                                <Link
+                                  key={subItem.href}
+                                  href={subItem.href}
+                                  className={`text-sm ${pathname === subItem.href ? "text-[#00bbb4]" : "text-muted-foreground"
+                                    }`}
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            className={`text-base font-medium ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                              }`}
+                            onClick={() => setIsOpen(false)}
+                          >
                             {item.name}
-                          </div>
-                          <div className="pl-4 flex flex-col space-y-2 mb-2">
-                            {item.items?.map((subItem) => (
-                              <Link
-                                key={subItem.href}
-                                href={subItem.href}
-                                className={`text-sm ${
-                                  pathname === subItem.href ? "text-primary" : "text-muted-foreground"
-                                }`}
-                                onClick={() => setIsOpen(false)}
-                              >
-                                {subItem.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className={`text-base font-medium ${
-                            pathname === item.href || pathname.startsWith(item.href + '/') ? "text-primary" : "text-muted-foreground"
-                          }`}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      )}
-                    </div>
-                  ))}
+                          </Link>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
