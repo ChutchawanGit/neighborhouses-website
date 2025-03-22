@@ -136,7 +136,7 @@ export default function PackageComparisonPage() {
             onClick={() => togglePackage(pkg.id)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               selectedPackages.includes(pkg.id)
-                ? 'bg-[#00bbb4] text-black hover:bg-[#e6ed4a]'
+                ? 'bg-[#00bbb4] text-black hover:from-emerald-600 hover:to-teal-600'
                 : 'bg-white border border-zinc-200 text-zinc-700 hover:bg-zinc-100'
             }`}
           >
@@ -227,7 +227,7 @@ export default function PackageComparisonPage() {
             เราเข้าใจว่าทุกบ้านมีความต้องการที่แตกต่างกัน ทีมงานของเราพร้อมให้คำปรึกษาและออกแบบระบบ Smart Home ที่เหมาะกับบ้านของคุณโดยเฉพาะ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button asChild className="bg-[#00bbb4] text-black hover:from-emerald-600 hover:to-teal-600">
               <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
             </Button>
             <Button asChild variant="outline">

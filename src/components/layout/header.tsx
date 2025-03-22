@@ -79,18 +79,17 @@ export function Header() {
           <div className="hidden lg:flex items-center justify-center gap-8">
             <Link
               href="/"
-              className={`text-sm font-medium transition-colors hover:text-[#00bbb4] ${pathname === "/" ? "text-[#00bbb4]" : "text-muted-foreground"
+              className={`text-sm font-medium transition-colors hover:text-emerald-500 ${pathname === "/" ? "text-emerald-500" : "text-muted-foreground"
                 }`}
             >
               หน้าแรก
             </Link>
-
             {navItems.slice(1).map((item) => (
               <React.Fragment key={item.href}>
                 {item.dropdown ? (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button className={`text-sm font-medium transition-colors hover:text-[#00bbb4] flex items-center ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                      <button className={`text-sm font-medium transition-colors hover:text-emerald-500 flex items-center ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-emerald-500" : "text-muted-foreground"
                         }`}>
                         {item.name}
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 h-4 w-4">
@@ -114,7 +113,7 @@ export function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`text-sm font-medium transition-colors hover:text-[#00bbb4] ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                    className={`text-sm font-medium transition-colors hover:text-emerald-500 ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-emerald-500" : "text-muted-foreground"
                       }`}
                   >
                     {item.name}
@@ -125,9 +124,9 @@ export function Header() {
           </div>
 
           <div className="flex items-center gap-4">
-            <Button asChild variant="default" className="hidden lg:flex bg-[#00bbb4] text-white hover:bg-[#e6ed4a]">
-              <Link href="/contact">ติดต่อเรา</Link>
-            </Button>
+          <Button asChild variant="default" className="hidden lg:flex bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 transition-all">
+            <Link href="/contact">ติดต่อเรา</Link>
+          </Button>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="lg:hidden">
                 <Button variant="outline" size="icon">
@@ -151,7 +150,7 @@ export function Header() {
                       <div key={item.href}>
                         {item.dropdown ? (
                           <>
-                            <div className={`text-base font-medium mb-2 ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                            <div className={`text-base font-medium mb-2 ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-emerald-500" : "text-muted-foreground"
                               }`}>
                               {item.name}
                             </div>
@@ -160,7 +159,7 @@ export function Header() {
                                 <Link
                                   key={subItem.href}
                                   href={subItem.href}
-                                  className={`text-sm ${pathname === subItem.href ? "text-[#00bbb4]" : "text-muted-foreground"
+                                  className={`text-sm ${pathname === subItem.href ? "text-emerald-500" : "text-muted-foreground"
                                     }`}
                                   onClick={() => setIsOpen(false)}
                                 >
@@ -172,7 +171,7 @@ export function Header() {
                         ) : (
                           <Link
                             href={item.href}
-                            className={`text-base font-medium ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-[#00bbb4]" : "text-muted-foreground"
+                            className={`text-base font-medium ${pathname === item.href || pathname.startsWith(item.href + '/') ? "text-emerald-500" : "text-muted-foreground"
                               }`}
                             onClick={() => setIsOpen(false)}
                           >

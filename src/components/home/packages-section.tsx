@@ -76,10 +76,10 @@ export function PackagesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {packages.map((pkg) => (
-            <Card key={pkg.name} className={`relative flex flex-col h-full ${pkg.popular ? 'border-[#00bbb4] shadow-lg' : ''}`}>
+            <Card key={pkg.name} className={`relative flex flex-col h-full transition-all ${pkg.popular ? 'border-emerald-500 shadow-lg' : 'hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100'}`}>
               {pkg.popular && (
                 <div className="absolute -top-3 left-0 right-0 flex justify-center">
-                  <span className="bg-[#00bbb4] text-white text-xs font-medium px-3 py-1 rounded-full">
+                  <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-medium px-3 py-1 rounded-full">
                     แนะนำ
                   </span>
                 </div>
@@ -96,14 +96,14 @@ export function PackagesSection() {
                 <ul className="space-y-2">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start">
-                      <Check className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                      <Check className="mr-2 h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button asChild className={`w-full ${pkg.popular ? 'bg-[#00bbb4] hover:bg-yellow-600 text-white' : ''}`}>
+                <Button asChild className={`w-full ${pkg.popular ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white transition-all' : ''}`}>
                   <Link href={pkg.href}>
                     เลือกแพ็คเกจนี้
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -118,7 +118,7 @@ export function PackagesSection() {
           <p className="text-muted-foreground mb-4">
             ต้องการแพ็คเกจที่ปรับแต่งเองตามความต้องการเฉพาะ?
           </p>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="hover:text-emerald-500 hover:border-emerald-500">
             <Link href="/contact">ปรึกษาผู้เชี่ยวชาญของเรา</Link>
           </Button>
         </div>

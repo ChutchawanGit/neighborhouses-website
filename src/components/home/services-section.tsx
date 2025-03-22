@@ -106,12 +106,12 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg border border-gray-200 hover:border-[#00bbb4] hover:shadow-md transition-all"
+              className="bg-white p-6 rounded-lg border border-gray-200 hover:border-emerald-500 hover:shadow-md transition-all"
             >
-              <div className="mb-4 text-[#00bbb4]">{service.icon}</div>
+              <div className="mb-4 text-emerald-500">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-muted-foreground mb-4">{service.description}</p>
-              <Button asChild variant="ghost" className="p-0 h-auto text-[#00bbb4] hover:text-[#009991] hover:bg-transparent">
+              <Button asChild variant="ghost" className="p-0 h-auto text-emerald-500 hover:text-emerald-600 hover:bg-transparent">
                 <Link href={service.href} className="flex items-center">
                   <span>อ่านเพิ่มเติม</span>
                   <ArrowRight className="ml-1 h-4 w-4" />
@@ -122,7 +122,7 @@ export function ServicesSection() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild variant="default" className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+          <Button asChild variant="default" className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 transition-all">
             <Link href="/services">ดูบริการทั้งหมด</Link>
           </Button>
         </div>

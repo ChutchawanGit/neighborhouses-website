@@ -123,10 +123,10 @@ export default function PackagesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {packages.map((pkg) => (
-          <Card key={pkg.name} className={`relative flex flex-col h-full ${pkg.popular ? 'border-[#00bbb4] shadow-lg' : ''}`}>
+          <Card key={pkg.name} className={`relative flex flex-col h-full ${pkg.popular ? 'border-emerald-500 shadow-lg' : ''}`}>
             {pkg.popular && (
               <div className="absolute -top-3 left-0 right-0 flex justify-center">
-                <span className="bg-[#00bbb4] text-black text-xs font-medium px-3 py-1 rounded-full">
+                <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-medium px-3 py-1 rounded-full">
                   แนะนำ
                 </span>
               </div>
@@ -143,14 +143,14 @@ export default function PackagesPage() {
               <ul className="space-y-2">
                 {pkg.features.map((feature) => (
                   <li key={feature} className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 text-green-500 shrink-0 mt-0.5" />
+                    <Check className="mr-2 h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
             </CardContent>
             <CardFooter>
-              <Button asChild className={`w-full ${pkg.popular ? 'bg-[#00bbb4] hover:bg-yellow-600 text-black' : ''}`}>
+              <Button asChild className={`w-full ${pkg.popular ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white' : ''}`}>
                 <Link href={pkg.href}>
                   {pkg.custom ? 'ปรึกษาผู้เชี่ยวชาญ' : 'เลือกแพ็คเกจนี้'}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -169,7 +169,7 @@ export default function PackagesPage() {
             โปรดติดต่อทีมงานของเรา
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 transition-all">
               <Link href="/contact">
                 ติดต่อเรา
               </Link>
