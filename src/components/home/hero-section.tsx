@@ -37,7 +37,7 @@ export function HeroSection() {
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-10 md:mb-16">
           <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mb-4">
-            <span className="block">แพ็คเกจ Smart Home</span>
+            <span className="block">Neighbor Houses</span>
             <span className="block bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-transparent bg-clip-text">สำหรับบ้านยุคใหม่</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8">

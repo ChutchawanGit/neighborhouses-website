@@ -1,25 +1,12 @@
 "use client";
 
 import { useState } from "react";
+// Only import existing components
 import { Button } from "@/components/ui/button";
 import {
   Card, CardContent, CardDescription, CardHeader, CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
-} from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { CalendarIcon, Check, Phone, Mail, MapPin } from "lucide-react";
-import { format } from "date-fns";
-import { th } from "date-fns/locale";
-
-// Metadata moved to a separate metadata.ts file
 
 const contactInfo = [
   {
@@ -67,16 +54,186 @@ const contactReasons = [
   { id: "other", label: "อื่นๆ" },
 ];
 
-export default function ContactPage({ searchParams }) {
-  const [date, setDate] = useState(null);
-  const [timeSlot, setTimeSlot] = useState("");
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const defaultTab = searchParams?.review ? "message" : "appointment";
-  const [activeTab, setActiveTab] = useState(defaultTab);
+interface TabType {
+  value: string;
+  label: string;
+}
 
-  const handleSubmit = (e) => {
+interface SimpleTabsProps {
+  tabs: TabType[];
+  activeTab: string;
+  onTabChange: (tabValue: string) => void;
+  children: React.ReactNode;
+}
+
+// Basic tabs component replacement
+const SimpleTabs: React.FC<SimpleTabsProps> = ({ tabs, activeTab, onTabChange, children }) => {
+  return (
+    <div>
+      <div className="grid w-full grid-cols-2 mb-8">
+        {tabs.map((tab) => (
+          <button
+            key={tab.value}
+            className={`py-2 px-4 font-medium ${
+              activeTab === tab.value
+                ? "bg-[#00bbb4] text-black"
+                : "bg-gray-100 text-gray-700"
+            }`}
+            onClick={() => onTabChange(tab.value)}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+      <div>{children}</div>
+    </div>
+  );
+};
+
+interface ContactPageProps {
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default function ContactPage({ searchParams }: ContactPageProps) {
+  const [selectedDate, setSelectedDate] = useState<string>("");
+  const [timeSlot, setTimeSlot] = useState<string>("");
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
+  const [calendarOpen, setCalendarOpen] = useState<boolean>(false);
+  
+  // กำหนดค่า default ของ activeTab โดยดูจาก URL ตอนแรกที่เปิดหน้า
+  const [activeTab, setActiveTab] = useState<string>(() => {
+    // เนื่องจากเป็น client component จึงต้องตรวจสอบว่า window พร้อมใช้งานหรือไม่
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.has('review') ? "message" : "appointment";
+    }
+    return "appointment";
+  });
+
+  // สถานะสำหรับการแสดง loading และ error
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+    
+    const formData = new FormData(e.currentTarget);
+    const formDataObj = Object.fromEntries(formData.entries());
+    
+    // ใช้บริการ webhook.site เพื่อทดสอบ (แทนที่ด้วย URL ของคุณเอง)
+    // สร้าง webhook ทดสอบได้ที่: https://webhook.site/
+    // const webhookUrl = "https://webhook.site/YOUR_TEST_WEBHOOK_ID";
+    
+    // Discord webhook URL (ใส่ webhook URL ของคุณที่นี่)
+    const webhookUrl = "https://discord.com/api/webhooks/1353096824142954608/g5jH5nwiGIem9xE9-o8Wu1pU8QBmmAHgg0n4k6760Cymq8VdMWiFe_RuoNoVisBH98q8";
+    
+    try {
+      // แสดงข้อมูลที่จะส่งใน console เสมอ
+      console.log("กำลังส่งข้อมูลฟอร์ม:", formDataObj);
+      
+      // สร้าง message สำหรับส่งไปยัง webhook
+      let message: Record<string, any>;
+      
+      if (activeTab === "appointment") {
+        // ข้อมูลการนัดหมาย
+        const appointmentType = appointmentTypes.find(type => type.id === formDataObj.appointmentType as string)?.label || formDataObj.appointmentType;
+        const timeSlotLabel = timeSlots.find(slot => slot.id === formDataObj.timeSlot as string)?.label || formDataObj.timeSlot;
+        
+        message = {
+          type: "appointment",
+          title: "คำขอนัดหมายใหม่",
+          data: {
+            name: formDataObj.name || "ไม่ระบุ",
+            phone: formDataObj.phone || "ไม่ระบุ",
+            email: formDataObj.email || "ไม่ระบุ",
+            appointmentType: appointmentType || "ไม่ระบุ",
+            date: formatDate(selectedDate) || "ไม่ระบุ",
+            timeSlot: timeSlotLabel || "ไม่ระบุ",
+            address: formDataObj.address || "ไม่ระบุ"
+          },
+          timestamp: new Date().toISOString()
+        };
+      } else {
+        // ข้อความติดต่อ
+        const reasonLabel = contactReasons.find(reason => reason.id === formDataObj['msg-subject'] as string)?.label || formDataObj['msg-subject'];
+        
+        message = {
+          type: "message",
+          title: "ข้อความติดต่อใหม่",
+          data: {
+            name: formDataObj['msg-name'] || "ไม่ระบุ",
+            email: formDataObj['msg-email'] || "ไม่ระบุ",
+            subject: reasonLabel || "ไม่ระบุ",
+            message: formDataObj['msg-message'] || "ไม่มีข้อความ"
+          },
+          timestamp: new Date().toISOString()
+        };
+      }
+      
+      // สร้าง Discord message format ที่ถูกต้อง
+      const discordMessage = {
+        content: activeTab === "appointment" ? "มีการส่งคำขอนัดหมายใหม่! 📅" : "มีข้อความติดต่อใหม่! 📨",
+        embeds: [{
+          title: activeTab === "appointment" ? "ข้อมูลการนัดหมาย" : "ข้อความติดต่อ",
+          color: 0x00bbb4,
+          fields: Object.entries(message.data).map(([key, value]) => ({
+            name: key,
+            value: String(value || "ไม่ระบุ"), // แปลงเป็น string เสมอและไม่เป็นค่าว่าง
+            inline: key !== "address" && key !== "message"
+          })),
+          timestamp: new Date().toISOString()
+        }]
+      };
+      
+      console.log("ข้อมูลที่จะส่ง:", {
+        webhookUrl,
+        message: message,
+        discordMessage: discordMessage
+      });
+      
+      // ส่งข้อมูลไปยัง webhook URL ที่กำหนด
+      // ใช้รูปแบบข้อความที่เหมาะสมกับ webhook ที่ใช้
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(discordMessage), // ใช้รูปแบบสำหรับ Discord webhook
+      });
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('การส่งข้อมูลไม่สำเร็จ:', errorText);
+        setSubmitError(`ส่งข้อมูลไม่สำเร็จ: ${response.status} ${response.statusText}`);
+        // แสดง alert เพื่อให้เห็นชัดเจน
+        alert(`ส่งข้อมูลไม่สำเร็จ: ${response.status} ${response.statusText}`);
+      } else {
+        console.log('ส่งข้อมูลสำเร็จ!', await response.text());
+        // แสดง alert เพื่อให้เห็นชัดเจน
+        alert('ส่งข้อมูลสำเร็จ!');
+        // เปลี่ยนสถานะเป็นส่งแล้ว
+        setFormSubmitted(true);
+      }
+    } catch (error) {
+      console.error('เกิดข้อผิดพลาดในการส่งข้อมูล:', error);
+      setSubmitError(`เกิดข้อผิดพลาด: ${error instanceof Error ? error.message : String(error)}`);
+      // แสดง alert เพื่อให้เห็นชัดเจน
+      alert(`เกิดข้อผิดพลาด: ${error instanceof Error ? error.message : String(error)}`);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const formatDate = (dateString: string): string => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString('th-TH', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
   };
 
   return (
@@ -133,135 +290,214 @@ export default function ContactPage({ searchParams }) {
             <CardDescription>นัดหมายเพื่อปรึกษาหรือติดตั้งระบบ Smart Home หรือส่งข้อความถึงเรา</CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger value="appointment">นัดหมาย</TabsTrigger>
-                <TabsTrigger value="message">ส่งข้อความ</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="appointment">
+            <SimpleTabs
+              tabs={[
+                { value: "appointment", label: "นัดหมาย" },
+                { value: "message", label: "ส่งข้อความ" }
+              ]}
+              activeTab={activeTab}
+              onTabChange={setActiveTab}
+            >
+              {activeTab === "appointment" && (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">ชื่อ-นามสกุล</Label>
-                      <Input id="name" placeholder="ชื่อ-นามสกุล" required />
+                      <label htmlFor="name" className="block font-medium">ชื่อ-นามสกุล</label>
+                      <input 
+                        id="name"
+                        name="name"
+                        placeholder="ชื่อ-นามสกุล" 
+                        required 
+                        className="w-full p-2 border rounded-md"
+                      />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">เบอร์โทรศัพท์</Label>
-                      <Input id="phone" type="tel" placeholder="0x-xxx-xxxx" required />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="email">อีเมล</Label>
-                      <Input id="email" type="email" placeholder="your@email.com" required />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="appointmentType">ประเภทการนัดหมาย</Label>
-                      <Select required>
-                        <SelectTrigger>
-                          <SelectValue placeholder="เลือกประเภทการนัดหมาย" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {appointmentTypes.map((type) => (
-                            <SelectItem key={type.id} value={type.id}>{type.label}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
+                      <label htmlFor="phone" className="block font-medium">เบอร์โทรศัพท์</label>
+                      <input 
+                        id="phone"
+                        name="phone"
+                        type="tel" 
+                        placeholder="0x-xxx-xxxx" 
+                        required 
+                        className="w-full p-2 border rounded-md"
+                      />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label>วันที่ต้องการนัดหมาย</Label>
-                      <Popover>
-                        <PopoverTrigger asChild>
-                          <Button
-                            variant={"outline"}
-                            className="w-full justify-start text-left font-normal"
-                          >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
-                            {date ? format(date, "PPP", { locale: th }) : "เลือกวันที่"}
-                          </Button>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0">
-                          <Calendar
-                            mode="single"
-                            selected={date}
-                            onSelect={setDate}
-                            initialFocus
-                            disabled={(date) => {
-                              const today = new Date();
-                              today.setHours(0, 0, 0, 0);
-                              return date < today;
-                            }}
-                          />
-                        </PopoverContent>
-                      </Popover>
+                      <label htmlFor="email" className="block font-medium">อีเมล</label>
+                      <input 
+                        id="email"
+                        name="email"
+                        type="email" 
+                        placeholder="your@email.com" 
+                        required 
+                        className="w-full p-2 border rounded-md"
+                      />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="timeSlot">ช่วงเวลาที่สะดวก</Label>
-                      <RadioGroup value={timeSlot} onValueChange={setTimeSlot}>
+                      <label htmlFor="appointmentType" className="block font-medium">ประเภทการนัดหมาย</label>
+                      <select 
+                        id="appointmentType"
+                        name="appointmentType" 
+                        required 
+                        className="w-full p-2 border rounded-md"
+                      >
+                        <option value="">เลือกประเภทการนัดหมาย</option>
+                        {appointmentTypes.map((type) => (
+                          <option key={type.id} value={type.id}>{type.label}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="block font-medium">วันที่ต้องการนัดหมาย</label>
+                      <div className="relative">
+                        <button
+                          type="button"
+                          className="w-full p-2 border rounded-md flex items-center justify-start"
+                          onClick={() => setCalendarOpen(!calendarOpen)}
+                        >
+                          <CalendarIcon className="mr-2 h-4 w-4" />
+                          {selectedDate ? formatDate(selectedDate) : "เลือกวันที่"}
+                        </button>
+                        {calendarOpen && (
+                          <div className="absolute z-10 mt-1 bg-white border rounded-md shadow-lg p-4">
+                            <input 
+                              type="date"
+                              name="appointmentDate"
+                              value={selectedDate}
+                              onChange={(e) => {
+                                setSelectedDate(e.target.value);
+                                setCalendarOpen(false);
+                              }} 
+                              className="p-2 border rounded-md"
+                              min={new Date().toISOString().split('T')[0]}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="block font-medium">ช่วงเวลาที่สะดวก</label>
+                      <div className="space-y-2">
                         {timeSlots.map((slot) => (
                           <div key={slot.id} className="flex items-center space-x-2">
-                            <RadioGroupItem value={slot.id} id={slot.id} />
-                            <Label htmlFor={slot.id}>{slot.label}</Label>
+                            <input 
+                              type="radio" 
+                              id={slot.id} 
+                              name="timeSlot" 
+                              value={slot.id}
+                              checked={timeSlot === slot.id}
+                              onChange={(e) => setTimeSlot(e.target.value)}
+                            />
+                            <label htmlFor={slot.id}>{slot.label}</label>
                           </div>
                         ))}
-                      </RadioGroup>
+                      </div>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="address">ที่อยู่สำหรับการติดตั้ง/นัดหมาย</Label>
-                    <Textarea id="address" placeholder="ที่อยู่สำหรับการติดตั้งหรือนัดหมาย" />
+                    <label htmlFor="address" className="block font-medium">ที่อยู่สำหรับการติดตั้ง/นัดหมาย</label>
+                    <textarea 
+                      id="address"
+                      name="address"
+                      placeholder="ที่อยู่สำหรับการติดตั้งหรือนัดหมาย"
+                      className="w-full p-2 border rounded-md h-24"
+                    ></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
-                    ส่งคำขอนัดหมาย
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'กำลังส่งข้อมูล...' : 'ส่งคำขอนัดหมาย'}
                   </Button>
+                  
+                  {submitError && (
+                    <div className="mt-3 p-3 bg-red-100 text-red-700 rounded-md">
+                      <p className="font-bold">เกิดข้อผิดพลาด:</p>
+                      <p>{submitError}</p>
+                    </div>
+                  )}
                 </form>
-              </TabsContent>
+              )}
 
-              <TabsContent value="message">
+              {activeTab === "message" && (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="msg-name">ชื่อ-นามสกุล</Label>
-                      <Input id="msg-name" placeholder="ชื่อ-นามสกุล" required />
+                      <label htmlFor="msg-name" className="block font-medium">ชื่อ-นามสกุล</label>
+                      <input 
+                        id="msg-name"
+                        name="msg-name"
+                        placeholder="ชื่อ-นามสกุล" 
+                        required 
+                        className="w-full p-2 border rounded-md"
+                      />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="msg-email">อีเมล</Label>
-                      <Input id="msg-email" type="email" placeholder="your@email.com" required />
+                      <label htmlFor="msg-email" className="block font-medium">อีเมล</label>
+                      <input 
+                        id="msg-email"
+                        name="msg-email"
+                        type="email" 
+                        placeholder="your@email.com" 
+                        required 
+                        className="w-full p-2 border rounded-md"
+                      />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="msg-subject">หัวข้อ</Label>
-                    <Select required>
-                      <SelectTrigger>
-                        <SelectValue placeholder="เลือกหัวข้อ" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {contactReasons.map((reason) => (
-                          <SelectItem key={reason.id} value={reason.id}>{reason.label}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                    <label htmlFor="msg-subject" className="block font-medium">หัวข้อ</label>
+                    <select 
+                      id="msg-subject"
+                      name="msg-subject"
+                      required 
+                      className="w-full p-2 border rounded-md"
+                    >
+                      <option value="">เลือกหัวข้อ</option>
+                      {contactReasons.map((reason) => (
+                        <option key={reason.id} value={reason.id}>{reason.label}</option>
+                      ))}
+                    </select>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="msg-message">ข้อความ</Label>
-                    <Textarea id="msg-message" placeholder="รายละเอียดของข้อความที่ต้องการส่งถึงเรา" rows={6} required />
+                    <label htmlFor="msg-message" className="block font-medium">ข้อความ</label>
+                    <textarea 
+                      id="msg-message"
+                      name="msg-message"
+                      placeholder="รายละเอียดของข้อความที่ต้องการส่งถึงเรา" 
+                      rows={6} 
+                      required 
+                      className="w-full p-2 border rounded-md"
+                    ></textarea>
                   </div>
 
-                  <Button type="submit" className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
-                    ส่งข้อความ
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'กำลังส่งข้อมูล...' : 'ส่งข้อความ'}
                   </Button>
+                  
+                  {submitError && (
+                    <div className="mt-3 p-3 bg-red-100 text-red-700 rounded-md">
+                      <p className="font-bold">เกิดข้อผิดพลาด:</p>
+                      <p>{submitError}</p>
+                    </div>
+                  )}
                 </form>
-              </TabsContent>
-            </Tabs>
+              )}
+            </SimpleTabs>
           </CardContent>
         </Card>
       )}
@@ -290,7 +526,19 @@ export default function ContactPage({ searchParams }) {
               <a href="tel:021234567">โทรหาเราเลย</a>
             </Button>
             <Button asChild variant="outline">
-              <a href="#" onClick={() => setActiveTab("appointment")}>นัดหมายตอนนี้</a>
+              <a href="#" onClick={(e) => {
+                e.preventDefault();
+                setActiveTab("appointment");
+                // ใช้ querySelector เพื่อหาองค์ประกอบที่ต้องการเลื่อนไป
+                const formElement = document.querySelector('.max-w-3xl.mx-auto.mb-16');
+                if (formElement) {
+                  const offsetTop = formElement.getBoundingClientRect().top + window.pageYOffset;
+                  window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                  });
+                }
+              }}>นัดหมายตอนนี้</a>
             </Button>
           </div>
         </div>

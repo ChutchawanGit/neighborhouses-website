@@ -37,7 +37,7 @@ const navItems = [
       { name: "ดูแพ็คเกจทั้งหมด", href: "/packages" },
       { name: "เปรียบเทียบแพ็คเกจ", href: "/packages/compare" },
       { name: "คำนวณราคา", href: "/calculator" },
-      { name: "แพ็คเกจเริ่มต้น", href: "/packages/starter" },
+      { name: "แพ็คเกจเริ่มต้น", href: "/packages/basic" },
       { name: "แพ็คเกจกลาง", href: "/packages/standard" },
       { name: "แพ็คเกจพรีเมียม", href: "/packages/premium" },
     ]

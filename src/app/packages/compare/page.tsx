@@ -12,7 +12,7 @@ import { Check, X, InfoIcon } from "lucide-react";
 
 const packages = [
   {
-    id: "starter",
+    id: "basic",
     name: "Smart Home เริ่มต้น",
     price: "39,900",
     description: "เหมาะสำหรับบ้านขนาดเล็ก หรือเริ่มต้นใช้งานระบบ Smart Home",
@@ -32,7 +32,7 @@ const packages = [
       "warranty": { value: 1, label: "รับประกัน", unit: "ปี" },
     },
     popular: false,
-    href: "/packages/starter",
+    href: "/packages/basic",
   },
   {
     id: "standard",

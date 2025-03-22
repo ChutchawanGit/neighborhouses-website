@@ -21,7 +21,7 @@ const packages = [
       "แอพควบคุมผ่านมือถือ",
       "ติดตั้งฟรี รับประกัน 1 ปี",
     ],
-    href: "/packages/starter",
+    href: "/packages/basic",
     popular: false,
   },
   {
@@ -103,7 +103,7 @@ const packages = [
       "รองรับการขยายระบบในอนาคต",
       "บริการหลังการขายครบวงจร",
     ],
-    href: "/contact",
+    href: "/packages/custom-design",
     popular: false,
     custom: true,
   },
@@ -123,7 +123,12 @@ export default function PackagesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {packages.map((pkg) => (
-          <Card key={pkg.name} className={`relative flex flex-col h-full ${pkg.popular ? 'border-emerald-500 shadow-lg' : ''}`}>
+          <Card 
+            key={pkg.name} 
+            className={`relative flex flex-col h-full transition-all group ${
+              pkg.popular ? 'border-emerald-500 shadow-lg' : 'hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100'
+            }`}
+          >
             {pkg.popular && (
               <div className="absolute -top-3 left-0 right-0 flex justify-center">
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-medium px-3 py-1 rounded-full">
@@ -150,7 +155,14 @@ export default function PackagesPage() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button asChild className={`w-full ${pkg.popular ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white' : ''}`}>
+              <Button 
+                asChild 
+                className={`w-full transition-all ${
+                  pkg.popular 
+                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white' 
+                  : 'group-hover:bg-emerald-500 group-hover:text-white'
+                }`}
+              >
                 <Link href={pkg.href}>
                   {pkg.custom ? 'ปรึกษาผู้เชี่ยวชาญ' : 'เลือกแพ็คเกจนี้'}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -174,7 +186,7 @@ export default function PackagesPage() {
                 ติดต่อเรา
               </Link>
             </Button>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="hover:text-emerald-500 hover:border-emerald-500">
               <Link href="/faq">
                 คำถามที่พบบ่อย
               </Link>
