@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Quote } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "รีวิวจากลูกค้า - Smart Home",
@@ -147,7 +148,7 @@ export default function TestimonialsPage() {
               <div key={testimonial.id} className="bg-white rounded-lg border border-zinc-200 overflow-hidden shadow">
                 <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                   <div className="bg-zinc-950 relative">
-                    <img
+                    <Image
                       src={testimonial.image}
                       alt={testimonial.name}
                       className="w-full h-full object-cover opacity-80"
@@ -203,7 +204,7 @@ export default function TestimonialsPage() {
             <div key={testimonial.id} className="bg-white border border-zinc-200 rounded-lg p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-[#00bbb4]">
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     className="w-full h-full object-cover"

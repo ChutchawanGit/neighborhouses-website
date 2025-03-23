@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from 'next/image';
 
 export const metadata = {
   title: "ผลงานการติดตั้ง Smart Home - ติดตั้ง Smart Home",
@@ -116,7 +117,7 @@ export default function ProjectsPage() {
             {featuredProjects.map((project) => (
               <div key={project.id} className="group relative overflow-hidden rounded-lg bg-zinc-950">
                 <div className="aspect-[16/9]">
-                  <img
+                  <Image
                     src={project.images[0]}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform group-hover:scale-105"
@@ -163,7 +164,7 @@ export default function ProjectsPage() {
         {regularProjects.map((project) => (
           <div key={project.id} className="border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
             <div className="aspect-[4/3] overflow-hidden">
-              <img
+              <Image
                 src={project.images[0]}
                 alt={project.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform"

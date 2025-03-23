@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
@@ -21,14 +22,69 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { InfoCircle, Download } from "lucide-react";
+import { Info, Download } from "lucide-react"; // เปลี่ยนจาก InfoCircle เป็น Info
 
-export const metadata = {
-  title: "คำนวณราคา Smart Home - ติดตั้ง Smart Home",
-  description: "คำนวณราคาเบื้องต้นสำหรับการติดตั้งระบบ Smart Home ที่เหมาะกับบ้านของคุณ",
-};
+// ลบส่วน metadata ออกไป (ย้ายไปที่ layout.tsx แล้ว)
 
-const smartHomeOptions = {
+// เพิ่ม TypeScript interfaces
+interface SystemOption {
+  name: string;
+  basePrice: number;
+  pricePerPoint?: number;
+  pricePerCamera?: number;
+  pricePerDoorLock?: number;
+  pricePerAC?: number;
+  pricePerRoom?: number;
+  pricePerSensor?: number;
+}
+
+interface HomeType {
+  id: string;
+  name: string;
+  baseFactor: number;
+}
+
+interface HomeSize {
+  id: string;
+  name: string;
+  sizeFactor: number;
+}
+
+interface Package {
+  name: string;
+  discount: number;
+}
+
+interface SmartHomeOptions {
+  homeType: HomeType[];
+  homeSize: HomeSize[];
+  systemPrices: {
+    lighting: SystemOption;
+    security: SystemOption;
+    hvac: SystemOption;
+    audio: SystemOption;
+    automation: SystemOption;
+    control: SystemOption;
+  };
+  packages: {
+    basic: Package;
+    standard: Package;
+    premium: Package;
+    [key: string]: Package; // เพิ่ม index signature
+  };
+}
+
+interface Systems {
+  lighting: { enabled: boolean; points: number };
+  security: { enabled: boolean; cameras: number; doorLocks: number };
+  hvac: { enabled: boolean; acUnits: number };
+  audio: { enabled: boolean; rooms: number };
+  automation: { enabled: boolean; sensors: number };
+  control: { enabled: boolean };
+  [key: string]: any; // เพิ่ม index signature
+}
+
+const smartHomeOptions: SmartHomeOptions = {
   homeType: [
     { id: "condo", name: "คอนโดมิเนียม", baseFactor: 0.8 },
     { id: "townhouse", name: "ทาวน์เฮาส์", baseFactor: 1.0 },
@@ -59,7 +115,7 @@ const smartHomeOptions = {
 export default function CalculatorPage() {
   const [homeType, setHomeType] = useState("townhouse");
   const [homeSize, setHomeSize] = useState("medium");
-  const [systems, setSystems] = useState({
+  const [systems, setSystems] = useState<Systems>({
     lighting: { enabled: true, points: 5 },
     security: { enabled: true, cameras: 2, doorLocks: 1 },
     hvac: { enabled: true, acUnits: 2 },
@@ -88,31 +144,31 @@ export default function CalculatorPage() {
     // Calculate lighting cost
     if (systems.lighting.enabled) {
       const { basePrice, pricePerPoint } = smartHomeOptions.systemPrices.lighting;
-      systemsCost += basePrice + (pricePerPoint * systems.lighting.points);
+      systemsCost += basePrice + ((pricePerPoint || 0) * systems.lighting.points);
     }
 
     // Calculate security cost
     if (systems.security.enabled) {
       const { basePrice, pricePerCamera, pricePerDoorLock } = smartHomeOptions.systemPrices.security;
-      systemsCost += basePrice + (pricePerCamera * systems.security.cameras) + (pricePerDoorLock * systems.security.doorLocks);
+      systemsCost += basePrice + ((pricePerCamera || 0) * systems.security.cameras) + ((pricePerDoorLock || 0) * systems.security.doorLocks);
     }
 
     // Calculate HVAC cost
     if (systems.hvac.enabled) {
       const { basePrice, pricePerAC } = smartHomeOptions.systemPrices.hvac;
-      systemsCost += basePrice + (pricePerAC * systems.hvac.acUnits);
+      systemsCost += basePrice + ((pricePerAC || 0) * systems.hvac.acUnits);
     }
 
     // Calculate audio cost
     if (systems.audio.enabled) {
       const { basePrice, pricePerRoom } = smartHomeOptions.systemPrices.audio;
-      systemsCost += basePrice + (pricePerRoom * systems.audio.rooms);
+      systemsCost += basePrice + ((pricePerRoom || 0) * systems.audio.rooms);
     }
 
     // Calculate automation cost
     if (systems.automation.enabled) {
       const { basePrice, pricePerSensor } = smartHomeOptions.systemPrices.automation;
-      systemsCost += basePrice + (pricePerSensor * systems.automation.sensors);
+      systemsCost += basePrice + ((pricePerSensor || 0) * systems.automation.sensors);
     }
 
     // Calculate control system cost
@@ -155,11 +211,11 @@ export default function CalculatorPage() {
     }
   };
 
-  const formatPrice = (price) => {
+  const formatPrice = (price: number): string => {
     return new Intl.NumberFormat('th-TH').format(price);
   };
 
-  const updateSystemValue = (system, property, value) => {
+  const updateSystemValue = (system: string, property: string, value: any): void => {
     setSystems(prev => ({
       ...prev,
       [system]: {
@@ -237,7 +293,7 @@ export default function CalculatorPage() {
                   <Switch
                     id="lighting-switch"
                     checked={systems.lighting.enabled}
-                    onCheckedChange={(checked) => updateSystemValue('lighting', 'enabled', checked)}
+                    onCheckedChange={(checked: boolean) => updateSystemValue('lighting', 'enabled', checked)}
                   />
                 </div>
                 {systems.lighting.enabled && (
@@ -245,7 +301,7 @@ export default function CalculatorPage() {
                     <div className="flex items-center justify-between">
                       <Label htmlFor="lighting-points">จำนวนจุดควบคุมแสงสว่าง: {systems.lighting.points}</Label>
                       <span className="text-sm text-muted-foreground">
-                        {formatPrice(smartHomeOptions.systemPrices.lighting.pricePerPoint)} บาท/จุด
+                        {formatPrice(smartHomeOptions.systemPrices.lighting.pricePerPoint || 0)} บาท/จุด
                       </span>
                     </div>
                     <Slider
@@ -254,7 +310,7 @@ export default function CalculatorPage() {
                       max={20}
                       step={1}
                       value={[systems.lighting.points]}
-                      onValueChange={(value) => updateSystemValue('lighting', 'points', value[0])}
+                      onValueChange={(value: number[]) => updateSystemValue('lighting', 'points', value[0])}
                     />
                   </div>
                 )}
@@ -270,7 +326,7 @@ export default function CalculatorPage() {
                   <Switch
                     id="security-switch"
                     checked={systems.security.enabled}
-                    onCheckedChange={(checked) => updateSystemValue('security', 'enabled', checked)}
+                    onCheckedChange={(checked: boolean) => updateSystemValue('security', 'enabled', checked)}
                   />
                 </div>
                 {systems.security.enabled && (
@@ -279,7 +335,7 @@ export default function CalculatorPage() {
                       <div className="flex items-center justify-between">
                         <Label htmlFor="security-cameras">จำนวนกล้องวงจรปิด: {systems.security.cameras}</Label>
                         <span className="text-sm text-muted-foreground">
-                          {formatPrice(smartHomeOptions.systemPrices.security.pricePerCamera)} บาท/ตัว
+                          {formatPrice(smartHomeOptions.systemPrices.security.pricePerCamera || 0)} บาท/ตัว
                         </span>
                       </div>
                       <Slider
@@ -288,14 +344,14 @@ export default function CalculatorPage() {
                         max={10}
                         step={1}
                         value={[systems.security.cameras]}
-                        onValueChange={(value) => updateSystemValue('security', 'cameras', value[0])}
+                        onValueChange={(value: number[]) => updateSystemValue('security', 'cameras', value[0])}
                       />
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between">
                         <Label htmlFor="security-door-locks">จำนวนล็อคประตูอัจฉริยะ: {systems.security.doorLocks}</Label>
                         <span className="text-sm text-muted-foreground">
-                          {formatPrice(smartHomeOptions.systemPrices.security.pricePerDoorLock)} บาท/ชุด
+                          {formatPrice(smartHomeOptions.systemPrices.security.pricePerDoorLock || 0)} บาท/ชุด
                         </span>
                       </div>
                       <Slider
@@ -304,13 +360,14 @@ export default function CalculatorPage() {
                         max={5}
                         step={1}
                         value={[systems.security.doorLocks]}
-                        onValueChange={(value) => updateSystemValue('security', 'doorLocks', value[0])}
+                        onValueChange={(value: number[]) => updateSystemValue('security', 'doorLocks', value[0])}
                       />
                     </div>
                   </div>
                 )}
               </div>
 
+              {/* ทำแบบเดียวกันกับระบบอื่น ๆ - เพิ่ม type ให้กับ parameters ทั้งหมด */}
               {/* HVAC System */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -321,7 +378,7 @@ export default function CalculatorPage() {
                   <Switch
                     id="hvac-switch"
                     checked={systems.hvac.enabled}
-                    onCheckedChange={(checked) => updateSystemValue('hvac', 'enabled', checked)}
+                    onCheckedChange={(checked: boolean) => updateSystemValue('hvac', 'enabled', checked)}
                   />
                 </div>
                 {systems.hvac.enabled && (
@@ -329,7 +386,7 @@ export default function CalculatorPage() {
                     <div className="flex items-center justify-between">
                       <Label htmlFor="hvac-ac-units">จำนวนเครื่องปรับอากาศ: {systems.hvac.acUnits}</Label>
                       <span className="text-sm text-muted-foreground">
-                        {formatPrice(smartHomeOptions.systemPrices.hvac.pricePerAC)} บาท/เครื่อง
+                        {formatPrice(smartHomeOptions.systemPrices.hvac.pricePerAC || 0)} บาท/เครื่อง
                       </span>
                     </div>
                     <Slider
@@ -338,7 +395,7 @@ export default function CalculatorPage() {
                       max={10}
                       step={1}
                       value={[systems.hvac.acUnits]}
-                      onValueChange={(value) => updateSystemValue('hvac', 'acUnits', value[0])}
+                      onValueChange={(value: number[]) => updateSystemValue('hvac', 'acUnits', value[0])}
                     />
                   </div>
                 )}
@@ -354,7 +411,7 @@ export default function CalculatorPage() {
                   <Switch
                     id="audio-switch"
                     checked={systems.audio.enabled}
-                    onCheckedChange={(checked) => updateSystemValue('audio', 'enabled', checked)}
+                    onCheckedChange={(checked: boolean) => updateSystemValue('audio', 'enabled', checked)}
                   />
                 </div>
                 {systems.audio.enabled && (
@@ -362,7 +419,7 @@ export default function CalculatorPage() {
                     <div className="flex items-center justify-between">
                       <Label htmlFor="audio-rooms">จำนวนห้องที่ติดตั้ง: {systems.audio.rooms}</Label>
                       <span className="text-sm text-muted-foreground">
-                        {formatPrice(smartHomeOptions.systemPrices.audio.pricePerRoom)} บาท/ห้อง
+                        {formatPrice(smartHomeOptions.systemPrices.audio.pricePerRoom || 0)} บาท/ห้อง
                       </span>
                     </div>
                     <Slider
@@ -371,7 +428,7 @@ export default function CalculatorPage() {
                       max={10}
                       step={1}
                       value={[systems.audio.rooms]}
-                      onValueChange={(value) => updateSystemValue('audio', 'rooms', value[0])}
+                      onValueChange={(value: number[]) => updateSystemValue('audio', 'rooms', value[0])}
                     />
                   </div>
                 )}
@@ -387,7 +444,7 @@ export default function CalculatorPage() {
                   <Switch
                     id="automation-switch"
                     checked={systems.automation.enabled}
-                    onCheckedChange={(checked) => updateSystemValue('automation', 'enabled', checked)}
+                    onCheckedChange={(checked: boolean) => updateSystemValue('automation', 'enabled', checked)}
                   />
                 </div>
                 {systems.automation.enabled && (
@@ -395,7 +452,7 @@ export default function CalculatorPage() {
                     <div className="flex items-center justify-between">
                       <Label htmlFor="automation-sensors">จำนวนเซ็นเซอร์: {systems.automation.sensors}</Label>
                       <span className="text-sm text-muted-foreground">
-                        {formatPrice(smartHomeOptions.systemPrices.automation.pricePerSensor)} บาท/ตัว
+                        {formatPrice(smartHomeOptions.systemPrices.automation.pricePerSensor || 0)} บาท/ตัว
                       </span>
                     </div>
                     <Slider
@@ -404,7 +461,7 @@ export default function CalculatorPage() {
                       max={15}
                       step={1}
                       value={[systems.automation.sensors]}
-                      onValueChange={(value) => updateSystemValue('automation', 'sensors', value[0])}
+                      onValueChange={(value: number[]) => updateSystemValue('automation', 'sensors', value[0])}
                     />
                   </div>
                 )}
@@ -419,7 +476,7 @@ export default function CalculatorPage() {
                 <Switch
                   id="control-switch"
                   checked={systems.control.enabled}
-                  onCheckedChange={(checked) => updateSystemValue('control', 'enabled', checked)}
+                  onCheckedChange={(checked: boolean) => updateSystemValue('control', 'enabled', checked)}
                 />
               </div>
             </CardContent>
@@ -509,7 +566,7 @@ export default function CalculatorPage() {
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <InfoCircle className="h-4 w-4 shrink-0 mt-0.5" />
+                    <Info className="h-4 w-4 shrink-0 mt-0.5" />
                     <p>ราคานี้เป็นการประมาณการเบื้องต้น ราคาจริงอาจมีการเปลี่ยนแปลงขึ้นอยู่กับการสำรวจพื้นที่และความต้องการเฉพาะของลูกค้า</p>
                   </div>
 

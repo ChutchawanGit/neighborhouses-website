@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "ระบบอัตโนมัติอัจฉริยะ - Smart Home",
@@ -70,7 +71,7 @@ export default function AutomationServicePage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2670&auto=format&fit=crop"
+              <Image src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2670&auto=format&fit=crop"
                    alt="ระบบอัตโนมัติอัจฉริยะ" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">

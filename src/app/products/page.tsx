@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from 'next/image';
 
 export const metadata = {
   title: "สินค้า Smart Home - ติดตั้ง Smart Home",
@@ -161,7 +162,7 @@ export default function ProductsPage() {
         {products.map((product) => (
           <div key={product.name} className="border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
             <div className="aspect-[4/3] overflow-hidden">
-              <img
+              <Image
                 src={product.image}
                 alt={product.name}
                 className="w-full h-full object-cover"

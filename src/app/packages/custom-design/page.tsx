@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check, Brush, Sparkles, Settings, UserCheck } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "ออกแบบระบบ Smart Home - Smart Home",
@@ -93,7 +94,7 @@ export default function CustomDesignPage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img 
+              <Image 
                 src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg"
                 alt="ออกแบบระบบสมาร์ทโฮม" 
                 className="w-full h-full object-cover" 
@@ -169,16 +170,16 @@ export default function CustomDesignPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-square rounded-lg overflow-hidden">
-              <img src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" alt="ปรึกษากับผู้เชี่ยวชาญ" className="w-full h-full object-cover" />
+              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" alt="ปรึกษากับผู้เชี่ยวชาญ" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <img src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg" alt="ออกแบบระบบ" className="w-full h-full object-cover" />
+              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg" alt="ออกแบบระบบ" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <img src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" alt="ติดตั้งและตั้งค่า" className="w-full h-full object-cover" />
+              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" alt="ติดตั้งและตั้งค่า" className="w-full h-full object-cover" />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <img src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" alt="บริการหลังการขาย" className="w-full h-full object-cover" />
+              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" alt="บริการหลังการขาย" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

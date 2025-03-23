@@ -4,6 +4,7 @@ import {
   Card, CardContent, CardDescription, CardHeader, CardTitle
 } from "@/components/ui/card";
 import { Search } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "คลังความรู้ Smart Home - ติดตั้ง Smart Home",
@@ -122,7 +123,7 @@ export default function KnowledgeBasePage() {
             <Link key={article.id} href={`/knowledge-base/${article.id}`} className="group">
               <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col">
                 <div className="aspect-[16/9] overflow-hidden">
-                  <img
+                  <Image
                     src={article.image}
                     alt={article.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

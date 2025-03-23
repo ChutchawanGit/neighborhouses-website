@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check, Lightbulb, Home, Clock, Smartphone } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "ระบบไฟอัจฉริยะ - Smart Home",
@@ -73,7 +74,7 @@ export default function LightingServicePage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img 
+              <Image 
                 src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a7.jpg"
                 alt="ระบบแสงสว่างอัจฉริยะ" 
                 className="w-full h-full object-cover" 
@@ -126,7 +127,7 @@ export default function LightingServicePage() {
           <div className="grid grid-cols-2 gap-4">
             {products.map((product, index) => (
               <div key={index} className="aspect-square rounded-lg overflow-hidden">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                <Image src={product.image} alt={product.name} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>

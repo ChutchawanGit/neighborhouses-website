@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-
+import Image from 'next/image';
 export const metadata = {
   title: "บทความ Smart Home - ติดตั้ง Smart Home",
   description: "บทความและเคล็ดลับเกี่ยวกับเทคโนโลยี Smart Home รวมถึงเทรนด์ล่าสุดสำหรับบ้านอัจฉริยะ",
@@ -139,7 +139,7 @@ export default function BlogPage() {
             }`}
           >
             <div className={`${index === 0 ? 'aspect-[16/9] md:aspect-[16/10]' : 'aspect-[16/9]'} relative`}>
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
                 className="w-full h-full object-cover"
@@ -168,7 +168,7 @@ export default function BlogPage() {
         {regularPosts.map((post) => (
           <div key={post.id} className="border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
             <div className="aspect-[16/9] overflow-hidden">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
                 className="w-full h-full object-cover hover:scale-105 transition-transform"

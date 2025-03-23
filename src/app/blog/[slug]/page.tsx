@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CalendarIcon, ClockIcon, UserIcon, ArrowLeft, Facebook, Twitter, Link2 } from "lucide-react";
-
+import Image from 'next/image';
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   // This would normally fetch from a CMS or database
   const post = getBlogPostBySlug(params.slug);
@@ -120,7 +120,7 @@ function getRelatedPosts(slugs: string[]) {
   return allPosts.filter(post => slugs.includes(post.id));
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getBlogPostBySlug(params.slug);
   const relatedPosts = getRelatedPosts(post.relatedPosts || []);
 
@@ -159,7 +159,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="aspect-[16/9] rounded-lg overflow-hidden mb-8">
-          <img
+          <Image
             src={post.image}
             alt={post.title}
             className="w-full h-full object-cover"
@@ -209,7 +209,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               {relatedPosts.map(related => (
                 <div key={related.id} className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
                   <div className="aspect-[16/9] overflow-hidden">
-                    <img
+                    <Image
                       src={related.image}
                       alt={related.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"

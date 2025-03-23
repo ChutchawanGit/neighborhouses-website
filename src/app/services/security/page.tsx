@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "ระบบรักษาความปลอดภัยอัจฉริยะ - Smart Home",
@@ -57,7 +58,7 @@ export default function SecurityServicePage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
+              <Image src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
                    alt="ระบบรักษาความปลอดภัยอัจฉริยะ" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
@@ -110,7 +111,7 @@ export default function SecurityServicePage() {
           <div className="grid grid-cols-2 gap-4">
             {products.map((product, index) => (
               <div key={index} className="aspect-square rounded-lg overflow-hidden">
-                <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                <Image src={product.image} alt={product.name} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>

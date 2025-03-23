@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "บริการ Smart Home - ติดตั้ง Smart Home",
@@ -118,7 +119,7 @@ export default function ServicesPage() {
           >
             <div className="w-full md:w-1/2">
               <div className="aspect-video w-full rounded-lg overflow-hidden">
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover"

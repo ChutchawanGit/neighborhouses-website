@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image';
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";

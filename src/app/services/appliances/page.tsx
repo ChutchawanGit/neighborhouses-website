@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Check, Zap, Lightbulb, Smartphone, Timer, BarChart3 } from "lucide-react";
+import Image from 'next/image';
 
 export const metadata = {
   title: "ระบบควบคุมเครื่องใช้ไฟฟ้า - Smart Home",
@@ -95,7 +96,7 @@ export default function AppliancesControlPage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <img 
+              <Image 
                 src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg"
                 alt="ระบบควบคุมเครื่องใช้ไฟฟ้าอัจฉริยะ" 
                 className="w-full h-full object-cover" 
@@ -147,7 +148,7 @@ export default function AppliancesControlPage() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="aspect-video rounded-lg overflow-hidden">
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop"
                 alt="ระบบควบคุมเครื่องใช้ไฟฟ้า" 
                 className="w-full h-full object-cover" 

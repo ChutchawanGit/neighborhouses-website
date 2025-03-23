@@ -7,6 +7,7 @@ import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger
 } from "@/components/ui/tooltip";
 import { Check, X, InfoIcon } from "lucide-react";
+import React from 'react';
 
 // Metadata moved to a separate metadata.ts file
 

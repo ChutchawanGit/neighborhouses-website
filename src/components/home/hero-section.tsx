@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
@@ -74,22 +75,52 @@ export function HeroSection() {
         </div>
 
         <div className="mt-16 flex flex-wrap justify-center gap-x-16 gap-y-8">
-          <div className="flex items-center">
-            <img src="https://ext.same-assets.com/268403754/1187847822.svg+xml" alt="Partner logo" className="h-10 w-auto grayscale opacity-70" />
-          </div>
-          <div className="flex items-center">
-            <img src="https://ext.same-assets.com/2946675380/679194529.svg+xml" alt="Partner logo" className="h-10 w-auto grayscale opacity-70" />
-          </div>
-          <div className="flex items-center">
-            <img src="https://ext.same-assets.com/3900658367/4254507783.svg+xml" alt="Partner logo" className="h-10 w-auto grayscale opacity-70" />
-          </div>
-          <div className="flex items-center">
-            <img src="https://ext.same-assets.com/819762305/3681126479.svg+xml" alt="Partner logo" className="h-10 w-auto grayscale opacity-70" />
-          </div>
-          <div className="flex items-center">
-            <img src="https://ext.same-assets.com/251439802/4143483249.svg+xml" alt="Partner logo" className="h-10 w-auto grayscale opacity-70" />
-          </div>
-        </div>
+  <div className="flex items-center">
+    <Image 
+      src="https://ext.same-assets.com/268403754/1187847822.svg+xml" 
+      alt="Partner logo" 
+      width={120} 
+      height={40} 
+      className="h-10 w-auto grayscale opacity-70" 
+    />
+  </div>
+  <div className="flex items-center">
+    <Image 
+      src="https://ext.same-assets.com/2946675380/679194529.svg+xml" 
+      alt="Partner logo" 
+      width={120} 
+      height={40} 
+      className="h-10 w-auto grayscale opacity-70" 
+    />
+  </div>
+  <div className="flex items-center">
+    <Image 
+      src="https://ext.same-assets.com/3900658367/4254507783.svg+xml" 
+      alt="Partner logo" 
+      width={120} 
+      height={40} 
+      className="h-10 w-auto grayscale opacity-70" 
+    />
+  </div>
+  <div className="flex items-center">
+    <Image 
+      src="https://ext.same-assets.com/819762305/3681126479.svg+xml" 
+      alt="Partner logo" 
+      width={120} 
+      height={40} 
+      className="h-10 w-auto grayscale opacity-70" 
+    />
+  </div>
+  <div className="flex items-center">
+    <Image 
+      src="https://ext.same-assets.com/251439802/4143483249.svg+xml" 
+      alt="Partner logo" 
+      width={120} 
+      height={40} 
+      className="h-10 w-auto grayscale opacity-70" 
+    />
+  </div>
+</div>
       </div>
     </section>
   );
