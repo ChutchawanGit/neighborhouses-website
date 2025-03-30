@@ -131,13 +131,24 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="aspect-[4/3] overflow-hidden rounded-lg">
-            <Image src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
+            <Image
+              src={project.images[0]}
+              alt={project.title}
+              width={2670}
+              height={2000}
+              className="w-full h-full object-cover"
+            />
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {project.images.slice(1, 3).map((image, index) => (
               <div key={index} className="aspect-square overflow-hidden rounded-lg">
-                <Image src={image} alt={`${project.title} ${index + 2}`} className="w-full h-full object-cover" />
+                <Image
+                  src={image}
+                  alt={`${project.title} ${index + 2}`}
+                  width={2670}
+                  height={2000}
+                  className="w-full h-full object-cover"
+                />
               </div>
             ))}
 
@@ -230,6 +241,8 @@ export default function ProjectDetailPage({ params }: { params: { id: string } }
                     <Image
                       src={related.image}
                       alt={related.title}
+                      width={2670}
+                      height={2000}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>

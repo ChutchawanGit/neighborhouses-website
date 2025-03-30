@@ -151,6 +151,8 @@ export default function TestimonialsPage() {
                     <Image
                       src={testimonial.image}
                       alt={testimonial.name}
+                      width={2574}
+                      height={1920}
                       className="w-full h-full object-cover opacity-80"
                     />
                     <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent text-white">
@@ -207,6 +209,8 @@ export default function TestimonialsPage() {
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={100}
+                    height={100}
                     className="w-full h-full object-cover"
                   />
                 </div>

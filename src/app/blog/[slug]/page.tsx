@@ -162,6 +162,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           <Image
             src={post.image}
             alt={post.title}
+            width={2670}
+            height={2000}
             className="w-full h-full object-cover"
           />
         </div>
@@ -212,6 +214,8 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                     <Image
                       src={related.image}
                       alt={related.title}
+                      width={2670}
+                      height={2000}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>

@@ -120,6 +120,8 @@ export default function ProjectsPage() {
                   <Image
                     src={project.images[0]}
                     alt={project.title}
+                    width={2670}
+                    height={2000}
                     className="w-full h-full object-cover transition-transform group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
@@ -167,6 +169,8 @@ export default function ProjectsPage() {
               <Image
                 src={project.images[0]}
                 alt={project.title}
+                width={2670}
+                height={2000}
                 className="w-full h-full object-cover hover:scale-105 transition-transform"
               />
             </div>

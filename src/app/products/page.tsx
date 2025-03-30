@@ -165,6 +165,8 @@ export default function ProductsPage() {
               <Image
                 src={product.image}
                 alt={product.name}
+                width={product.image.includes("w=2574") ? 2574 : 2670}
+                height={2000}
                 className="w-full h-full object-cover"
               />
             </div>
