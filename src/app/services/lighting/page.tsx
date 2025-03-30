@@ -98,6 +98,8 @@ export default function SmartLightingPage() {
               <Image
                 src="https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?q=80&w=2574&auto=format&fit=crop"
                 alt="ระบบควบคุมแสงสว่างอัจฉริยะ"
+                width={2574}
+                height={1920}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -163,30 +165,32 @@ export default function SmartLightingPage() {
                 <Image
                   src="https://images.unsplash.com/photo-1567789884554-0b844b597180?q=80&w=2670&auto=format&fit=crop"
                   alt="ควบคุมผ่านมือถือ"
+                  width={2670}
+                  height={2000}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1532006369555-90160a3b2013?q=80&w=2574&auto=format&fit=crop"
-                  alt="ตั้งเวลาอัตโนมัติ"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1596555224999-7f579ba07b1d?q=80&w=2508&auto=format&fit=crop"
-                  alt="สั่งงานด้วยเสียง"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="aspect-square rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1564540574859-0dfb63985953?q=80&w=2670&auto=format&fit=crop"
-                  alt="ปรับแต่งบรรยากาศ"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <Image
+                src="https://images.unsplash.com/photo-1532006369555-90160a3b2013?q=80&w=2574&auto=format&fit=crop"
+                alt="ตั้งเวลาอัตโนมัติ"
+                width={2574}
+                height={1920}
+                className="w-full h-full object-cover"
+              />
+              <Image
+                src="https://images.unsplash.com/photo-1596555224999-7f579ba07b1d?q=80&w=2508&auto=format&fit=crop"
+                alt="สั่งงานด้วยเสียง"
+                width={2508}
+                height={1880}
+                className="w-full h-full object-cover"
+              />
+              <Image
+                src="https://images.unsplash.com/photo-1564540574859-0dfb63985953?q=80&w=2670&auto=format&fit=crop"
+                alt="ปรับแต่งบรรยากาศ"
+                width={2670}
+                height={2000}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

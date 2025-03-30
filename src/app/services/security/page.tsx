@@ -29,10 +29,30 @@ const features = [
 ];
 
 const products = [
-  { name: "กล้องวงจรปิดอัจฉริยะ", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop" },
-  { name: "ระบบล็อคประตูอัจฉริยะ", image: "https://images.unsplash.com/photo-1584644207904-a03a08f463a8?q=80&w=2670&auto=format&fit=crop" },
-  { name: "เซ็นเซอร์ตรวจจับความเคลื่อนไหว", image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2670&auto=format&fit=crop" },
-  { name: "กล้องวิดีโอหน้าประตู", image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop" },
+  { 
+    name: "กล้องวงจรปิดอัจฉริยะ", 
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop",
+    width: 2574,
+    height: 1900
+  },
+  { 
+    name: "ระบบล็อคประตูอัจฉริยะ", 
+    image: "https://images.unsplash.com/photo-1584644207904-a03a08f463a8?q=80&w=2670&auto=format&fit=crop",
+    width: 2670,
+    height: 2000
+  },
+  { 
+    name: "เซ็นเซอร์ตรวจจับความเคลื่อนไหว", 
+    image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2670&auto=format&fit=crop",
+    width: 2670,
+    height: 2000
+  },
+  { 
+    name: "กล้องวิดีโอหน้าประตู", 
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop",
+    width: 2670,
+    height: 2000
+  },
 ];
 
 export default function SecurityServicePage() {
@@ -58,8 +78,13 @@ export default function SecurityServicePage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
-                   alt="ระบบรักษาความปลอดภัยอัจฉริยะ" className="w-full h-full object-cover" />
+              <Image 
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
+                width={2574}
+                height={1900}
+                alt="ระบบรักษาความปลอดภัยอัจฉริยะ" 
+                className="w-full h-full object-cover" 
+              />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
               <p className="text-lg font-bold text-black">ปกป้องบ้านคุณ</p>
@@ -111,7 +136,13 @@ export default function SecurityServicePage() {
           <div className="grid grid-cols-2 gap-4">
             {products.map((product, index) => (
               <div key={index} className="aspect-square rounded-lg overflow-hidden">
-                <Image src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                <Image 
+                  src={product.image} 
+                  alt={product.name} 
+                  width={product.width}
+                  height={product.height}
+                  className="w-full h-full object-cover" 
+                />
               </div>
             ))}
           </div>

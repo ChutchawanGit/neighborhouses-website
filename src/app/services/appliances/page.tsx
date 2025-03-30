@@ -97,7 +97,7 @@ export default function AppliancesControlPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg"
+                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg" width={1200} height={900}
                 alt="ระบบควบคุมเครื่องใช้ไฟฟ้าอัจฉริยะ" 
                 className="w-full h-full object-cover" 
               />
@@ -149,7 +149,7 @@ export default function AppliancesControlPage() {
           <div className="order-1 lg:order-2">
             <div className="aspect-video rounded-lg overflow-hidden">
               <Image 
-                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2670&auto=format&fit=crop" width={2670} height={2000}
                 alt="ระบบควบคุมเครื่องใช้ไฟฟ้า" 
                 className="w-full h-full object-cover" 
               />

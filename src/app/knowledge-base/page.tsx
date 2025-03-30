@@ -88,7 +88,7 @@ const featuredArticles = [
     id: "security-system",
     title: "เสริมความปลอดภัยให้บ้านด้วย Smart Home",
     excerpt: "แนะนำระบบรักษาความปลอดภัยอัจฉริยะที่ช่วยปกป้องบ้านและครอบครัวของคุณ",
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop&width=auto",
     category: "ความปลอดภัย",
   },
 ];

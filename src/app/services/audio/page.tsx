@@ -51,7 +51,7 @@ export default function AudioServicePage() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1516280906200-1d059b5ce1eb?q=80&w=2670&auto=format&fit=crop"
+              <Image src="https://images.unsplash.com/photo-1516280906200-1d059b5ce1eb?q=80&w=2670&auto=format&fit=crop" width={2670} height={2000}
                    alt="ระบบเสียงอัจฉริยะ" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
@@ -104,7 +104,7 @@ export default function AudioServicePage() {
           </div>
           <div className="order-1 lg:order-2">
             <div className="aspect-video rounded-lg overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1574879148365-18efb2cf079f?q=80&w=2671&auto=format&fit=crop"
+              <Image src="https://images.unsplash.com/photo-1574879148365-18efb2cf079f?q=80&w=2671&auto=format&fit=crop" width={2671} height={2000}
                    alt="ระบบเสียงคุณภาพสูง" className="w-full h-full object-cover" />
             </div>
           </div>
