@@ -122,6 +122,8 @@ export default function ServicesPage() {
                 <Image
                   src={service.image}
                   alt={service.title}
+                  width={service.image.includes("w=2574") ? 2574 : 2670}
+                  height={service.image.includes("w=2574") ? 1920 : 2000}
                   className="w-full h-full object-cover"
                 />
               </div>
