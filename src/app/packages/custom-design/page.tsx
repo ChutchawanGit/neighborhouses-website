@@ -97,7 +97,9 @@ export default function CustomDesignPage() {
               <Image 
                 src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg"
                 alt="ออกแบบระบบสมาร์ทโฮม" 
-                className="w-full h-full object-cover" 
+                className="w-full h-full object-cover"
+                width={800}
+                height={600}
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
@@ -170,16 +172,40 @@ export default function CustomDesignPage() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-square rounded-lg overflow-hidden">
-              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" alt="ปรึกษากับผู้เชี่ยวชาญ" className="w-full h-full object-cover" />
+              <Image 
+                src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" 
+                alt="ปรึกษากับผู้เชี่ยวชาญ" 
+                className="w-full h-full object-cover"
+                width={400}
+                height={400}
+              />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg" alt="ออกแบบระบบ" className="w-full h-full object-cover" />
+              <Image 
+                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg" 
+                alt="ออกแบบระบบ" 
+                className="w-full h-full object-cover"
+                width={400}
+                height={400}
+              />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" alt="ติดตั้งและตั้งค่า" className="w-full h-full object-cover" />
+              <Image 
+                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" 
+                alt="ติดตั้งและตั้งค่า" 
+                className="w-full h-full object-cover"
+                width={400}
+                height={400}
+              />
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
-              <Image src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" alt="บริการหลังการขาย" className="w-full h-full object-cover" />
+              <Image 
+                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" 
+                alt="บริการหลังการขาย" 
+                className="w-full h-full object-cover"
+                width={400}
+                height={400}
+              />
             </div>
           </div>
         </div>
@@ -304,7 +330,7 @@ export default function CustomDesignPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-white text-[#00bbb4] hover:bg-zinc-100">
-              <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
+              <Link href="/contact">ติดต่อเรา</Link>
             </Button>
             <Button asChild variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">
               <Link href="/calculator">คำนวณราคาติดตั้ง</Link>

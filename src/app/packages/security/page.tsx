@@ -78,6 +78,8 @@ export default function SecurityServicePage() {
                 src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a7.jpg"
                 alt="ระบบรักษาความปลอดภัยอัจฉริยะ" 
                 className="w-full h-full object-cover" 
+                width={800}
+                height={600}
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
@@ -127,7 +129,13 @@ export default function SecurityServicePage() {
           <div className="grid grid-cols-2 gap-4">
             {products.map((product, index) => (
               <div key={index} className="aspect-square rounded-lg overflow-hidden">
-                <Image src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                <Image 
+                  src={product.image} 
+                  alt={product.name} 
+                  className="w-full h-full object-cover"
+                  width={400}
+                  height={400}
+                />
               </div>
             ))}
           </div>
