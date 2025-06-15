@@ -35,6 +35,8 @@ NeighborHouses คือแพลตฟอร์มที่จะเปลี�
 - Line
 - และอื่นๆ
 
+### มี Notification แจ้งเตือนผ่าน Discord เวลามีคนร้องเรียนเข้ามา
+
 ### 🛠 เทคโนโลยีที่ใช้
 
 - **เฟรมเวิร์ค:** Next.js
@@ -75,12 +77,12 @@ The project is configured for seamless deployment on Netlify. Just connect your 
 
 In Local Connect: http://localhost:3000
 
-Or Connect Production Connect: http://neighborhouses.com/
+Or Connect Production Connect: [[http://neighborhouses.com/](https://neighborhouses-website.vercel.app/)](https://neighborhouses-website.vercel.app/)
 
 ### 📬 Contact
 
 **We Email And Contact?**
-- Email: connect@neighborhouses.com
+- Email: chutchawanmeesrimatupoj@gmail.com
 - GitHub: @ChutchawanGit
 
 ---
