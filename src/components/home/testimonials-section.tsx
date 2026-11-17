@@ -2,108 +2,92 @@
 
 import { useState } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Quote } from "lucide-react";
-import type { CarouselApi } from "@/components/ui/carousel";
+import { Quote, Star } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "การติดตั้ง Smart Home ทำให้ชีวิตประจำวันสะดวกสบายขึ้นมาก สามารถควบคุมทุกอย่างได้จากมือถือ บริการหลังการขายดีเยี่ยม ทีมงานให้คำแนะนำและแก้ไขปัญหาได้อย่างรวดเร็ว",
+    quote: "งานติดตั้งมีความเป็นมืออาชีพสูงมาก ทีมช่างเก็บสายไฟและอุปกรณ์ได้เรียบร้อยจนแทบมองไม่เห็น การควบคุมแสงไฟตามช่วงเวลาและ Scene ช่วยเปลี่ยนบรรยากาศในบ้านได้อย่างน่าทึ่ง",
     author: "คุณสมศักดิ์ จิตรสุขใส",
-    title: "เจ้าของบ้านเดี่ยว จ.นนทบุรี",
+    title: "เจ้าของบ้านเดี่ยวโครงการหรู จ.นนทบุรี",
+    estate: "Private Villa Estate",
     rating: 5,
   },
   {
-    quote: "ประทับใจในการบริการมาก ทีมงานติดตั้งเป็นมืออาชีพ ทำงานรวดเร็วและเรียบร้อย ระบบทำงานได้อย่างมีประสิทธิภาพ ช่วยประหยัดค่าไฟและเพิ่มความปลอดภัยให้กับบ้านของเรา",
+    quote: "ประทับใจระบบกล้อง AI CCTV 4K และ Smart Door Lock มาก เวลาเดินทางไปต่างประเทศสามารถตรวจเช็คความปลอดภัยของคอนโดได้อย่างมั่นใจ ไร้กังวล บริการหลังการขายรวดเร็วมากครับ",
     author: "คุณพิมพ์มาดา วิริยะพันธ์",
-    title: "เจ้าของคอนโดมิเนียม กรุงเทพฯ",
+    title: "เจ้าของเพนท์เฮาส์ สุขุมวิท กรุงเทพฯ",
+    estate: "Luxury Penthouse Resident",
     rating: 5,
   },
   {
-    quote: "ใช้บริการติดตั้งระบบกล้องวงจรปิดและระบบล็อคประตูอัจฉริยะ ทำให้รู้สึกอุ่นใจเวลาไม่อยู่บ้าน สามารถเช็คและควบคุมทุกอย่างได้จากมือถือ ราคาคุ้มค่ากับคุณภาพที่ได้รับ",
+    quote: "ระบบ Multi-Room Audio และ Automation ใช้งานง่ายอย่างไม่น่าเชื่อ แขกที่มาพักที่รีสอร์ทต่างชมว่าเทคโนโลยีทันสมัยและช่วยสร้างบรรยากาศผ่อนคลายได้อย่างลงตัว",
     author: "คุณนพรัตน์ สุขสวัสดิ์",
-    title: "เจ้าของธุรกิจรีสอร์ท จ.เชียงใหม่",
-    rating: 4,
+    title: "เจ้าของธุรกิจบูทีครีสอร์ท จ.เชียงใหม่",
+    estate: "Boutique Resort Owner",
+    rating: 5,
   },
   {
-    quote: "บริการดีเยี่ยม มีความเป็นมืออาชีพสูง ให้คำแนะนำและวางแผนการติดตั้งที่เหมาะสมกับบ้านของเรา ระบบใช้งานง่าย แม้แต่ผู้สูงอายุอย่างแม่ก็ใช้งานได้ไม่ยาก",
+    quote: "การได้ควบคุมเครื่องปรับอากาศและไฟส่องสว่างทั้งบ้านผ่านคำสั่งเสียงและแอปเดียว ช่วยลดค่าไฟได้จริง และที่สำคัญคือคุณพ่อคุณแม่ใช้งานได้ง่าย ไม่ซับซ้อนเลย",
     author: "คุณวิชัย เจริญทรัพย์",
-    title: "เจ้าของบ้านเดี่ยว จ.ปทุมธานี",
+    title: "เจ้าของคฤหาสน์ จ.ปทุมธานี",
+    estate: "Architectural Residence",
     rating: 5,
   },
 ];
 
 export function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [api, setApi] = useState<CarouselApi>();
-
-  const onSelect = (index: number) => {
-    setActiveIndex(index);
-  };
-
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-24 md:py-32 bg-white overflow-hidden">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl mb-4">
-            เสียงจากลูกค้าของเรา
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <p className="text-xs font-semibold tracking-[0.25em] text-emerald-700 uppercase mb-3">
+            Client Perspectives
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-950 tracking-tight mb-4">
+            ความไว้วางใจจาก <span className="font-medium">เจ้าของบ้านชั้นนำ</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
-            ความประทับใจจากผู้ใช้บริการ Smart Home
+          <p className="text-base md:text-lg text-zinc-600 font-light leading-relaxed">
+            เสียงสะท้อนจากลูกค้าระดับพรีเมียมที่ได้สัมผัสมาตรฐานงานติดตั้งและบริการระดับลักชัวรีจากเรา
           </p>
         </div>
 
-        <Carousel
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-          className="max-w-5xl mx-auto"
-          setApi={setApi}
-          onSelect={onSelect}
-        >
-          <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-4/5 lg:basis-3/4 px-4">
-                <div className={`bg-zinc-50 p-8 rounded-lg border transition-all ${activeIndex === index ? 'border-[#00bbb4] shadow-md' : 'border-gray-200'}`}>
-                  <div className="mb-6 text-[#00bbb4]">
-                    <Quote className="h-8 w-8" />
-                  </div>
-                  <blockquote className="text-xl mb-8">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div className="flex items-center">
-                    <div className="mr-4 bg-[#00bbb4] h-12 w-12 rounded-full flex items-center justify-center text-black font-bold text-xl">
-                      {testimonial.author.charAt(0)}
+        {/* Testimonials Grid / Carousel */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((t, idx) => (
+              <div 
+                key={idx}
+                className="relative p-8 md:p-10 rounded-3xl border border-zinc-200/80 bg-zinc-50/40 hover:bg-white hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex gap-1">
+                      {[...Array(t.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      ))}
                     </div>
-                    <div>
-                      <div className="font-semibold">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.title}</div>
-                      <div className="flex mt-1">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <svg
-                            key={i}
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            fill={i < testimonial.rating ? "#EAB308" : "none"}
-                            stroke={i < testimonial.rating ? "#EAB308" : "currentColor"}
-                            className="h-4 w-4 mr-0.5"
-                          >
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
+                    <span className="text-[10px] uppercase tracking-widest font-semibold px-2.5 py-1 rounded-full bg-zinc-200/60 text-zinc-600">
+                      {t.estate}
+                    </span>
                   </div>
+
+                  <p className="text-zinc-700 font-light text-sm sm:text-base leading-relaxed mb-8 italic">
+                    "{t.quote}"
+                  </p>
                 </div>
-              </CarouselItem>
+
+                <div className="pt-6 border-t border-zinc-200/60">
+                  <h4 className="font-medium text-sm text-zinc-950">{t.author}</h4>
+                  <p className="text-xs text-zinc-500 font-light mt-0.5">{t.title}</p>
+                </div>
+              </div>
             ))}
-          </CarouselContent>
-          <div className="mt-8 flex justify-center gap-2">
-            <CarouselPrevious className="relative static border-[#00bbb4] text-[#00bbb4] hover:bg-yellow-100 hover:text-[#009991] hover:border-yellow-700" />
-            <CarouselNext className="relative static border-[#00bbb4] text-[#00bbb4] hover:bg-yellow-100 hover:text-[#009991] hover:border-yellow-700" />
           </div>
-        </Carousel>
+        </div>
       </div>
     </section>
   );
 }
+
+export default TestimonialsSection;

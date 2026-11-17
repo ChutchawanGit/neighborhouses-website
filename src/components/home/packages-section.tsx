@@ -1,140 +1,176 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Sparkles } from "lucide-react";
 
 const packages = [
   {
-    name: "Smart Home เริ่มต้น",
-    description: "เหมาะสำหรับบ้านขนาดเล็ก หรือเริ่มต้นใช้งานระบบ Smart Home",
+    name: "The Estate Essential",
+    subtitle: "สำหรับทาวน์โฮมและบ้านเดี่ยวขนาดเริ่มต้น",
     price: "39,900",
+    description: "จุดเริ่มต้นที่สมบูรณ์แบบสำหรับการสัมผัสประสบการณ์ Smart Home ที่ครอบคลุมฟังก์ชันหลักของบ้าน",
     features: [
-      "ชุดควบคุมแสงสว่าง 5 จุด",
-      "กล้องวงจรปิด 2 ตัว",
-      "ระบบล็อคประตูอัจฉริยะ 1 ชุด",
-      "สวิตช์อัจฉริยะ 3 ตัว",
-      "แอพควบคุมผ่านมือถือ",
-      "ติดตั้งฟรี รับประกัน 1 ปี",
+      "ระบบควบคุมไฟส่องสว่าง Smart Lighting 5 จุด",
+      "กล้องวงจรปิด AI ความละเอียดคมชัด 2 ตัว",
+      "Smart Digital Door Lock สแกนลายนิ้วมือและรหัส 1 ชุด",
+      "Smart Switch กระจกนิรภัยระดับพรีเมียม 3 จุด",
+      "ควบคุมสั่งการผ่านแอปพลิเคชันมือถือ 24 ชม.",
+      "ติดตั้งฟรีโดยทีมช่างมาตรฐาน พร้อมรับประกัน 1 ปี",
     ],
     href: "/packages/basic",
     popular: false,
+    cta: "เลือกแพ็คเกจเริ่มต้น",
   },
   {
-    name: "Smart Home กลาง",
-    description: "เหมาะสำหรับบ้านขนาดกลาง เพิ่มความสะดวกสบายและปลอดภัย",
+    name: "The Manor Signature",
+    subtitle: "สำหรับบ้านเดี่ยวขนาดกลางและครอบครัวยุคใหม่",
     price: "79,900",
+    description: "แพ็คเกจยอดนิยมสูงสุด ยกระดับความสะดวกสบายและความปลอดภัยรอบทิศทาง พร้อมระบบอัตโนมัติ",
     features: [
-      "ชุดควบคุมแสงสว่าง 10 จุด",
-      "กล้องวงจรปิด 4 ตัว",
-      "ระบบล็อคประตูอัจฉริยะ 2 ชุด",
-      "สวิตช์อัจฉริยะ 6 ตัว",
-      "เซ็นเซอร์ตรวจจับการเคลื่อนไหว 2 ตัว",
-      "ระบบควบคุมแอร์อัจฉริยะ 2 เครื่อง",
-      "ระบบควบคุมเสียง 1 ชุด",
-      "แอพควบคุมผ่านมือถือ",
-      "ติดตั้งฟรี รับประกัน 2 ปี",
+      "ระบบควบคุมไฟ Smart Lighting ทั่วบริเวณหลัก 10 จุด",
+      "กล้องวงจรปิด AI CCTV 4K ตรวจจับคนและรถ 4 ตัว",
+      "Smart Door Lock ระบบจดจำใบหน้าและลายนิ้วมือ 2 ชุด",
+      "Smart Switch ดีไซน์มินิมอลลักชัวรี 6 จุด",
+      "Motion & Light Ambient Sensors 2 จุด",
+      "โมดูลควบคุมเครื่องปรับอากาศอัจฉริยะ 2 เครื่อง",
+      "ระบบเชื่อมต่อ Smart Speaker สั่งงานด้วยเสียง",
+      "ติดตั้งฟรี เดินท่อร้อยสายประณีต รับประกัน 2 ปี",
     ],
     href: "/packages/standard",
     popular: true,
+    cta: "เลือกแพ็คเกจยอดนิยม",
   },
   {
-    name: "Smart Home พรีเมียม",
-    description: "เหมาะสำหรับบ้านขนาดใหญ่ ครบครันทุกฟังก์ชันการใช้งาน",
+    name: "The Sovereign Bespoke",
+    subtitle: "สำหรับคฤหาสน์และบ้านเดี่ยวขนาดใหญ่ (Super Luxury)",
     price: "149,900",
+    description: "โซลูชันบ้านอัจฉริยะเต็มระบบ ครอบคลุมแสง สี เสียง อุณหภูมิ และความปลอดภัยระดับสูงสุด",
     features: [
-      "ชุดควบคุมแสงสว่างทั้งบ้าน",
-      "กล้องวงจรปิด 8 ตัว",
-      "ระบบล็อคประตูอัจฉริยะทุกประตู",
-      "สวิตช์อัจฉริยะทั้งบ้าน",
-      "เซ็นเซอร์ตรวจจับการเคลื่อนไหว 5 ตัว",
-      "ระบบควบคุมแอร์อัจฉริยะทุกเครื่อง",
-      "ระบบควบคุมเสียงทั้งบ้าน",
-      "ระบบม่านอัจฉริยะ",
-      "ระบบรักษาความปลอดภัยขั้นสูง",
-      "แอพควบคุมผ่านมือถือและระบบสั่งงานด้วยเสียง",
-      "ติดตั้งฟรี รับประกัน 3 ปี",
+      "ระบบควบคุมไฟแสงสว่างอัจฉริยะทั้งหลังแบบไม่จำกัดจุด",
+      "ระบบกล้องวงจรปิด AI CCTV 4K Color Night Vision 8 จุด",
+      "Smart Digital Door Locks ครบทุกจุดเข้าออกหลัก",
+      "สวิตช์ระบบสัมผัสและแผงควบคุมผนัง Smart Wall Panels",
+      "Motion & Environmental Sensors ครอบคลุมทั้งบ้าน",
+      "ระบบควบคุมแอร์และระบบระบายอากาศอัจฉริยะทั้งหลัง",
+      "ระบบเสียง Multi-Room Audio ฝังฝ้าเพดานอย่างกลมกลืน",
+      "ระบบควบคุมม่านและมู่ลี่ไฟฟ้าอัตโนมัติตามเวลา",
+      "Priority On-Site Support 24/7 รับประกันสูงสุด 3 ปี",
     ],
     href: "/packages/premium",
     popular: false,
+    cta: "เลือกแพ็คเกจพรีเมียม",
   },
 ];
 
 export function PackagesSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 md:py-32 bg-white">
       <div className="container">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl mb-4">
-            แพ็คเกจติดตั้ง Smart Home
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+          <p className="text-xs font-semibold tracking-[0.25em] text-emerald-700 uppercase mb-3">
+            Transparent Investment
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-950 tracking-tight mb-4">
+            แพ็คเกจติดตั้ง <span className="font-medium">มาตรฐานสากล</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
-            เลือกแพ็คเกจที่เหมาะกับความต้องการของคุณ สามารถปรับแต่งได้ตามต้องการ
+          <p className="text-base md:text-lg text-zinc-600 font-light leading-relaxed">
+            ราคารวมอุปกรณ์มาตรฐานระดับพรีเมียม ค่าแรงช่างวิศวกร การเซ็ตอัประบบ และการรับประกันอย่างเป็นทางการ ไร้ค่าใช้จ่ายแอบแฝง
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Pricing Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
           {packages.map((pkg) => (
-            <Card 
+            <div 
               key={pkg.name} 
-              className={`relative flex flex-col h-full transition-all group ${
-                pkg.popular ? 'border-emerald-500 shadow-lg' : 'hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100'
+              className={`relative flex flex-col justify-between rounded-3xl p-8 md:p-10 transition-all duration-300 bg-white ${
+                pkg.popular 
+                  ? "border-2 border-emerald-600 shadow-2xl shadow-emerald-950/10 ring-4 ring-emerald-500/10 lg:-translate-y-2" 
+                  : "border border-zinc-200/80 hover:border-zinc-300 hover:shadow-xl"
               }`}
             >
               {pkg.popular && (
-                <div className="absolute -top-3 left-0 right-0 flex justify-center">
-                  <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-                    แนะนำ
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-medium tracking-widest uppercase shadow-md">
+                    <Sparkles className="w-3 h-3 text-emerald-200" />
+                    <span>Most Popular Choice</span>
                   </span>
                 </div>
               )}
-              <CardHeader>
-                <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                <CardDescription className="text-base">{pkg.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
+
+              <div>
                 <div className="mb-6">
-                  <span className="text-3xl font-bold">{pkg.price}</span>
-                  <span className="text-muted-foreground ml-1">บาท</span>
+                  <h3 className="text-2xl font-light text-zinc-950 mb-1">{pkg.name}</h3>
+                  <p className="text-xs text-zinc-500 font-light">{pkg.subtitle}</p>
                 </div>
-                <ul className="space-y-2">
-                  {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start">
-                      <Check className="mr-2 h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              <CardFooter>
+
+                <div className="mb-6 pb-6 border-b border-zinc-100">
+                  <div className="flex items-baseline">
+                    <span className="text-4xl font-light text-zinc-950">฿{pkg.price}</span>
+                    <span className="text-xs text-zinc-500 ml-2 font-light">สุทธิรวมติดตั้ง</span>
+                  </div>
+                  <p className="text-xs text-zinc-600 font-light mt-3 leading-relaxed">
+                    {pkg.description}
+                  </p>
+                </div>
+
+                {/* Features List */}
+                <div className="mb-8">
+                  <p className="text-xs font-semibold text-zinc-900 uppercase tracking-wider mb-4">
+                    สิ่งที่จะได้รับในแพ็คเกจ:
+                  </p>
+                  <ul className="space-y-3.5">
+                    {pkg.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start text-xs sm:text-sm text-zinc-700 font-light leading-snug">
+                        <div className="w-4 h-4 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mr-2.5 mt-0.5 shrink-0">
+                          <Check className="w-3 h-3" />
+                        </div>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div>
                 <Button 
                   asChild 
-                  className={`w-full transition-all ${
+                  className={`w-full py-6 rounded-full text-xs font-medium tracking-wide shadow-sm transition-all ${
                     pkg.popular 
-                    ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white' 
-                    : 'group-hover:bg-emerald-500 group-hover:text-white'
+                      ? "bg-emerald-600 hover:bg-emerald-700 text-white hover:shadow-md" 
+                      : "bg-zinc-900 hover:bg-zinc-800 text-white"
                   }`}
                 >
                   <Link href={pkg.href}>
-                    เลือกแพ็คเกจนี้
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    {pkg.cta}
+                    <ArrowRight className="ml-2 w-3.5 h-3.5" />
                   </Link>
                 </Button>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            ต้องการแพ็คเกจที่ปรับแต่งเองตามความต้องการเฉพาะ?
+        {/* Comparison Callout */}
+        <div className="mt-16 text-center">
+          <p className="text-sm text-zinc-500 font-light mb-3">
+            ต้องการแพ็คเกจที่ปรับแต่งตามขนาดพื้นที่หรือสถาปัตยกรรมเฉพาะของคุณ?
           </p>
-          <Button asChild variant="outline" className="hover:text-emerald-500 hover:border-emerald-500">
-            <Link href="/contact">ปรึกษาผู้เชี่ยวชาญของเรา</Link>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button asChild variant="outline" className="rounded-full border-zinc-300 hover:bg-zinc-50 px-6 text-xs">
+              <Link href="/packages/compare">ดูตารางเปรียบเทียบทุกแพ็คเกจ</Link>
+            </Button>
+            <Button asChild variant="ghost" className="rounded-full text-emerald-700 hover:text-emerald-800 hover:bg-emerald-50/50 text-xs">
+              <Link href="/calculator">ทดลองคำนวณราคาตามขนาดบ้าน →</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+export default PackagesSection;

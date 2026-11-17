@@ -2,45 +2,92 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ArrowRight, Phone, ShieldCheck, Sparkles } from "lucide-react";
 
 export function CTASection() {
   return (
-    <section className="py-16 bg-[#00bbb4] overflow-hidden relative">
+    <section className="relative py-24 md:py-32 overflow-hidden bg-zinc-950 text-white">
+      {/* Ambient Radial Mesh & Glowing Halos */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-emerald-600/20 via-teal-500/10 to-transparent rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px] opacity-40" />
+      </div>
+
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-black mb-4">
-            เริ่มต้นใช้ชีวิตแบบ Smart Home วันนี้
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Eyebrow */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-emerald-400 text-xs font-medium tracking-widest uppercase mb-8">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Private Consultation & Site Survey</span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-white mb-6 leading-tight">
+            พร้อมเปลี่ยนบ้านของคุณสู่
+            <span className="block mt-2 font-normal bg-gradient-to-r from-emerald-300 via-teal-200 to-white bg-clip-text text-transparent">
+              คฤหาสน์อัจฉริยะที่สมบูรณ์แบบแล้วหรือยัง?
+            </span>
           </h2>
-          <p className="text-xl text-zinc-800 mb-8">
-            ปรึกษาผู้เชี่ยวชาญของเราเพื่อรับคำแนะนำและวางแผนติดตั้งระบบ Smart Home ที่เหมาะกับบ้านของคุณ
+
+          {/* Description */}
+          <p className="text-base sm:text-lg text-zinc-400 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+            ทีมนักออกแบบและวิศวกร Smart Home ของเราพร้อมเข้าสำรวจหน้างาน ให้คำปรึกษา และวางผังระบบเฉพาะสำหรับบ้านของคุณโดยไม่มีค่าใช้จ่าย
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-black text-white hover:bg-zinc-800">
-              <Link href="/contact">
-                ปรึกษาเรา ฟรี!
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button asChild size="lg" className="rounded-full bg-white text-zinc-950 hover:bg-zinc-100 px-8 py-6 text-sm font-medium tracking-wide shadow-xl hover:shadow-2xl transition-all duration-300">
+              <Link href="/contact" className="flex items-center gap-2">
+                <span>นัดหมายสำรวจหน้างานฟรี</span>
+                <ArrowRight className="w-4 h-4 text-emerald-600" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-black text-black hover:bg-black/5">
-              <Link href="/packages">
-                ดูแพ็คเกจทั้งหมด
-              </Link>
-            </Button>
+
+            <a 
+              href="tel:021234567" 
+              className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 text-white text-sm font-medium tracking-wide transition-all"
+            >
+              <Phone className="w-4 h-4 text-emerald-400" />
+              <span>โทรปรึกษาด่วน 02-123-4567</span>
+            </a>
+          </div>
+
+          {/* Trust Guarantees */}
+          <div className="mt-14 pt-10 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-emerald-400 shrink-0">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-xs font-medium text-white">อุปกรณ์แท้ 100%</p>
+                <p className="text-[11px] text-zinc-500 font-light">รับประกันศูนย์ไทยสูงสุด 5 ปี</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-emerald-400 shrink-0">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-xs font-medium text-white">งานติดตั้งประณีต</p>
+                <p className="text-[11px] text-zinc-500 font-light">ช่างผู้ชำนาญการด้านสถาปัตยกรรม</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-emerald-400 shrink-0">
+                <Phone className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-xs font-medium text-white">On-Site Support</p>
+                <p className="text-[11px] text-zinc-500 font-light">ทีมงานดูแลถึงที่พักตลอดอายุสัญญา</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute right-0 bottom-0 w-64 h-64 opacity-20">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path fill="currentColor" d="M44.9,-76.2C57.4,-69.2,66.3,-55.3,71.9,-40.9C77.4,-26.5,79.7,-11.8,77.7,1.8C75.7,15.3,69.5,27.7,61.4,38.8C53.2,50,43.2,59.9,31.1,66.1C19,72.3,4.8,74.7,-9.9,74.5C-24.6,74.3,-49.1,71.4,-62.3,59.3C-75.5,47.3,-77.3,26.1,-78.1,5.4C-78.9,-15.3,-78.8,-35.5,-69.8,-50.1C-60.7,-64.7,-42.8,-73.7,-25.9,-78.8C-9,-84,-4.5,-85.4,6.4,-81.3C17.2,-77.2,32.4,-83.2,44.9,-76.2Z" transform="translate(100 100)" />
-        </svg>
-      </div>
-
-      <div className="absolute left-0 top-0 w-40 h-40 opacity-20">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path fill="currentColor" d="M46.4,-78.2C59.6,-71.3,69.4,-58.6,76.4,-44.3C83.4,-30,87.6,-15,87.8,0.1C88,15.3,84.2,30.5,76.4,43.4C68.6,56.3,56.9,66.8,43.3,74.4C29.8,82,14.9,86.8,0.2,86.4C-14.6,86.1,-29.1,80.8,-41.6,72.3C-54.1,63.9,-64.5,52.4,-71.7,39.1C-78.9,25.7,-82.8,10.4,-82.9,-5.2C-83,-20.8,-79.3,-36.6,-70.3,-47.9C-61.3,-59.3,-47,-66.1,-33.2,-72.4C-19.4,-78.6,-6.2,-84.2,7.3,-84.9C20.8,-85.6,33.2,-85.1,46.4,-78.2Z" transform="translate(100 100)" />
-        </svg>
       </div>
     </section>
   );
 }
+
+export default CTASection;
