@@ -3,8 +3,20 @@ import Link from "next/link";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import Image from 'next/image';
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const project = getProjectById(params.id);
+export async function generateStaticParams() {
+  return [
+    { id: "luxury-condo-bangkok" },
+    { id: "modern-house-phuket" },
+    { id: "townhome-chiang-mai" },
+    { id: "vacation-home-samui" },
+    { id: "restaurant-bangkok" },
+    { id: "office-silom" },
+  ];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> | { id: string } }) {
+  const resolvedParams = await Promise.resolve(params);
+  const project = getProjectById(resolvedParams.id);
   return {
     title: `${project.title} - Smart Home Projects`,
     description: project.description,
@@ -106,8 +118,9 @@ function getRelatedProjects(ids: string[]) {
   return allProjects.filter(project => ids.includes(project.id));
 }
 
-export default function ProjectDetailPage({ params }: { params: { id: string } }) {
-  const project = getProjectById(params.id);
+export default async function ProjectDetailPage({ params }: { params: Promise<{ id: string }> | { id: string } }) {
+  const resolvedParams = await Promise.resolve(params);
+  const project = getProjectById(resolvedParams.id);
   const relatedProjects = getRelatedProjects(project.relatedProjects || []);
 
   return (

@@ -2,9 +2,22 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CalendarIcon, ClockIcon, UserIcon, ArrowLeft, Facebook, Twitter, Link2 } from "lucide-react";
 import Image from 'next/image';
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  // This would normally fetch from a CMS or database
-  const post = getBlogPostBySlug(params.slug);
+export async function generateStaticParams() {
+  return [
+    { slug: "smart-home-beginners-guide" },
+    { slug: "smart-home-security" },
+    { slug: "smart-home-energy-saving" },
+    { slug: "smart-speakers-comparison" },
+    { slug: "smart-home-trends-2024" },
+    { slug: "smart-home-automation-ideas" },
+    { slug: "smart-home-vs-traditional" },
+    { slug: "smart-home-for-elderly" },
+  ];
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
+  const resolvedParams = await Promise.resolve(params);
+  const post = getBlogPostBySlug(resolvedParams.slug);
 
   return {
     title: `${post.title} - Smart Home`,
@@ -120,8 +133,9 @@ function getRelatedPosts(slugs: string[]) {
   return allPosts.filter(post => slugs.includes(post.id));
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getBlogPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
+  const resolvedParams = await Promise.resolve(params);
+  const post = getBlogPostBySlug(resolvedParams.slug);
   const relatedPosts = getRelatedPosts(post.relatedPosts || []);
 
   return (
