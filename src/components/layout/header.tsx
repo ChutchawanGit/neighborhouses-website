@@ -61,6 +61,7 @@ const navItems = [
 export function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   const pathname = usePathname();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '/neighborhouses-website';
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-white">
@@ -68,7 +69,7 @@ export function Header() {
         <div className="flex items-center justify-between w-full">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/logo.png"
+              src={`${basePath}/images/logo.png`}
               alt="Neighbor House Logo"
               width={160}
               height={50}
@@ -138,7 +139,7 @@ export function Header() {
                 <div className="px-2 py-4">
                   <Link href="/" className="flex items-center mb-8" onClick={() => setIsOpen(false)}>
                     <Image
-                      src="/images/logo.png"
+                      src={`${basePath}/images/logo.png`}
                       alt="Neighbor House Logo"
                       width={160}
                       height={50}
