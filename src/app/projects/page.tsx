@@ -240,7 +240,7 @@ export default function ProjectsPage() {
           <h2 className="text-2xl font-bold mb-6 text-center">ขั้นตอนการทำงานของเรา</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">01</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">01</div>
               <h3 className="text-lg font-semibold mb-2">ปรึกษาและวางแผน</h3>
               <p className="text-muted-foreground">เราเริ่มต้นด้วยการพูดคุยเพื่อเข้าใจความต้องการและไลฟ์สไตล์ของคุณ</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -251,7 +251,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">02</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">02</div>
               <h3 className="text-lg font-semibold mb-2">ออกแบบระบบ</h3>
               <p className="text-muted-foreground">ทีมงานของเราออกแบบระบบ Smart Home ที่เหมาะสมกับบ้านและความต้องการของคุณ</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -262,7 +262,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">03</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">03</div>
               <h3 className="text-lg font-semibold mb-2">ติดตั้งและทดสอบ</h3>
               <p className="text-muted-foreground">ทีมงานมืออาชีพของเราติดตั้งอุปกรณ์และทดสอบระบบอย่างละเอียด</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -273,7 +273,7 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">04</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">04</div>
               <h3 className="text-lg font-semibold mb-2">สอนการใช้งานและบริการหลังการขาย</h3>
               <p className="text-muted-foreground">เราสอนการใช้งานระบบและให้บริการหลังการขายตลอด 24 ชั่วโมง</p>
             </div>
@@ -288,7 +288,7 @@ export default function ProjectsPage() {
           ปรึกษาผู้เชี่ยวชาญของเราเพื่อเริ่มต้นการติดตั้ง Smart Home ในบ้านของคุณ
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+          <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
             <Link href="/contact">
               ติดต่อเรา
             </Link>

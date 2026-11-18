@@ -175,7 +175,7 @@ export default function FaqPage() {
             หากคุณมีคำถามอื่นๆ ที่ไม่ได้รวมอยู่ในรายการนี้ โปรดติดต่อทีมงานของเราเพื่อรับคำตอบ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-11 px-6 font-semibold shadow-sm transition-all">
               <Link href="/contact">ติดต่อเรา</Link>
             </Button>
             <Button asChild variant="outline">

@@ -55,13 +55,13 @@ export default function AutomationServicePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-              ระบบ<span className="text-[#00bbb4]">อัตโนมัติ</span>อัจฉริยะ
+              ระบบ<span className="text-[#2a2014]">อัตโนมัติ</span>อัจฉริยะ
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               ยกระดับบ้านของคุณด้วยระบบอัตโนมัติที่ทำให้บ้านทำงานเองโดยอัตโนมัติ เพิ่มความสะดวกสบายและประหยัดพลังงาน
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
               </Button>
               <Button asChild variant="outline">
@@ -91,8 +91,8 @@ export default function AutomationServicePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
-              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#00bbb4]">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
+              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#2a2014]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -115,7 +115,7 @@ export default function AutomationServicePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {automationScenarios.map((scenario, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
               <div className="flex items-center mb-4">
                 <span className="text-4xl mr-3">{scenario.icon}</span>
                 <h3 className="text-xl font-semibold">{scenario.title}</h3>
@@ -134,7 +134,7 @@ export default function AutomationServicePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-4">01</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-4">01</div>
               <h3 className="text-xl font-semibold mb-2">เซ็นเซอร์ตรวจจับ</h3>
               <p className="text-muted-foreground">เซ็นเซอร์ตรวจจับสภาพแวดล้อม การเคลื่อนไหว อุณหภูมิ และอื่นๆ</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -145,7 +145,7 @@ export default function AutomationServicePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-4">02</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-4">02</div>
               <h3 className="text-xl font-semibold mb-2">ประมวลผล</h3>
               <p className="text-muted-foreground">ศูนย์ควบคุมประมวลผลข้อมูลและตัดสินใจตามเงื่อนไขที่ตั้งไว้</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -156,7 +156,7 @@ export default function AutomationServicePage() {
               </div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[#00bbb4] mb-4">03</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-4">03</div>
               <h3 className="text-xl font-semibold mb-2">ทำงานอัตโนมัติ</h3>
               <p className="text-muted-foreground">อุปกรณ์ต่างๆ ในบ้านทำงานโดยอัตโนมัติตามคำสั่งจากศูนย์ควบคุม</p>
             </div>
@@ -164,7 +164,7 @@ export default function AutomationServicePage() {
         </div>
       </section>
 
-      <section className="bg-[#00bbb4] p-12 rounded-lg">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-black">พร้อมให้บ้านของคุณทำงานอัตโนมัติ?</h2>
           <p className="text-xl text-zinc-800 mb-8">

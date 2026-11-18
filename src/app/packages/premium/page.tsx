@@ -12,7 +12,7 @@ export default function PremiumPackagePage() {
     <div className="container py-16">
       <Link
         href="/packages"
-        className="inline-flex items-center text-sm text-[#00bbb4] hover:text-[#009a9b] mb-6"
+        className="inline-flex items-center text-sm text-[#2a2014] hover:text-[#6e5f50] font-semibold mb-6"
       >
         <ArrowLeft className="h-4 w-4 mr-2" />
         กลับไปหน้าแพ็คเกจทั้งหมด
@@ -117,7 +117,7 @@ export default function PremiumPackagePage() {
           <div className="flex flex-col space-y-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[#00bbb4] text-white hover:bg-[#009a9b] h-12 py-2 px-4"
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all h-12 py-2 px-4"
             >
               สั่งซื้อแพ็คเกจนี้
             </Link>
@@ -134,7 +134,7 @@ export default function PremiumPackagePage() {
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
         <div className="rounded-lg border border-zinc-200 p-6">
           <div className="flex items-center mb-4">
-            <Calendar className="h-5 w-5 text-[#00bbb4] mr-2" />
+            <Calendar className="h-5 w-5 text-[#2a2014] mr-2" />
             <h3 className="font-semibold">ระยะเวลาการติดตั้ง</h3>
           </div>
           <p className="text-sm text-zinc-500">
@@ -145,7 +145,7 @@ export default function PremiumPackagePage() {
 
         <div className="rounded-lg border border-zinc-200 p-6">
           <div className="flex items-center mb-4">
-            <Wrench className="h-5 w-5 text-[#00bbb4] mr-2" />
+            <Wrench className="h-5 w-5 text-[#2a2014] mr-2" />
             <h3 className="font-semibold">การรับประกันและบริการ</h3>
           </div>
           <p className="text-sm text-zinc-500">
@@ -156,7 +156,7 @@ export default function PremiumPackagePage() {
 
         <div className="rounded-lg border border-zinc-200 p-6">
           <div className="flex items-center mb-4">
-            <MessageCircle className="h-5 w-5 text-[#00bbb4] mr-2" />
+            <MessageCircle className="h-5 w-5 text-[#2a2014] mr-2" />
             <h3 className="font-semibold">ต้องการข้อมูลเพิ่มเติม?</h3>
           </div>
           <p className="text-sm text-zinc-500 mb-4">
@@ -164,7 +164,7 @@ export default function PremiumPackagePage() {
           </p>
           <Link
             href="/contact"
-            className="text-sm text-[#00bbb4] hover:text-[#009a9b] font-medium"
+            className="text-sm text-[#2a2014] hover:text-[#6e5f50] font-semibold font-medium"
           >
             ติดต่อเรา →
           </Link>
@@ -179,7 +179,7 @@ export default function PremiumPackagePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบแสงอัจฉริยะทั้งบ้าน</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบแสงอัจฉริยะทั้งบ้าน</h4>
               <p className="text-sm text-zinc-500">
                 ระบบไฟอัจฉริยะระดับพรีเมียมทุกจุดในบ้าน พร้อมระบบปรับแสงอัตโนมัติตามเวลาและสภาพแสงธรรมชาติ
                 ควบคุมความสว่าง สี และโทนแสงได้ตามต้องการ สร้างบรรยากาศที่เหมาะสมกับทุกโอกาส
@@ -187,7 +187,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบกล้องวงจรปิดครบวงจร (8 ตัว)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบกล้องวงจรปิดครบวงจร (8 ตัว)</h4>
               <p className="text-sm text-zinc-500">
                 กล้อง IP Camera ความละเอียด 4K ครอบคลุมทุกพื้นที่ทั้งภายในและภายนอกบ้าน มีระบบ AI ตรวจจับบุคคล
                 แยกแยะใบหน้า และแจ้งเตือนเมื่อพบสิ่งผิดปกติ พร้อมระบบบันทึกข้อมูลในคลาวด์แบบไม่จำกัด
@@ -195,7 +195,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">กลอนประตูอัจฉริยะ (2 ชุด)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">กลอนประตูอัจฉริยะ (2 ชุด)</h4>
               <p className="text-sm text-zinc-500">
                 กลอนประตูระดับสูงพร้อมกล้องและอินเตอร์คอม สามารถปลดล็อคด้วยลายนิ้วมือ ใบหน้า รหัส หรือผ่านแอพมือถือ
                 มีระบบแจ้งเตือนเมื่อมีผู้มาเยือน และสามารถสื่อสารกับผู้มาเยือนได้แม้ไม่อยู่บ้าน
@@ -203,7 +203,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">เซ็นเซอร์ประตูและหน้าต่างทุกบาน</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">เซ็นเซอร์ประตูและหน้าต่างทุกบาน</h4>
               <p className="text-sm text-zinc-500">
                 เซ็นเซอร์แม่เหล็กคุณภาพสูงติดตั้งที่ประตูและหน้าต่างทุกบาน แจ้งเตือนทันทีเมื่อมีการเปิด-ปิด
                 ทำงานร่วมกับระบบรักษาความปลอดภัยและระบบปรับอากาศ เพื่อความปลอดภัยและประหยัดพลังงาน
@@ -211,7 +211,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบปรับอากาศอัตโนมัติ</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบปรับอากาศอัตโนมัติ</h4>
               <p className="text-sm text-zinc-500">
                 ระบบควบคุมเครื่องปรับอากาศทุกเครื่องในบ้าน พร้อมเซ็นเซอร์วัดอุณหภูมิและความชื้นในแต่ละห้อง
                 ปรับสภาพอากาศให้เหมาะสมโดยอัตโนมัติ และเรียนรู้พฤติกรรมการใช้งานเพื่อประหยัดพลังงานสูงสุด
@@ -219,7 +219,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบเสียงรอบทิศทาง</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบเสียงรอบทิศทาง</h4>
               <p className="text-sm text-zinc-500">
                 ลำโพงอัจฉริยะคุณภาพสูงติดตั้งในทุกห้อง เชื่อมต่อกันเป็นระบบเสียงรอบทิศทาง ควบคุมด้วยเสียงหรือแอพ
                 ฟังเพลงในแต่ละห้องแยกกันได้ หรือเล่นพร้อมกันทั้งบ้าน พร้อมระบบสื่อสารภายในบ้าน
@@ -227,7 +227,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">เซ็นเซอร์อัจฉริยะ</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">เซ็นเซอร์อัจฉริยะ</h4>
               <p className="text-sm text-zinc-500">
                 เซ็นเซอร์ครบทุกประเภท ทั้งตรวจจับการเคลื่อนไหว วัดอุณหภูมิ ความชื้น คุณภาพอากาศ แสง และการรั่วซึมของน้ำ
                 ทำงานร่วมกันเป็นระบบอัตโนมัติที่ปรับตามสภาพแวดล้อมและพฤติกรรมการใช้งาน
@@ -235,7 +235,7 @@ export default function PremiumPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบอัจฉริยะเรียนรู้พฤติกรรม</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบอัจฉริยะเรียนรู้พฤติกรรม</h4>
               <p className="text-sm text-zinc-500">
                 ซอฟต์แวร์อัจฉริยะที่เรียนรู้พฤติกรรมการใช้งานของผู้อยู่อาศัย และปรับการทำงานของระบบให้เหมาะสมโดยอัตโนมัติ
                 ช่วยให้บ้านปรับตัวตามไลฟ์สไตล์ของคุณ เพิ่มความสะดวกสบายและประหยัดพลังงาน

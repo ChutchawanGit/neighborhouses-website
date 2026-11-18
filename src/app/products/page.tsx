@@ -187,7 +187,7 @@ export default function ProductsPage() {
                   <div className="text-sm text-zinc-500">+{product.features.length - 3} คุณสมบัติเพิ่มเติม</div>
                 )}
               </div>
-              <Button asChild className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href={`/products/${product.category}`}>
                   ดูรายละเอียด
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -206,7 +206,7 @@ export default function ProductsPage() {
             ปรึกษาผู้เชี่ยวชาญของเราเพื่อรับคำแนะนำที่เหมาะกับความต้องการของคุณ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
               <Link href="/packages">
                 ดูแพ็คเกจติดตั้ง
               </Link>

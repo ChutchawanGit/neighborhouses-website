@@ -250,15 +250,15 @@ export default function AboutPage() {
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-zinc-300 before:to-transparent">
           {milestones.map((milestone, index) => (
             <div key={index} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${index % 2 === 0 ? "" : ""}`}>
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#00bbb4] text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-[#2a2014] text-[#c8f94a] font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                 {milestone.year.slice(-2)}
               </div>
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-lg border border-zinc-200 shadow-sm">
+              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] oasel-glass p-6 rounded-3xl border border-[#3c280f]/10 shadow-sm">
                 <div className="flex items-center justify-between mb-1">
-                  <div className="text-xl font-bold text-[#00bbb4]">{milestone.year}</div>
+                  <div className="text-xl font-extrabold text-[#2a2014]">{milestone.year}</div>
                 </div>
-                <div className="text-lg font-semibold mb-1">{milestone.title}</div>
-                <div className="text-muted-foreground">{milestone.description}</div>
+                <div className="text-lg font-semibold mb-1 text-[#2a2014]">{milestone.title}</div>
+                <div className="text-sm text-[#6e5f50] leading-relaxed">{milestone.description}</div>
               </div>
             </div>
           ))}
@@ -390,18 +390,22 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#00bbb4] p-12 rounded-lg text-white">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">พร้อมยกระดับบ้านของคุณให้เป็นบ้านอัจฉริยะ?</h2>
-          <p className="text-xl opacity-90 mb-8">
-            เริ่มต้นการเดินทางสู่บ้านอัจฉริยะกับเราวันนี้ ทีมงานผู้เชี่ยวชาญของเราพร้อมให้คำปรึกษาและบริการคุณ
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-[#fbf5e9] text-[10px] font-semibold tracking-widest uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c8f94a]" />
+            ELEVATE YOUR ESTATE
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">พร้อมยกระดับบ้านของคุณสู่ระบบสถาปัตยกรรมอัจฉริยะ?</h2>
+          <p className="text-base sm:text-lg text-[#cdbea6] mb-8 leading-relaxed">
+            เริ่มต้นวางแผนระบบบ้านอัจฉริยะร่วมกับทีมวิศวกรและสถาปนิกของเราวันนี้ เพื่อมาตรฐานการอยู่อาศัยที่สมบูรณ์แบบ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-white text-[#00bbb4] hover:bg-zinc-100">
-              <Link href="/contact">ติดต่อทีมงาน</Link>
+            <Button asChild className="bg-[#c8f94a] text-[#1a2404] hover:bg-[#b2e23b] font-bold rounded-2xl h-12 px-8 shadow-md transition-all">
+              <Link href="/contact">ติดต่อทีมนัดหมาย</Link>
             </Button>
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
-              <Link href="/packages">ดูแพ็คเกจของเรา</Link>
+            <Button asChild variant="outline" className="border-white/20 text-white hover:bg-white/10 rounded-2xl h-12 px-8 font-semibold transition-all">
+              <Link href="/packages">ดูแพ็คเกจทั้งหมด</Link>
             </Button>
           </div>
         </div>

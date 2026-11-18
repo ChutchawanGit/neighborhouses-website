@@ -94,12 +94,12 @@ export default function CctvServicePage() {
       <section className="relative py-24 md:py-32 overflow-hidden border-b border-zinc-100 bg-gradient-to-b from-zinc-50/80 to-white">
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200/60 text-emerald-800 text-xs font-medium tracking-wide mb-6">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#2a2014] text-[#fbf5e9] text-[11px] font-semibold tracking-widest uppercase mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#c8f94a]" />
               INTELLIGENT SURVEILLANCE SOLUTIONS
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-zinc-900 mb-6">
-              ระบบกล้องวงจรปิด <span className="font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">AI CCTV 4K</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-[#2a2014] mb-6">
+              ระบบกล้องวงจรปิด <span className="font-extrabold text-[#2a2014] underline decoration-[#c8f94a] decoration-4 underline-offset-8">AI CCTV 4K</span>
             </h1>
             <p className="text-lg md:text-xl text-zinc-600 leading-relaxed font-light mb-10">
               ยกระดับความปลอดภัยให้กับคฤหาสน์และบ้านพักอาศัยระดับลักชัวรี ด้วยกล้องวงจรปิดความละเอียด 4K HDR ผสานระบบปัญญาประดิษฐ์ AI อัจฉริยะที่แม่นยำ พร้อมงานติดตั้งที่ประณีต เรียบร้อย ไร้สายรกตา

@@ -62,13 +62,13 @@ export default function SecurityServicePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-              ระบบรักษาความปลอดภัย<span className="text-[#00bbb4]">อัจฉริยะ</span>
+              ระบบรักษาความปลอดภัย<span className="text-[#2a2014]">อัจฉริยะ</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               เพิ่มความปลอดภัยให้กับบ้านของคุณด้วยระบบรักษาความปลอดภัยอัจฉริยะที่ทันสมัย ควบคุมและตรวจสอบได้จากทุกที่ผ่านสมาร์ทโฟน
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
               </Button>
               <Button asChild variant="outline">
@@ -103,8 +103,8 @@ export default function SecurityServicePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
-              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#00bbb4]">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
+              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#2a2014]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M20 7 9 18l-5-5"></path>
@@ -149,7 +149,7 @@ export default function SecurityServicePage() {
         </div>
       </section>
 
-      <section className="bg-[#00bbb4] p-12 rounded-lg">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-black">พร้อมที่จะเพิ่มความปลอดภัยให้กับบ้านของคุณ?</h2>
           <p className="text-xl text-zinc-800 mb-8">

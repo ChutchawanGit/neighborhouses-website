@@ -498,13 +498,13 @@ export default function CalculatorPage() {
                       key={packageKey}
                       className={`border rounded-lg p-4 cursor-pointer transition-all ${
                         selectedPackage === packageKey
-                          ? 'border-[#00bbb4] bg-yellow-50'
-                          : 'border-zinc-200 hover:border-[#00bbb4]'
+                          ? 'border-[#2a2014] bg-[#2a2014]/5 shadow-sm'
+                          : 'border-[#3c280f]/15 hover:border-[#2a2014]'
                       } ${isRecommended ? 'relative' : ''}`}
                       onClick={() => setSelectedPackage(packageKey)}
                     >
                       {isRecommended && (
-                        <div className="absolute -top-2 -right-2 bg-[#00bbb4] text-black text-xs px-2 py-1 rounded-full">
+                        <div className="absolute -top-2 -right-2 bg-[#c8f94a] text-[#1a2404] font-bold text-[10px] px-2.5 py-0.5 rounded-full shadow-xs">
                           แนะนำ
                         </div>
                       )}
@@ -556,7 +556,7 @@ export default function CalculatorPage() {
                   <div className="bg-zinc-50 p-3 rounded-md mt-4">
                     <div className="flex justify-between items-center">
                       <span className="font-medium">ผ่อนชำระรายเดือน</span>
-                      <span className="font-semibold text-[#00bbb4]">{formatPrice(monthlyInstallment)} บาท/เดือน</span>
+                      <span className="font-bold text-[#2a2014]">{formatPrice(monthlyInstallment)} บาท/เดือน</span>
                     </div>
                     <div className="text-xs text-muted-foreground">
                       ระยะเวลาผ่อนชำระ 10 เดือน
@@ -570,7 +570,7 @@ export default function CalculatorPage() {
                     <p>ราคานี้เป็นการประมาณการเบื้องต้น ราคาจริงอาจมีการเปลี่ยนแปลงขึ้นอยู่กับการสำรวจพื้นที่และความต้องการเฉพาะของลูกค้า</p>
                   </div>
 
-                  <Button className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+                  <Button className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-11 font-semibold shadow-sm transition-all">
                     <Download className="h-4 w-4 mr-2" />
                     บันทึกใบเสนอราคา
                   </Button>

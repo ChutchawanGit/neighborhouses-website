@@ -75,13 +75,13 @@ export default function SmartLightingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-              ระบบควบคุมแสงสว่าง<span className="text-[#00bbb4]">อัจฉริยะ</span>
+              ระบบควบคุมแสงสว่าง<span className="text-[#2a2014]">อัจฉริยะ</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               เพิ่มความสะดวกสบายให้กับบ้านของคุณด้วยระบบควบคุมแสงสว่างอัจฉริยะ ที่สามารถควบคุมได้จากทุกที่ ตั้งเวลาเปิด-ปิดอัตโนมัติ และปรับแต่งบรรยากาศได้ตามต้องการ
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact">
                   ปรึกษาผู้เชี่ยวชาญ
                 </Link>
@@ -121,8 +121,8 @@ export default function SmartLightingPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
-              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#00bbb4]">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
+              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#2a2014]">
                 {/* Placeholder for icon */}
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2v8"></path>
@@ -202,7 +202,7 @@ export default function SmartLightingPage() {
           <h2 className="text-3xl font-bold mb-6 text-center">ขั้นตอนการติดตั้ง</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">01</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">01</div>
               <h3 className="text-lg font-semibold mb-2">สำรวจและวางแผน</h3>
               <p className="text-muted-foreground">เราจะทำการสำรวจพื้นที่และวางแผนการติดตั้งที่เหมาะสมกับบ้านของคุณ</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -213,7 +213,7 @@ export default function SmartLightingPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">02</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">02</div>
               <h3 className="text-lg font-semibold mb-2">ติดตั้งอุปกรณ์</h3>
               <p className="text-muted-foreground">ทีมงานมืออาชีพของเราทำการติดตั้งอุปกรณ์ทั้งหมดให้เรียบร้อย</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -224,7 +224,7 @@ export default function SmartLightingPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">03</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">03</div>
               <h3 className="text-lg font-semibold mb-2">ตั้งค่าระบบ</h3>
               <p className="text-muted-foreground">เราตั้งค่าระบบทั้งหมดให้พร้อมใช้งาน และปรับแต่งตามความต้องการของคุณ</p>
               <div className="hidden md:block absolute top-0 right-0 -mr-4 mt-2 text-zinc-300">
@@ -235,7 +235,7 @@ export default function SmartLightingPage() {
               </div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-[#00bbb4] mb-2">04</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-2">04</div>
               <h3 className="text-lg font-semibold mb-2">สอนการใช้งาน</h3>
               <p className="text-muted-foreground">เราสอนการใช้งานระบบทั้งหมดให้คุณสามารถใช้งานได้อย่างเต็มประสิทธิภาพ</p>
             </div>
@@ -249,7 +249,7 @@ export default function SmartLightingPage() {
         <div className="max-w-3xl mx-auto">
           <div className="space-y-6">
             {faqItems.map((item, index) => (
-              <div key={index} className="border border-zinc-200 rounded-lg p-6 hover:border-[#00bbb4] transition-colors">
+              <div key={index} className="border border-zinc-200 rounded-lg p-6 hover:border-[#2a2014] transition-colors">
                 <h3 className="text-xl font-semibold mb-2">{item.question}</h3>
                 <p className="text-muted-foreground">{item.answer}</p>
               </div>
@@ -259,7 +259,7 @@ export default function SmartLightingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#00bbb4] p-12 rounded-lg">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-black">พร้อมที่จะติดตั้งระบบควบคุมแสงสว่างอัจฉริยะ?</h2>
           <p className="text-xl text-zinc-800 mb-8">

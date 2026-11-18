@@ -230,7 +230,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
             </svg>
             <blockquote className="text-xl italic mb-6">{project.testimonial.content}</blockquote>
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-[#00bbb4] rounded-full flex items-center justify-center text-white font-bold mr-3">
+              <div className="w-10 h-10 bg-[#2a2014] rounded-full flex items-center justify-center text-white font-bold mr-3">
                 {project.testimonial.author.charAt(0)}
               </div>
               <div>
@@ -264,7 +264,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                       <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">{related.type}</span>
                       <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">{related.location}</span>
                     </div>
-                    <h3 className="font-semibold group-hover:text-[#00bbb4] transition-colors">{related.title}</h3>
+                    <h3 className="font-semibold group-hover:text-[#2a2014] transition-colors">{related.title}</h3>
                   </div>
                 </div>
               </Link>
@@ -274,7 +274,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       )}
 
       {/* CTA */}
-      <div className="bg-[#00bbb4] p-12 rounded-lg text-center">
+      <div className="bg-[#2a2014] p-12 rounded-lg text-center">
         <h2 className="text-3xl font-bold mb-4 text-black">สนใจติดตั้ง Smart Home?</h2>
         <p className="text-xl text-zinc-800 mb-8 max-w-3xl mx-auto">
           ปรึกษาผู้เชี่ยวชาญของเราเพื่อรับคำแนะนำและเริ่มต้นการติดตั้งระบบที่เหมาะสมกับบ้านของคุณ

@@ -162,7 +162,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <h1 className="text-4xl font-bold tracking-tight mb-6">{post.title}</h1>
 
           <div className="flex items-center mb-8">
-            <div className="w-10 h-10 bg-[#00bbb4] rounded-full flex items-center justify-center text-white font-bold mr-3">
+            <div className="w-10 h-10 bg-[#2a2014] text-[#c8f94a] rounded-full flex items-center justify-center font-bold mr-3 shadow-xs">
               {post.author.charAt(0)}
             </div>
             <div>
@@ -244,7 +244,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </div>
                     <Link
                       href={`/blog/${related.id}`}
-                      className="text-sm text-[#00bbb4] hover:text-yellow-800 font-medium"
+                      className="text-sm font-semibold text-[#2a2014] hover:text-[#6e5f50] transition-colors"
                     >
                       อ่านบทความ
                     </Link>
@@ -262,7 +262,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               ปรึกษาผู้เชี่ยวชาญของเราเพื่อรับคำแนะนำและเริ่มต้นการติดตั้งระบบที่เหมาะสมกับบ้านของคุณ
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-11 px-6 font-semibold shadow-sm transition-all">
                 <Link href="/contact">ติดต่อเรา</Link>
               </Button>
               <Button asChild variant="outline">

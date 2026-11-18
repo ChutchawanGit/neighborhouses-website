@@ -35,13 +35,13 @@ export default function AudioServicePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-              ระบบเสียง<span className="text-[#00bbb4]">อัจฉริยะ</span>
+              ระบบเสียง<span className="text-[#2a2014]">อัจฉริยะ</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               ยกระดับประสบการณ์การฟังเพลงในบ้านของคุณด้วยระบบเสียงอัจฉริยะที่ควบคุมง่าย ให้คุณภาพเสียงระดับพรีเมียม
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
               </Button>
               <Button asChild variant="outline">
@@ -71,8 +71,8 @@ export default function AudioServicePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
-              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#00bbb4]">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
+              <div className="mb-4 w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#2a2014]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
@@ -116,17 +116,17 @@ export default function AudioServicePage() {
           <h2 className="text-3xl font-bold mb-6 text-center">แนะนำการใช้งาน</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg border border-zinc-200 hover:shadow-md transition-all">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-4">01</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-4">01</div>
               <h3 className="text-xl font-semibold mb-2">ฟังเพลงทั่วบ้าน</h3>
               <p className="text-muted-foreground">เล่นเพลงเดียวกันทั่วทั้งบ้าน หรือเลือกเล่นเพลงที่แตกต่างกันในแต่ละห้องตามต้องการ</p>
             </div>
             <div className="bg-white p-6 rounded-lg border border-zinc-200 hover:shadow-md transition-all">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-4">02</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-4">02</div>
               <h3 className="text-xl font-semibold mb-2">ควบคุมด้วยเสียง</h3>
               <p className="text-muted-foreground">สั่งเปิดเพลง ปรับระดับเสียง หรือเปลี่ยนเพลงด้วยคำสั่งเสียงผ่าน Google Assistant หรือ Amazon Alexa</p>
             </div>
             <div className="bg-white p-6 rounded-lg border border-zinc-200 hover:shadow-md transition-all">
-              <div className="text-3xl font-bold text-[#00bbb4] mb-4">03</div>
+              <div className="text-3xl font-bold text-[#2a2014] mb-4">03</div>
               <h3 className="text-xl font-semibold mb-2">ปาร์ตี้โหมด</h3>
               <p className="text-muted-foreground">เปิดใช้งานโหมดปาร์ตี้ เพื่อปรับแต่งแสงและเสียงให้เหมาะกับบรรยากาศงานปาร์ตี้ทันที</p>
             </div>
@@ -134,7 +134,7 @@ export default function AudioServicePage() {
         </div>
       </section>
 
-      <section className="bg-[#00bbb4] p-12 rounded-lg">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-black">พร้อมยกระดับประสบการณ์การฟังเพลงในบ้านของคุณ?</h2>
           <p className="text-xl text-zinc-800 mb-8">

@@ -129,10 +129,10 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <div className="mb-4 text-[#00bbb4]">{service.icon}</div>
+              <div className="mb-4 text-[#2a2014]">{service.icon}</div>
               <h2 className="text-3xl font-bold mb-4">{service.title}</h2>
               <p className="text-muted-foreground mb-6">{service.description}</p>
-              <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href={service.href}>
                   อ่านเพิ่มเติม
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -150,7 +150,7 @@ export default function ServicesPage() {
             เลือกแพ็คเกจที่เหมาะกับความต้องการของคุณ หรือปรึกษาผู้เชี่ยวชาญของเราเพื่อออกแบบระบบที่ตรงกับความต้องการของคุณโดยเฉพาะ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
               <Link href="/packages">
                 ดูแพ็คเกจทั้งหมด
               </Link>

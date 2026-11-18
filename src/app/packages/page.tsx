@@ -123,70 +123,70 @@ export default function PackagesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
         {packages.map((pkg) => (
-          <Card 
+          <div 
             key={pkg.name} 
-            className={`relative flex flex-col h-full transition-all group ${
-              pkg.popular ? 'border-emerald-500 shadow-lg' : 'hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100'
+            className={`relative flex flex-col h-full oasel-glass rounded-3xl border transition-all duration-300 group p-6 sm:p-8 ${
+              pkg.popular ? 'border-[#2a2014] shadow-xl' : 'border-[#3c280f]/10 hover:shadow-lg'
             }`}
           >
             {pkg.popular && (
-              <div className="absolute -top-3 left-0 right-0 flex justify-center">
-                <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-medium px-3 py-1 rounded-full">
-                  แนะนำ
+              <div className="absolute -top-3.5 left-0 right-0 flex justify-center">
+                <span className="bg-[#c8f94a] text-[#1a2404] text-xs font-bold px-3.5 py-1 rounded-full shadow-sm tracking-wide">
+                  แนะนำ / POPULAR
                 </span>
               </div>
             )}
-            <CardHeader>
-              <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-              <CardDescription className="text-base">{pkg.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-1">
+            <div className="mb-4">
+              <h2 className="text-2xl font-bold text-[#2a2014] mb-2">{pkg.name}</h2>
+              <p className="text-sm text-[#6e5f50] leading-relaxed">{pkg.description}</p>
+            </div>
+            <div className="flex-1 flex flex-col justify-between">
               <div className="mb-6">
-                <span className="text-3xl font-bold">{pkg.price}</span>
-                {!pkg.custom && <span className="text-muted-foreground ml-1">บาท</span>}
+                <span className="text-3xl sm:text-4xl font-extrabold text-[#2a2014] tracking-tight">{pkg.price}</span>
+                {!pkg.custom && <span className="text-sm text-[#6e5f50] ml-1.5 font-medium">บาท</span>}
               </div>
-              <ul className="space-y-2">
+              <ul className="space-y-3 mb-8">
                 {pkg.features.map((feature) => (
-                  <li key={feature} className="flex items-start">
-                    <Check className="mr-2 h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                  <li key={feature} className="flex items-start text-sm text-[#44362a]">
+                    <Check className="mr-2.5 h-4 w-4 text-[#1a2404] bg-[#c8f94a] rounded-full p-0.5 shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
-            </CardContent>
-            <CardFooter>
-              <Button 
-                asChild 
-                className={`w-full transition-all ${
-                  pkg.popular 
-                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white' 
-                  : 'group-hover:bg-emerald-500 group-hover:text-white'
-                }`}
-              >
-                <Link href={pkg.href}>
-                  {pkg.custom ? 'ปรึกษาผู้เชี่ยวชาญ' : 'เลือกแพ็คเกจนี้'}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+              <div>
+                <Button 
+                  asChild 
+                  className={`w-full rounded-2xl h-12 font-semibold transition-all ${
+                    pkg.popular 
+                    ? 'bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] shadow-md' 
+                    : 'bg-white/80 hover:bg-[#2a2014] hover:text-[#fbf5e9] text-[#2a2014] border border-[#3c280f]/15'
+                  }`}
+                >
+                  <Link href={pkg.href}>
+                    {pkg.custom ? 'ปรึกษาผู้เชี่ยวชาญ' : 'เลือกแพ็คเกจนี้'}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
 
-      <div className="bg-zinc-50 p-8 rounded-lg border border-zinc-200">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">มีคำถามเกี่ยวกับแพ็คเกจของเรา?</h2>
-          <p className="text-muted-foreground mb-6">
-            หากคุณมีคำถามเพิ่มเติมเกี่ยวกับแพ็คเกจหรือต้องการคำแนะนำในการเลือกแพ็คเกจที่เหมาะสมกับบ้านของคุณ
-            โปรดติดต่อทีมงานของเรา
+      <div className="oasel-glass p-8 sm:p-12 rounded-3xl border border-[#3c280f]/10 shadow-sm">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-[#2a2014]">มีคำถามเกี่ยวกับแพ็คเกจของเรา?</h2>
+          <p className="text-[#6e5f50] text-sm sm:text-base mb-8 leading-relaxed">
+            หากคุณมีคำถามเพิ่มเติมเกี่ยวกับแพ็คเกจ หรือต้องการคำแนะนำในการเลือกแพ็คเกจที่เหมาะสมกับโครงสร้างบ้านของคุณ
+            ทีมงานวิศวกรของเรายินดีให้คำปรึกษา
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:from-emerald-600 hover:to-teal-600 transition-all">
+            <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-12 px-8 font-semibold shadow-md transition-all">
               <Link href="/contact">
                 ติดต่อเรา
               </Link>
             </Button>
-            <Button asChild variant="outline" className="hover:text-emerald-500 hover:border-emerald-500">
+            <Button asChild variant="outline" className="border-[#3c280f]/15 bg-white/80 hover:bg-[#2a2014] hover:text-[#fbf5e9] text-[#2a2014] rounded-2xl h-12 px-8 font-semibold transition-all">
               <Link href="/faq">
                 คำถามที่พบบ่อย
               </Link>

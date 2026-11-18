@@ -78,13 +78,13 @@ export default function CustomDesignPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-              ออกแบบ<span className="text-[#00bbb4]">ระบบสมาร์ทโฮม</span><br />ที่ตรงกับความต้องการ
+              ออกแบบ<span className="text-[#2a2014]">ระบบสมาร์ทโฮม</span><br />ที่ตรงกับความต้องการ
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               ออกแบบระบบ Smart Home ที่ตรงกับความต้องการของคุณโดยเฉพาะ ด้วยทีมผู้เชี่ยวชาญที่พร้อมดูแลตั้งแต่การออกแบบจนถึงการติดตั้ง
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#00bbb4] text-white hover:bg-[#009a9b]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
               </Button>
               <Button asChild variant="outline">
@@ -102,7 +102,7 @@ export default function CustomDesignPage() {
                 height={600}
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
+            <div className="absolute -bottom-4 -right-4 bg-[#2a2014] p-6 rounded-lg shadow-lg">
               <p className="text-lg font-bold text-white">เริ่มต้นเพียง</p>
               <p className="text-3xl font-bold text-white">เริ่มต้น</p>
             </div>
@@ -119,8 +119,8 @@ export default function CustomDesignPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
-              <div className="mb-4 w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-[#00bbb4]">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
+              <div className="mb-4 w-12 h-12 bg-[#2a2014]/5 rounded-full flex items-center justify-center text-[#2a2014]">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
@@ -142,7 +142,7 @@ export default function CustomDesignPage() {
             {designProcess.map((step, index) => (
               <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:shadow-md transition-all">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 rounded-full bg-[#00bbb4] text-white flex items-center justify-center mr-3">
+                  <div className="w-8 h-8 rounded-full bg-[#2a2014] text-white flex items-center justify-center mr-3">
                     {index + 1}
                   </div>
                   <h3 className="text-xl font-semibold">{step.title}</h3>
@@ -241,7 +241,7 @@ export default function CustomDesignPage() {
                   <span>รองรับการขยายระบบในอนาคต</span>
                 </li>
               </ul>
-              <Button asChild className="w-full bg-[#00bbb4] text-white hover:bg-[#009a9b]">
+              <Button asChild className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact?service=custom-design">ปรึกษาผู้เชี่ยวชาญ</Link>
               </Button>
             </div>
@@ -249,7 +249,7 @@ export default function CustomDesignPage() {
               <h3 className="text-xl font-bold mb-6">ข้อมูลที่เราต้องการเพื่อการออกแบบ</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-medium text-[#00bbb4] mb-2">รายละเอียดบ้านของคุณ</h4>
+                  <h4 className="font-medium text-[#2a2014] mb-2">รายละเอียดบ้านของคุณ</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <Check className="h-4 w-4 mr-2 text-green-500 shrink-0 mt-0.5" />
@@ -266,7 +266,7 @@ export default function CustomDesignPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#00bbb4] mb-2">ความต้องการของคุณ</h4>
+                  <h4 className="font-medium text-[#2a2014] mb-2">ความต้องการของคุณ</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <Check className="h-4 w-4 mr-2 text-green-500 shrink-0 mt-0.5" />
@@ -283,7 +283,7 @@ export default function CustomDesignPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#00bbb4] mb-2">ระบบปัจจุบัน (ถ้ามี)</h4>
+                  <h4 className="font-medium text-[#2a2014] mb-2">ระบบปัจจุบัน (ถ้ามี)</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <Check className="h-4 w-4 mr-2 text-green-500 shrink-0 mt-0.5" />
@@ -300,7 +300,7 @@ export default function CustomDesignPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-medium text-[#00bbb4] mb-2">แผนในอนาคต</h4>
+                  <h4 className="font-medium text-[#2a2014] mb-2">แผนในอนาคต</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <Check className="h-4 w-4 mr-2 text-green-500 shrink-0 mt-0.5" />
@@ -322,14 +322,14 @@ export default function CustomDesignPage() {
         </div>
       </section>
 
-      <section className="bg-[#00bbb4] p-12 rounded-lg">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">พร้อมที่จะออกแบบบ้านอัจฉริยะของคุณ?</h2>
           <p className="text-xl text-white/90 mb-8">
             ปรึกษาผู้เชี่ยวชาญของเราเพื่อเริ่มต้นออกแบบระบบสมาร์ทโฮมที่ตรงกับความต้องการของคุณโดยเฉพาะ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-white text-[#00bbb4] hover:bg-zinc-100">
+            <Button asChild className="bg-[#c8f94a] text-[#1a2404] hover:bg-[#b2e23b] font-bold rounded-2xl shadow-sm transition-all">
               <Link href="/contact">ติดต่อเรา</Link>
             </Button>
             <Button asChild variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">

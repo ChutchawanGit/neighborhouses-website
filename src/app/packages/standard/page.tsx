@@ -12,7 +12,7 @@ export default function StandardPackagePage() {
     <div className="container py-16">
       <Link
         href="/packages"
-        className="inline-flex items-center text-sm text-[#00bbb4] hover:text-[#009a9b] mb-6"
+        className="inline-flex items-center text-sm text-[#2a2014] hover:text-[#6e5f50] font-semibold mb-6"
       >
         <ArrowLeft className="h-4 w-4 mr-2" />
         กลับไปหน้าแพ็คเกจทั้งหมด
@@ -56,8 +56,8 @@ export default function StandardPackagePage() {
         </div>
 
         <div>
-          <div className="mb-2 inline-flex items-center rounded-full border border-[#00bbb4] bg-[#e6f7f7] px-2.5 py-0.5 text-xs font-medium text-[#00bbb4]">
-            <Star className="h-3 w-3 mr-1 fill-[#00bbb4]" /> แนะนำ
+          <div className="mb-2 inline-flex items-center rounded-full border border-[#c8f94a]/60 bg-[#c8f94a]/30 px-2.5 py-0.5 text-xs font-bold text-[#1a2404]">
+            <Star className="h-3 w-3 mr-1 fill-[#1a2404]" /> แนะนำ
           </div>
           <h1 className="text-4xl font-bold tracking-tight mb-4">แพ็คเกจ Standard</h1>
           <div className="flex items-center gap-4 mb-6">
@@ -113,7 +113,7 @@ export default function StandardPackagePage() {
           <div className="flex flex-col space-y-4">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[#00bbb4] text-white hover:bg-[#009a9b] h-12 py-2 px-4"
+              className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all h-12 py-2 px-4"
             >
               สั่งซื้อแพ็คเกจนี้
             </Link>
@@ -130,7 +130,7 @@ export default function StandardPackagePage() {
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
         <div className="rounded-lg border border-zinc-200 p-6">
           <div className="flex items-center mb-4">
-            <Calendar className="h-5 w-5 text-[#00bbb4] mr-2" />
+            <Calendar className="h-5 w-5 text-[#2a2014] mr-2" />
             <h3 className="font-semibold">ระยะเวลาการติดตั้ง</h3>
           </div>
           <p className="text-sm text-zinc-500">
@@ -141,7 +141,7 @@ export default function StandardPackagePage() {
 
         <div className="rounded-lg border border-zinc-200 p-6">
           <div className="flex items-center mb-4">
-            <Wrench className="h-5 w-5 text-[#00bbb4] mr-2" />
+            <Wrench className="h-5 w-5 text-[#2a2014] mr-2" />
             <h3 className="font-semibold">การรับประกันและบริการ</h3>
           </div>
           <p className="text-sm text-zinc-500">
@@ -152,7 +152,7 @@ export default function StandardPackagePage() {
 
         <div className="rounded-lg border border-zinc-200 p-6">
           <div className="flex items-center mb-4">
-            <MessageCircle className="h-5 w-5 text-[#00bbb4] mr-2" />
+            <MessageCircle className="h-5 w-5 text-[#2a2014] mr-2" />
             <h3 className="font-semibold">ต้องการข้อมูลเพิ่มเติม?</h3>
           </div>
           <p className="text-sm text-zinc-500 mb-4">
@@ -160,7 +160,7 @@ export default function StandardPackagePage() {
           </p>
           <Link
             href="/contact"
-            className="text-sm text-[#00bbb4] hover:text-[#009a9b] font-medium"
+            className="text-sm text-[#2a2014] hover:text-[#6e5f50] font-semibold font-medium"
           >
             ติดต่อเรา →
           </Link>
@@ -175,7 +175,7 @@ export default function StandardPackagePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบควบคุมไฟอัจฉริยะ (10 จุด)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบควบคุมไฟอัจฉริยะ (10 จุด)</h4>
               <p className="text-sm text-zinc-500">
                 สวิตช์อัจฉริยะรุ่น Premium ควบคุมผ่าน WiFi รองรับการหรี่ไฟและตั้งค่าแสงที่เหมาะสม
                 ตั้งเวลาเปิด-ปิดได้ และทำงานร่วมกับเซ็นเซอร์ตรวจจับการเคลื่อนไหวได้
@@ -183,7 +183,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">กล้องวงจรปิด (4 ตัว)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">กล้องวงจรปิด (4 ตัว)</h4>
               <p className="text-sm text-zinc-500">
                 กล้อง IP Camera ความละเอียด 3MP มุมมองกว้าง 140° พร้อมระบบอินฟราเรด
                 ตรวจจับการเคลื่อนไหวอัจฉริยะ และสามารถหมุนเพื่อปรับมุมมองได้ บันทึกข้อมูลในระบบคลาวด์
@@ -191,7 +191,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">กลอนประตูอัจฉริยะ (1 ชุด)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">กลอนประตูอัจฉริยะ (1 ชุด)</h4>
               <p className="text-sm text-zinc-500">
                 กลอนประตูไร้กุญแจ สามารถปลดล็อคด้วยรหัส ลายนิ้วมือ บัตร หรือผ่านแอพมือถือ
                 พร้อมระบบแจ้งเตือนเมื่อมีการเปิดประตู บันทึกประวัติการเข้า-ออก
@@ -199,7 +199,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">เซ็นเซอร์ประตู (2 จุด)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">เซ็นเซอร์ประตู (2 จุด)</h4>
               <p className="text-sm text-zinc-500">
                 เซ็นเซอร์แม่เหล็กไร้สายรุ่นพรีเมียม แจ้งเตือนทันทีเมื่อมีการเปิด-ปิดประตู
                 ทำงานร่วมกับระบบความปลอดภัยอื่นๆ ได้ เช่น เปิดไฟอัตโนมัติเมื่อเปิดประตู
@@ -207,7 +207,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ระบบควบคุมแอร์ (4 เครื่อง)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ระบบควบคุมแอร์ (4 เครื่อง)</h4>
               <p className="text-sm text-zinc-500">
                 ระบบควบคุมเครื่องปรับอากาศระดับพรีเมียม ตั้งค่าอุณหภูมิตามช่วงเวลา
                 ตรวจจับการมีผู้ใช้งานในห้อง และประหยัดพลังงานโดยอัตโนมัติ
@@ -215,7 +215,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">ลำโพงอัจฉริยะ (2 ตัว)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">ลำโพงอัจฉริยะ (2 ตัว)</h4>
               <p className="text-sm text-zinc-500">
                 ลำโพงอัจฉริยะระดับพรีเมียม รองรับการควบคุมด้วยเสียง คุณภาพเสียงระดับสูง
                 สามารถใช้ร่วมกับระบบ Smart Home ทั้งหมด ควบคุมอุปกรณ์ต่างๆ ผ่านคำสั่งเสียง
@@ -223,7 +223,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">เซ็นเซอร์ตรวจจับการเคลื่อนไหว (2 จุด)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">เซ็นเซอร์ตรวจจับการเคลื่อนไหว (2 จุด)</h4>
               <p className="text-sm text-zinc-500">
                 เซ็นเซอร์ตรวจจับการเคลื่อนไหวไร้สาย ครอบคลุมพื้นที่กว้าง ทำงานร่วมกับไฟและระบบความปลอดภัย
                 สามารถตั้งค่าการแจ้งเตือนและการทำงานอัตโนมัติได้ตามความต้องการ
@@ -231,7 +231,7 @@ export default function StandardPackagePage() {
             </div>
             
             <div>
-              <h4 className="font-medium text-[#00bbb4] mb-2">แท็บเล็ตควบคุม (1 เครื่อง)</h4>
+              <h4 className="font-medium text-[#2a2014] mb-2">แท็บเล็ตควบคุม (1 เครื่อง)</h4>
               <p className="text-sm text-zinc-500">
                 แท็บเล็ตรุ่นพิเศษพร้อมแอพควบคุมบ้านอัจฉริยะติดตั้งไว้ล่วงหน้า สามารถควบคุมอุปกรณ์ทั้งหมดในบ้าน
                 ดูภาพจากกล้องวงจรปิด และตั้งค่าระบบอัตโนมัติได้

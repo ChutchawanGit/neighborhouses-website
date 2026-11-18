@@ -110,7 +110,7 @@ export default function KnowledgeBasePage() {
           <input
             type="text"
             placeholder="ค้นหาบทความ..."
-            className="block w-full pl-10 pr-3 py-2 border border-zinc-300 rounded-md leading-5 bg-white placeholder-zinc-500 focus:outline-none focus:placeholder-zinc-400 focus:ring-1 focus:ring-yellow-500 focus:border-[#00bbb4]"
+            className="block w-full pl-10 pr-3 py-2.5 border border-[#3c280f]/15 rounded-2xl leading-5 bg-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#c8f94a] focus:border-[#2a2014] text-sm"
           />
         </div>
       </div>
@@ -121,7 +121,7 @@ export default function KnowledgeBasePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredArticles.map((article) => (
             <Link key={article.id} href={`/knowledge-base/${article.id}`} className="group">
-              <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col">
+              <div className="oasel-glass rounded-3xl overflow-hidden border border-[#3c280f]/10 hover:shadow-lg transition-all h-full flex flex-col">
                 <div className="aspect-[16/9] overflow-hidden">
                   <Image
                     src={article.image}
@@ -129,19 +129,19 @@ export default function KnowledgeBasePage() {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <div className="p-4 flex-1 flex flex-col">
+                <div className="p-6 flex-1 flex flex-col">
                   <div className="mb-2">
-                    <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">
+                    <span className="inline-block bg-[#2a2014]/5 text-[#2a2014] text-xs font-semibold px-2.5 py-1 rounded-full border border-[#3c280f]/10">
                       {article.category}
                     </span>
                   </div>
-                  <h3 className="font-semibold mb-2 group-hover:text-[#00bbb4] transition-colors">
+                  <h3 className="font-bold text-lg mb-2 text-[#2a2014] group-hover:text-[#6e5f50] transition-colors">
                     {article.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm line-clamp-3 mb-4 flex-1">
+                  <p className="text-[#6e5f50] text-sm line-clamp-3 mb-4 flex-1 leading-relaxed">
                     {article.excerpt}
                   </p>
-                  <span className="text-sm text-[#00bbb4] group-hover:text-yellow-800 font-medium inline-flex items-center">
+                  <span className="text-sm text-[#2a2014] group-hover:text-[#6e5f50] font-semibold inline-flex items-center">
                     อ่านเพิ่มเติม
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
                       <path d="M5 12h14"></path>
@@ -174,8 +174,8 @@ export default function KnowledgeBasePage() {
                 <ul className="space-y-2">
                   {category.topics.slice(0, 3).map((topic) => (
                     <li key={topic.id}>
-                      <Link href={`/knowledge-base/${topic.id}`} className="text-sm hover:text-[#00bbb4] transition-colors inline-flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-3 w-3">
+                      <Link href={`/knowledge-base/${topic.id}`} className="text-sm text-[#44362a] hover:text-[#2a2014] hover:underline transition-colors inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2 h-3 w-3 text-[#2a2014]">
                           <path d="M9 18l6-6-6-6"></path>
                         </svg>
                         {topic.title}
@@ -187,7 +187,7 @@ export default function KnowledgeBasePage() {
                   <Button
                     asChild
                     variant="ghost"
-                    className="mt-3 w-full text-xs hover:text-[#00bbb4] hover:bg-yellow-50"
+                    className="mt-3 w-full text-xs text-[#2a2014] hover:text-[#2a2014] hover:bg-[#2a2014]/5 rounded-xl"
                   >
                     <Link href={`/knowledge-base/category/${category.id}`}>
                       ดูทั้งหมด {category.topics.length} บทความ
@@ -210,7 +210,7 @@ export default function KnowledgeBasePage() {
             <Link
               key={index}
               href={`/knowledge-base/tag/${tag}`}
-              className="px-4 py-2 rounded-full bg-zinc-100 text-zinc-800 text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors"
+              className="px-4 py-2 rounded-full bg-white/80 border border-[#3c280f]/10 text-[#44362a] text-sm hover:bg-[#c8f94a] hover:text-[#1a2404] hover:border-[#c8f94a] transition-all shadow-2xs"
             >
               {tag}
             </Link>
@@ -219,19 +219,19 @@ export default function KnowledgeBasePage() {
       </section>
 
       {/* Newsletter */}
-      <section className="bg-zinc-50 p-8 rounded-lg border border-zinc-200">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-3">รับข่าวสารเกี่ยวกับ Smart Home</h2>
-          <p className="text-muted-foreground mb-6">
+      <section className="oasel-glass p-8 sm:p-12 rounded-3xl border border-[#3c280f]/10 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-[#2a2014]">รับข่าวสารเกี่ยวกับ Smart Home</h2>
+          <p className="text-[#6e5f50] text-sm sm:text-base mb-6 leading-relaxed">
             ลงทะเบียนเพื่อรับบทความใหม่ เคล็ดลับ และข่าวสารเกี่ยวกับเทคโนโลยี Smart Home ล่าสุด
           </p>
-          <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               placeholder="อีเมลของคุณ"
-              className="flex-1 px-3 py-2 border border-zinc-300 rounded-md focus:outline-none focus:ring-1 focus:ring-yellow-500 focus:border-[#00bbb4]"
+              className="flex-1 px-4 py-2.5 border border-[#3c280f]/15 rounded-2xl bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#c8f94a]"
             />
-            <Button className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-11 px-6 font-semibold shadow-sm transition-all">
               สมัครรับข่าวสาร
             </Button>
           </div>

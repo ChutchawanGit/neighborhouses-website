@@ -75,10 +75,10 @@ const SimpleTabs: React.FC<SimpleTabsProps> = ({ tabs, activeTab, onTabChange, c
         {tabs.map((tab) => (
           <button
             key={tab.value}
-            className={`py-2 px-4 font-medium ${
+            className={`py-2.5 px-4 font-semibold text-sm rounded-2xl transition-all ${
               activeTab === tab.value
-                ? "bg-[#00bbb4] text-black"
-                : "bg-gray-100 text-gray-700"
+                ? "bg-[#2a2014] text-[#fbf5e9] shadow-sm"
+                : "bg-white/70 text-[#6e5f50] hover:bg-white border border-[#3c280f]/10"
             }`}
             onClick={() => onTabChange(tab.value)}
           >
@@ -178,7 +178,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         content: activeTab === "appointment" ? "มีการส่งคำขอนัดหมายใหม่! 📅" : "มีข้อความติดต่อใหม่! 📨",
         embeds: [{
           title: activeTab === "appointment" ? "ข้อมูลการนัดหมาย" : "ข้อความติดต่อ",
-          color: 0x00bbb4,
+          color: 0xc8f94a,
           fields: Object.entries(message.data).map(([key, value]) => ({
             name: key,
             value: String(value || "ไม่ระบุ"), // แปลงเป็น string เสมอและไม่เป็นค่าว่าง
@@ -252,13 +252,13 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
         {contactInfo.map((info, index) => (
           <Card key={index}>
             <CardContent className="p-6 flex items-center">
-              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-[#00bbb4] mr-4">
+              <div className="w-12 h-12 bg-[#2a2014] rounded-2xl flex items-center justify-center text-[#c8f94a] mr-4 shadow-xs shrink-0">
                 {info.icon}
               </div>
               <div>
-                <h3 className="font-medium mb-1">{info.title}</h3>
-                <p className="text-muted-foreground mb-2">{info.contact}</p>
-                <Button variant="link" asChild className="p-0 font-medium text-[#00bbb4] hover:text-yellow-800">
+                <h3 className="font-bold text-[#2a2014] mb-1">{info.title}</h3>
+                <p className="text-sm text-[#6e5f50] mb-2">{info.contact}</p>
+                <Button variant="link" asChild className="p-0 font-semibold text-[#2a2014] hover:text-[#6e5f50]">
                   <a href={info.link} target={info.title === "ที่อยู่" ? "_blank" : undefined} rel="noreferrer">
                     {info.action}
                   </a>
@@ -279,7 +279,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             <p className="text-muted-foreground mb-6">
               เราได้รับข้อมูลของคุณเรียบร้อยแล้ว ทีมงานของเราจะติดต่อกลับหาคุณภายใน 24 ชั่วโมง
             </p>
-            <Button onClick={() => setFormSubmitted(false)} className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button onClick={() => setFormSubmitted(false)} className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-11 px-6 font-semibold shadow-sm transition-all">
               ส่งข้อความเพิ่มเติม
             </Button>
           </CardContent>
@@ -414,7 +414,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]"
+                    className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-12 font-semibold shadow-md transition-all"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'กำลังส่งข้อมูล...' : 'ส่งคำขอนัดหมาย'}
@@ -484,7 +484,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-[#00bbb4] text-black hover:bg-[#e6ed4a]"
+                    className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-12 font-semibold shadow-md transition-all"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'กำลังส่งข้อมูล...' : 'ส่งข้อความ'}
@@ -523,7 +523,7 @@ export default function ContactPage({ searchParams }: ContactPageProps) {
             ทีมงานของเรามีความเชี่ยวชาญและพร้อมให้คำแนะนำเพื่อให้คุณได้ระบบ Smart Home ที่เหมาะกับความต้องการมากที่สุด
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+            <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl h-11 px-6 font-semibold shadow-sm transition-all">
               <a href="tel:021234567">โทรหาเราเลย</a>
             </Button>
             <Button asChild variant="outline">

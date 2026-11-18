@@ -58,13 +58,13 @@ export default function LightingServicePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl font-bold tracking-tight lg:text-5xl mb-6">
-              ระบบแสงสว่าง<span className="text-[#00bbb4]">อัจฉริยะ</span>
+              ระบบแสงสว่าง<span className="text-[#2a2014]">อัจฉริยะ</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
               ยกระดับบ้านของคุณด้วยระบบแสงสว่างอัจฉริยะที่ควบคุมได้ง่ายผ่านมือถือ ปรับแต่งบรรยากาศในบ้านให้เหมาะกับทุกโอกาสและทุกช่วงเวลา
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="bg-[#00bbb4] text-white hover:bg-[#009a9b]">
+              <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
               </Button>
               <Button asChild variant="outline">
@@ -82,7 +82,7 @@ export default function LightingServicePage() {
                 height={600}
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
+            <div className="absolute -bottom-4 -right-4 bg-[#2a2014] p-6 rounded-lg shadow-lg">
               <p className="text-lg font-bold text-white">เริ่มต้นเพียง</p>
               <p className="text-3xl font-bold text-white">25,900 บาท</p>
             </div>
@@ -99,8 +99,8 @@ export default function LightingServicePage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#00bbb4] hover:shadow-md transition-all">
-              <div className="mb-4 w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center text-[#00bbb4]">
+            <div key={index} className="bg-white p-6 rounded-lg border border-zinc-200 hover:border-[#2a2014] hover:shadow-md transition-all">
+              <div className="mb-4 w-12 h-12 bg-[#2a2014]/5 rounded-full flex items-center justify-center text-[#2a2014]">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
@@ -147,7 +147,7 @@ export default function LightingServicePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg p-6 border border-zinc-200">
               <h3 className="text-xl font-bold mb-4">แพ็คเกจเริ่มต้น</h3>
-              <p className="text-3xl font-bold mb-2 text-[#00bbb4]">25,900 บาท</p>
+              <p className="text-3xl font-bold mb-2 text-[#2a2014]">25,900 บาท</p>
               <p className="text-sm text-zinc-500 mb-6">รวมค่าติดตั้งและอุปกรณ์</p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
@@ -175,15 +175,15 @@ export default function LightingServicePage() {
                   <span>ติดตั้งฟรี รับประกัน 1 ปี</span>
                 </li>
               </ul>
-              <Button asChild className="w-full bg-[#00bbb4] text-white hover:bg-[#009a9b]">
+              <Button asChild className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact?package=lighting-basic">เลือกแพ็คเกจนี้</Link>
               </Button>
             </div>
 
             <div className="bg-white rounded-lg p-6 border border-zinc-200 shadow-lg relative">
-              <div className="absolute -top-3 right-4 bg-[#00bbb4] text-white text-xs font-bold px-3 py-1 rounded-full">แนะนำ</div>
+              <div className="absolute -top-3 right-4 bg-[#c8f94a] text-[#1a2404] text-xs font-bold px-3 py-1 rounded-full shadow-xs">แนะนำ</div>
               <h3 className="text-xl font-bold mb-4">แพ็คเกจมาตรฐาน</h3>
-              <p className="text-3xl font-bold mb-2 text-[#00bbb4]">45,900 บาท</p>
+              <p className="text-3xl font-bold mb-2 text-[#2a2014]">45,900 บาท</p>
               <p className="text-sm text-zinc-500 mb-6">รวมค่าติดตั้งและอุปกรณ์</p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
@@ -211,14 +211,14 @@ export default function LightingServicePage() {
                   <span>ติดตั้งฟรี รับประกัน 2 ปี</span>
                 </li>
               </ul>
-              <Button asChild className="w-full bg-[#00bbb4] text-white hover:bg-[#009a9b]">
+              <Button asChild className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact?package=lighting-standard">เลือกแพ็คเกจนี้</Link>
               </Button>
             </div>
 
             <div className="bg-white rounded-lg p-6 border border-zinc-200">
               <h3 className="text-xl font-bold mb-4">แพ็คเกจพรีเมียม</h3>
-              <p className="text-3xl font-bold mb-2 text-[#00bbb4]">85,900 บาท</p>
+              <p className="text-3xl font-bold mb-2 text-[#2a2014]">85,900 บาท</p>
               <p className="text-sm text-zinc-500 mb-6">รวมค่าติดตั้งและอุปกรณ์</p>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
@@ -246,7 +246,7 @@ export default function LightingServicePage() {
                   <span>ติดตั้งฟรี รับประกัน 5 ปี</span>
                 </li>
               </ul>
-              <Button asChild className="w-full bg-[#00bbb4] text-white hover:bg-[#009a9b]">
+              <Button asChild className="w-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
                 <Link href="/contact?package=lighting-premium">เลือกแพ็คเกจนี้</Link>
               </Button>
             </div>
@@ -254,14 +254,14 @@ export default function LightingServicePage() {
         </div>
       </section>
 
-      <section className="bg-[#00bbb4] p-12 rounded-lg">
+      <section className="bg-[#2a2014] p-10 sm:p-14 rounded-3xl text-white border border-white/10 shadow-2xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4 text-white">พร้อมที่จะยกระดับบ้านของคุณด้วยระบบแสงสว่างอัจฉริยะ?</h2>
           <p className="text-xl text-white/90 mb-8">
             ปรึกษาผู้เชี่ยวชาญของเราเพื่อรับคำแนะนำและเริ่มต้นการติดตั้งระบบที่เหมาะสมกับบ้านของคุณ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-white text-[#00bbb4] hover:bg-zinc-100">
+            <Button asChild className="bg-[#c8f94a] text-[#1a2404] hover:bg-[#b2e23b] font-bold rounded-2xl shadow-sm transition-all">
               <Link href="/contact">ติดต่อเรา</Link>
             </Button>
             <Button asChild variant="outline" className="bg-transparent border-white text-white hover:bg-white/10">

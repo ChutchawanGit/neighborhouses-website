@@ -137,7 +137,7 @@ export default function PackageComparisonPage() {
             onClick={() => togglePackage(pkg.id)}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               selectedPackages.includes(pkg.id)
-                ? 'bg-[#00bbb4] text-black hover:from-emerald-600 hover:to-teal-600'
+                ? 'bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all'
                 : 'bg-white border border-zinc-200 text-zinc-700 hover:bg-zinc-100'
             }`}
           >
@@ -157,7 +157,7 @@ export default function PackageComparisonPage() {
                 className={`border-b border-zinc-200 p-4 text-center ${pkg.popular ? 'bg-yellow-50' : ''}`}
               >
                 {pkg.popular && (
-                  <div className="text-xs font-medium text-[#00bbb4] mb-1">แนะนำ</div>
+                  <div className="text-xs font-bold text-[#2a2014] mb-1">แนะนำ</div>
                 )}
                 <h3 className="font-bold text-lg">{pkg.name}</h3>
                 <div className="my-3">
@@ -165,7 +165,7 @@ export default function PackageComparisonPage() {
                   <span className="text-sm text-muted-foreground"> บาท</span>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">{pkg.description}</p>
-                <Button asChild className={`w-full ${pkg.popular ? 'bg-[#00bbb4] hover:bg-yellow-600 text-black' : ''}`}>
+                <Button asChild className={`w-full ${pkg.popular ? 'bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all' : ''}`}>
                   <Link href={pkg.href}>
                     เลือกแพ็คเกจนี้
                   </Link>
@@ -228,7 +228,7 @@ export default function PackageComparisonPage() {
             เราเข้าใจว่าทุกบ้านมีความต้องการที่แตกต่างกัน ทีมงานของเราพร้อมให้คำปรึกษาและออกแบบระบบ Smart Home ที่เหมาะกับบ้านของคุณโดยเฉพาะ
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild className="bg-[#00bbb4] text-black hover:from-emerald-600 hover:to-teal-600">
+            <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
               <Link href="/contact">ปรึกษาผู้เชี่ยวชาญ</Link>
             </Button>
             <Button asChild variant="outline">

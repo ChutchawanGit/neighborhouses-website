@@ -161,7 +161,7 @@ export default function TestimonialsPage() {
                     </div>
                   </div>
                   <div className="p-6 flex flex-col">
-                    <div className="mb-4 text-[#00bbb4]">
+                    <div className="mb-4 text-[#2a2014]">
                       <Quote className="h-8 w-8" />
                     </div>
                     <blockquote className="flex-1 text-muted-foreground mb-4 line-clamp-[7]">
@@ -205,7 +205,7 @@ export default function TestimonialsPage() {
           {testimonials.filter(t => !t.featured).map((testimonial) => (
             <div key={testimonial.id} className="bg-white border border-zinc-200 rounded-lg p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-[#00bbb4]">
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-3 border-2 border-[#2a2014]">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -219,7 +219,7 @@ export default function TestimonialsPage() {
                   <div className="text-sm text-muted-foreground">{testimonial.position}</div>
                 </div>
               </div>
-              <div className="mb-4 text-[#00bbb4]">
+              <div className="mb-4 text-[#2a2014]">
                 <Quote className="h-6 w-6" />
               </div>
               <blockquote className="text-muted-foreground mb-4 line-clamp-4">
@@ -284,7 +284,7 @@ export default function TestimonialsPage() {
           <p className="text-muted-foreground mb-6">
             เป็นลูกค้าของเรา? แชร์ประสบการณ์การใช้งาน Smart Home ของคุณให้ผู้อื่นได้รับทราบ
           </p>
-          <Button asChild className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]">
+          <Button asChild className="bg-[#2a2014] text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] rounded-2xl font-semibold shadow-sm transition-all">
             <Link href="/contact?review=true">แชร์รีวิวของคุณ</Link>
           </Button>
         </div>
