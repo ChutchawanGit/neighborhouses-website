@@ -22,11 +22,11 @@ export default function PremiumPackagePage() {
         <div>
           <div className="rounded-lg overflow-hidden mb-6">
             <Image
-              src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a5.jpg"
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop"
               alt="Premium Smart Home Package"
               width={600}
               height={400}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto rounded-lg object-cover"
               unoptimized
             />
           </div>
@@ -34,21 +34,21 @@ export default function PremiumPackagePage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg"
+                src="https://images.unsplash.com/photo-1512446816042-444d641267d4?q=80&w=600&auto=format&fit=crop"
                 alt="Smart Lighting System"
                 width={280}
                 height={200}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg object-cover"
                 unoptimized
               />
             </div>
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg"
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=600&auto=format&fit=crop"
                 alt="Smart Home System"
                 width={280}
                 height={200}
-                className="w-full h-auto rounded-lg"
+                className="w-full h-auto rounded-lg object-cover"
                 unoptimized
               />
             </div>

@@ -22,7 +22,7 @@ export default function StandardPackagePage() {
         <div>
           <div className="rounded-lg overflow-hidden mb-6">
             <Image
-              src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a7.jpg"
+              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop"
               alt="Standard Smart Home Package"
               width={600}
               height={400}
@@ -34,7 +34,7 @@ export default function StandardPackagePage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31c.jpg"
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=600&auto=format&fit=crop"
                 alt="Smart Door Lock"
                 width={280}
                 height={200}
@@ -44,7 +44,7 @@ export default function StandardPackagePage() {
             </div>
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg"
+                src="https://images.unsplash.com/photo-1543512214-318c7553f230?q=80&w=600&auto=format&fit=crop"
                 alt="Smart Speaker"
                 width={280}
                 height={200}

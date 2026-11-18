@@ -95,7 +95,7 @@ export default function CustomDesignPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
                 alt="ออกแบบระบบสมาร์ทโฮม" 
                 className="w-full h-full object-cover"
                 width={800}
@@ -173,7 +173,7 @@ export default function CustomDesignPage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-square rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" 
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=600&auto=format&fit=crop" 
                 alt="ปรึกษากับผู้เชี่ยวชาญ" 
                 className="w-full h-full object-cover"
                 width={400}
@@ -182,7 +182,7 @@ export default function CustomDesignPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg" 
+                src="https://images.unsplash.com/photo-1512446816042-444d641267d4?q=80&w=600&auto=format&fit=crop" 
                 alt="ออกแบบระบบ" 
                 className="w-full h-full object-cover"
                 width={400}
@@ -191,7 +191,7 @@ export default function CustomDesignPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" 
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=600&auto=format&fit=crop" 
                 alt="ติดตั้งและตั้งค่า" 
                 className="w-full h-full object-cover"
                 width={400}
@@ -200,7 +200,7 @@ export default function CustomDesignPage() {
             </div>
             <div className="aspect-square rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" 
+                src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=600&auto=format&fit=crop" 
                 alt="บริการหลังการขาย" 
                 className="w-full h-full object-cover"
                 width={400}

@@ -45,10 +45,10 @@ const features = [
 ];
 
 const products = [
-  { name: "กล้องวงจรปิดอัจฉริยะ", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" },
-  { name: "ระบบล็อคประตูอัจฉริยะ", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" },
-  { name: "เซ็นเซอร์ตรวจจับความเคลื่อนไหว", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a4.jpg" },
-  { name: "กล้องวิดีโอหน้าประตู", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" },
+  { name: "กล้องวงจรปิดอัจฉริยะ", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200&auto=format&fit=crop" },
+  { name: "ระบบล็อคประตูอัจฉริยะ", image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1200&auto=format&fit=crop" },
+  { name: "เซ็นเซอร์ตรวจจับความเคลื่อนไหว", image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=1200&auto=format&fit=crop" },
+  { name: "กล้องวิดีโอหน้าประตู", image: "https://images.unsplash.com/photo-1558036117-15d82a90b9b1?q=80&w=1200&auto=format&fit=crop" },
 ];
 
 export default function SecurityServicePage() {
@@ -75,7 +75,7 @@ export default function SecurityServicePage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a7.jpg"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop"
                 alt="ระบบรักษาความปลอดภัยอัจฉริยะ" 
                 className="w-full h-full object-cover" 
                 width={800}

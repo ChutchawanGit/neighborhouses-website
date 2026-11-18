@@ -43,6 +43,20 @@ const ecosystems = [
 export function HeroSection() {
   return (
     <section className="relative pt-8 pb-20 md:pt-14 md:pb-28 overflow-hidden">
+      {/* Ambient Blurred Architectural Villa Backdrop with Smooth Fade Gradient */}
+      <div className="absolute inset-x-0 top-0 h-[920px] pointer-events-none z-0 overflow-hidden select-none">
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center scale-105"
+          style={{ 
+            backgroundImage: "url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2400&auto=format&fit=crop')",
+            filter: "blur(8px)",
+            opacity: "0.32"
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f4ede2]/40 via-[#f4ede2]/80 to-[#f4ede2]" />
+        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-[#f4ede2] to-transparent" />
+      </div>
+
       <div className="container relative z-10">
         {/* Main Dossier Header Card */}
         <div className="oasel-glass rounded-3xl p-6 sm:p-10 md:p-14 mb-8 border border-[#3c280f]/10">

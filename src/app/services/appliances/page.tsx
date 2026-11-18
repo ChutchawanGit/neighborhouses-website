@@ -97,9 +97,10 @@ export default function AppliancesControlPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a6.jpg" width={1200} height={900}
+                src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop" width={1200} height={900}
                 alt="ระบบควบคุมเครื่องใช้ไฟฟ้าอัจฉริยะ" 
                 className="w-full h-full object-cover" 
+                unoptimized
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">

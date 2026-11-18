@@ -10,34 +10,28 @@ export const metadata = {
 
 const teamMembers = [
   {
-    name: "นาย A",
-    position: "ผู้ก่อตั้งและประธานบริษัท",
-    image: "https://same-assets.com/f/2023-05/SameAssets-20230531-b0fbaf.jpg",
-    bio: "ผู้เชี่ยวชาญด้านเทคโนโลยีสมาร์ทโฮมมากว่า 15 ปี เคยร่วมงานกับบริษัทเทคโนโลยีชั้นนำในต่างประเทศ"
+    name: "วิศรุต วัฒนากุล",
+    position: "ผู้ก่อตั้งและประธานกรรมการบริหาร (Founder & CEO)",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
+    bio: "ผู้เชี่ยวชาญด้านสถาปัตยกรรมเทคโนโลยีและการบริหารโครงการบ้านอัจฉริยะระดับลักชัวรี ประสบการณ์กว่า 15 ปี"
   },
   {
-    name: "นาย B",
-    position: "ผู้อำนวยการฝ่ายเทคโนโลยี",
-    image: "https://same-assets.com/f/2023-05/SameAssets-20230531-b0fbab.jpg",
-    bio: "วิศวกรไฟฟ้าและผู้เชี่ยวชาญด้านระบบอัตโนมัติ มีประสบการณ์ในการพัฒนาเทคโนโลยีสมาร์ทโฮมมากว่า 10 ปี"
+    name: "ดร. นพดล สุวรรณรัตน์",
+    position: "ผู้อำนวยการฝ่ายวิศวกรรมระบบ (Chief Technology Officer)",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
+    bio: "ผู้เชี่ยวชาญด้านโปรโตคอล IoT, Matter, KNX และโครงสร้างระบบอัตโนมัติความปลอดภัยสูงในที่อยู่อาศัย"
   },
   {
-    name: "นาย C",
-    position: "ผู้อำนวยการฝ่ายออกแบบและติดตั้ง",
-    image: "https://same-assets.com/f/2023-05/SameAssets-20230531-b0fbac.jpg",
-    bio: "สถาปนิกและนักออกแบบระบบที่มีประสบการณ์ในการออกแบบและติดตั้งระบบสมาร์ทโฮมในโครงการใหญ่ทั่วประเทศ"
+    name: "พิมลดา มงคลชัย",
+    position: "ผู้อำนวยการฝ่ายออกแบบสถาปัตยกรรมภายใน (Lead Interior Architect)",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop",
+    bio: "สถาปนิกผู้เชี่ยวชาญการออกแบบแสงสว่าง (Circadian Lighting) และการซ่อนระบบอุปกรณ์ให้กลมกลืนกับงานตกแต่งภายใน"
   },
   {
-    name: "นาย D",
-    position: "ผู้อำนวยการฝ่ายบริการลูกค้า",
-    image: "https://same-assets.com/f/2023-05/SameAssets-20230531-b0fbad.jpg",
-    bio: "ผู้เชี่ยวชาญด้านการบริการลูกค้า มุ่งมั่นให้ลูกค้าได้รับประสบการณ์ที่ดีที่สุดในทุกขั้นตอนการบริการ"
-  },
-  {
-    name: "นาย E",
-    position: "ตัวประกอบ",
-    image: "https://same-assets.com/f/2023-05/SameAssets-20230531-b0fbad.jpg",
-    bio: "ผู้เชี่ยวชาญด้านการบริการลูกค้า มุ่งมั่นให้ลูกค้าได้รับประสบการณ์ที่ดีที่สุดในทุกขั้นตอนการบริการ กะหรี่"
+    name: "กานดา จิตเจริญ",
+    position: "ผู้อำนวยการฝ่ายบริการและบริหารความพึงพอใจลูกค้า (Head of Customer Experience)",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+    bio: "ดูแลมาตรฐานการบริการ On-Site Support และการดูแลลูกค้าระดับ Executive ให้ได้รับความพึงพอใจสูงสุด"
   }
 ];
 
@@ -103,7 +97,7 @@ export default function AboutPage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a5.jpg"
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
                 alt="Smart Home Office"
                 width={600}
                 height={400}

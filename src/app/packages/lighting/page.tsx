@@ -45,10 +45,10 @@ const features = [
 ];
 
 const products = [
-  { name: "หลอดไฟ LED อัจฉริยะ", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-43b31a.jpg" },
-  { name: "สวิตช์ไฟอัจฉริยะ", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg" },
-  { name: "โคมไฟอัจฉริยะ", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-43b31b.jpg" },
-  { name: "ไฟตกแต่งภายนอกอัจฉริยะ", image: "https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg" },
+  { name: "หลอดไฟ LED อัจฉริยะ", image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=600&auto=format&fit=crop" },
+  { name: "สวิตช์ไฟอัจฉริยะ", image: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=600&auto=format&fit=crop" },
+  { name: "โคมไฟอัจฉริยะ", image: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?q=80&w=600&auto=format&fit=crop" },
+  { name: "ไฟตกแต่งภายนอกอัจฉริยะ", image: "https://images.unsplash.com/photo-1512446816042-444d641267d4?q=80&w=600&auto=format&fit=crop" },
 ];
 
 export default function LightingServicePage() {
@@ -75,7 +75,7 @@ export default function LightingServicePage() {
           <div className="relative">
             <div className="aspect-[4/3] rounded-lg overflow-hidden">
               <Image 
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a7.jpg"
+                src="https://images.unsplash.com/photo-1512446816042-444d641267d4?q=80&w=1200&auto=format&fit=crop"
                 alt="ระบบแสงสว่างอัจฉริยะ" 
                 className="w-full h-full object-cover"
                 width={800}

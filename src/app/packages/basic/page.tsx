@@ -23,7 +23,7 @@ export default function BasicPackagePage() {
         <div>
           <div className="rounded-lg overflow-hidden mb-6">
             <Image
-              src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a9.jpg"
+              src="https://images.unsplash.com/photo-1512446816042-444d641267d4?q=80&w=1200&auto=format&fit=crop"
               alt="Basic Smart Home Package"
               width={600}
               height={400}
@@ -35,7 +35,7 @@ export default function BasicPackagePage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-43b31a.jpg"
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=600&auto=format&fit=crop"
                 alt="Smart Light Control"
                 width={280}
                 height={200}
@@ -45,7 +45,7 @@ export default function BasicPackagePage() {
             </div>
             <div className="rounded-lg overflow-hidden">
               <Image
-                src="https://same-assets.com/f/2023-05/SameAssets-20230531-70a3a8.jpg"
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=600&auto=format&fit=crop"
                 alt="Security Camera"
                 width={280}
                 height={200}
