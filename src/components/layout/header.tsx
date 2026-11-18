@@ -52,7 +52,11 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-3 z-40 w-full px-3 sm:px-6 transition-all duration-300">
+    <header className={`sticky top-0 z-40 w-full transition-all duration-300 px-3 sm:px-6 py-2.5 ${
+      scrolled
+        ? "bg-[#f4ede2]/90 backdrop-blur-md border-b border-[#3c280f]/5 shadow-xs"
+        : "bg-transparent"
+    }`}>
       <div className="max-w-[1440px] mx-auto oasel-glass-floating rounded-2xl md:rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between border border-[#3c280f]/10 shadow-lg">
         {/* Left Side: Brand on mobile & Breadcrumbs on desktop */}
         <div className="flex items-center gap-3">
