@@ -112,42 +112,55 @@ export default function ProjectsPage() {
       {/* Featured Projects */}
       {featuredProjects.length > 0 && (
         <>
-          <h2 className="text-2xl font-bold mb-6">โปรเจกต์แนะนำ</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#c8f94a]" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#2a2014]">โปรเจกต์แนะนำ</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-lg bg-zinc-950">
-                <div className="aspect-[16/9]">
+              <div key={project.id} className="group relative overflow-hidden rounded-3xl border border-[#3c280f]/15 bg-[#140f0b] shadow-lg hover:shadow-2xl transition-all duration-300">
+                <div className="aspect-[16/10] sm:aspect-[16/9] overflow-hidden">
                   <Image
                     src={project.images[0]}
                     alt={project.title}
                     width={2670}
                     height={2000}
-                    className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+                  {/* High-Contrast Gradient Scrim for 100% Readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/15" />
                 </div>
-                <div className="absolute bottom-0 left-0 p-6 text-white">
-                  <div className="mb-2 flex gap-2">
-                    <span className="inline-block bg-[#00bbb4] text-black text-xs px-2 py-1 rounded-full">{project.type}</span>
-                    <span className="inline-block bg-zinc-700 text-white text-xs px-2 py-1 rounded-full">{project.location}</span>
+                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 text-white z-10">
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    <span className="inline-block bg-[#c8f94a] text-[#1a2404] font-bold text-xs px-3 py-1 rounded-full shadow-sm">
+                      {project.type}
+                    </span>
+                    <span className="inline-block bg-white/20 backdrop-blur-md text-white text-xs font-medium px-3 py-1 rounded-full border border-white/20">
+                      {project.location}
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-zinc-300 mb-4 line-clamp-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-2 text-white drop-shadow-md leading-tight group-hover:text-[#c8f94a] transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-[#e5dbcc] text-sm sm:text-base mb-4 line-clamp-2 leading-relaxed drop-shadow-sm font-normal">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.features.slice(0, 3).map((feature, idx) => (
-                      <span key={idx} className="inline-block bg-zinc-800 text-zinc-200 text-xs px-2 py-1 rounded-full">
+                      <span key={idx} className="inline-block bg-black/40 backdrop-blur-md text-[#f5ede2] text-xs px-2.5 py-1 rounded-full border border-white/10">
                         {feature}
                       </span>
                     ))}
                     {project.features.length > 3 && (
-                      <span className="inline-block bg-zinc-800 text-zinc-200 text-xs px-2 py-1 rounded-full">
+                      <span className="inline-block bg-black/40 backdrop-blur-md text-[#cdbea6] text-xs px-2.5 py-1 rounded-full border border-white/10">
                         +{project.features.length - 3} อื่นๆ
                       </span>
                     )}
                   </div>
                   <Button
                     asChild
-                    className="bg-[#00bbb4] text-black hover:bg-[#e6ed4a]"
+                    className="bg-[#c8f94a] text-[#1a2404] hover:bg-[#b2e23b] font-bold rounded-2xl px-6 shadow-md transition-all"
                   >
                     <Link href={`/projects/${project.id}`}>
                       ดูรายละเอียด
@@ -161,42 +174,56 @@ export default function ProjectsPage() {
       )}
 
       {/* Regular Projects */}
-      <h2 className="text-2xl font-bold mb-6">โปรเจกต์ทั้งหมด</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <div className="flex items-center gap-3 mb-6">
+        <span className="w-2.5 h-2.5 rounded-full bg-[#2a2014]" />
+        <h2 className="text-2xl sm:text-3xl font-bold text-[#2a2014]">โปรเจกต์ทั้งหมด</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-20">
         {regularProjects.map((project) => (
-          <div key={project.id} className="border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
-            <div className="aspect-[4/3] overflow-hidden">
+          <div key={project.id} className="oasel-glass rounded-3xl overflow-hidden border border-[#3c280f]/10 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group">
+            <div className="aspect-[4/3] overflow-hidden relative">
               <Image
                 src={project.images[0]}
                 alt={project.title}
                 width={2670}
                 height={2000}
-                className="w-full h-full object-cover hover:scale-105 transition-transform"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                unoptimized
               />
             </div>
-            <div className="p-6">
-              <div className="mb-3 flex gap-2">
-                <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">{project.type}</span>
-                <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">{project.location}</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.features.slice(0, 3).map((feature, idx) => (
-                  <span key={idx} className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">
-                    {feature}
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="mb-3 flex flex-wrap gap-2">
+                  <span className="inline-block bg-[#2a2014]/8 text-[#2a2014] text-xs font-semibold px-2.5 py-1 rounded-full border border-[#3c280f]/10">
+                    {project.type}
                   </span>
-                ))}
-                {project.features.length > 3 && (
-                  <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">
-                    +{project.features.length - 3} อื่นๆ
+                  <span className="inline-block bg-[#2a2014]/8 text-[#6e5f50] text-xs font-medium px-2.5 py-1 rounded-full border border-[#3c280f]/10">
+                    {project.location}
                   </span>
-                )}
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-[#2a2014] group-hover:text-[#6e5f50] transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-[#6e5f50] mb-4 line-clamp-2 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-6">
+                  {project.features.slice(0, 3).map((feature, idx) => (
+                    <span key={idx} className="inline-block bg-white/70 text-[#44362a] text-xs px-2.5 py-0.5 rounded-full border border-[#3c280f]/8">
+                      {feature}
+                    </span>
+                  ))}
+                  {project.features.length > 3 && (
+                    <span className="inline-block bg-white/70 text-[#6e5f50] text-xs px-2 py-0.5 rounded-full border border-[#3c280f]/8">
+                      +{project.features.length - 3}
+                    </span>
+                  )}
+                </div>
               </div>
               <Button
                 asChild
                 variant="outline"
-                className="w-full"
+                className="w-full rounded-2xl border-[#3c280f]/15 bg-white/80 hover:bg-[#2a2014] hover:text-[#fbf5e9] text-[#2a2014] font-semibold transition-all shadow-xs"
               >
                 <Link href={`/projects/${project.id}`}>
                   ดูรายละเอียด

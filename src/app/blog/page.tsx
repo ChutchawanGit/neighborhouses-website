@@ -118,11 +118,11 @@ export default function BlogPage() {
         </p>
       </div>
 
-      <div className="flex overflow-x-auto pb-4 mb-8 -mx-4 px-4 sm:px-0 sm:justify-center space-x-2">
+      <div className="flex overflow-x-auto pb-4 mb-10 -mx-4 px-4 sm:px-0 sm:justify-center space-x-2 scrollbar-none">
         {categories.map((category) => (
           <button
             key={category.id}
-            className="min-w-fit rounded-full border border-zinc-200 bg-white px-4 py-2 text-sm font-medium hover:bg-zinc-100 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            className="min-w-fit rounded-full border border-[#3c280f]/15 bg-white/70 px-4 py-2 text-xs sm:text-sm font-medium text-[#2a2014] hover:bg-[#c8f94a] hover:text-[#1a2404] hover:border-[#c8f94a] transition-all shadow-xs"
           >
             {category.name}
           </button>
@@ -130,96 +130,119 @@ export default function BlogPage() {
       </div>
 
       {/* Featured Posts */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
         {featuredPosts.map((post, index) => (
-          <div
+          <Link
             key={post.id}
-            className={`relative overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm hover:shadow-md transition-shadow ${
+            href={`/blog/${post.id}`}
+            className={`group relative overflow-hidden rounded-3xl border border-[#3c280f]/15 bg-[#140f0b] shadow-md hover:shadow-xl transition-all duration-300 ${
               index === 0 ? 'md:col-span-2 md:row-span-2' : ''
             }`}
           >
-            <div className={`${index === 0 ? 'aspect-[16/9] md:aspect-[16/10]' : 'aspect-[16/9]'} relative`}>
+            <div className={`${index === 0 ? 'aspect-[16/9] md:aspect-[16/10]' : 'aspect-[16/9]'} relative overflow-hidden`}>
               <Image
                 src={post.image}
                 alt={post.title}
                 width={2670}
                 height={2000}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-6 text-white">
-                <div className="mb-2">
-                  <span className="inline-block bg-[#00bbb4] text-black text-xs px-2 py-1 rounded-full">{post.category}</span>
+              {/* High-Contrast Gradient Scrim for 100% Readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/10" />
+              
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white z-10">
+                <div className="mb-3">
+                  <span className="inline-flex items-center bg-[#c8f94a] text-[#1a2404] text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                    {post.category}
+                  </span>
                 </div>
-                <h2 className="text-xl md:text-2xl font-bold mb-2">{post.title}</h2>
-                <div className="flex items-center text-sm text-zinc-200">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-white drop-shadow-md leading-tight group-hover:text-[#c8f94a] transition-colors">
+                  {post.title}
+                </h2>
+                <div className="flex items-center text-xs sm:text-sm text-[#e5dbcc] font-medium drop-shadow-sm">
+                  <span>{post.author}</span>
+                  <span className="mx-2 text-[#c8f94a]">•</span>
+                  <span>{post.date}</span>
+                  <span className="mx-2 text-[#c8f94a]">•</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Regular Posts */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+        {regularPosts.map((post) => (
+          <div key={post.id} className="oasel-glass rounded-3xl overflow-hidden border border-[#3c280f]/10 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group">
+            <div className="aspect-[16/9] overflow-hidden relative">
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={2670}
+                height={2000}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                unoptimized
+              />
+            </div>
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="mb-3">
+                  <span className="inline-block bg-[#2a2014]/8 text-[#2a2014] text-xs font-semibold px-2.5 py-1 rounded-full border border-[#3c280f]/10">
+                    {post.category}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold mb-2 text-[#2a2014] group-hover:text-[#6e5f50] transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-sm text-[#6e5f50] mb-4 line-clamp-2 leading-relaxed">
+                  {post.excerpt}
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center text-xs text-[#8a7b6c] mb-4 pt-3 border-t border-[#3c280f]/10">
                   <span>{post.author}</span>
                   <span className="mx-2">•</span>
                   <span>{post.date}</span>
                   <span className="mx-2">•</span>
                   <span>{post.readTime}</span>
                 </div>
+                <Link
+                  href={`/blog/${post.id}`}
+                  className="inline-flex items-center text-sm font-semibold text-[#2a2014] hover:text-[#524131] group/link"
+                >
+                  อ่านเพิ่มเติม
+                  <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Regular Posts */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        {regularPosts.map((post) => (
-          <div key={post.id} className="border border-zinc-200 rounded-lg overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow">
-            <div className="aspect-[16/9] overflow-hidden">
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={2670}
-                height={2000}
-                className="w-full h-full object-cover hover:scale-105 transition-transform"
-              />
-            </div>
-            <div className="p-6">
-              <div className="mb-3">
-                <span className="inline-block bg-zinc-100 text-zinc-800 text-xs px-2 py-1 rounded-full">{post.category}</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
-              <p className="text-muted-foreground mb-4 line-clamp-2">{post.excerpt}</p>
-              <div className="flex items-center text-sm text-zinc-500 mb-4">
-                <span>{post.author}</span>
-                <span className="mx-2">•</span>
-                <span>{post.date}</span>
-                <span className="mx-2">•</span>
-                <span>{post.readTime}</span>
-              </div>
-              <Link
-                href={`/blog/${post.id}`}
-                className="inline-flex items-center text-[#00bbb4] hover:text-yellow-800 font-medium"
-              >
-                อ่านเพิ่มเติม
-                <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </div>
+      <div className="oasel-glass rounded-3xl p-8 sm:p-12 border border-[#3c280f]/10 text-center">
+        <div className="max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#2a2014] text-[#fbf5e9] text-[10px] font-semibold tracking-widest uppercase mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#c8f94a]" />
+            NEWSLETTER
           </div>
-        ))}
-      </div>
-
-      <div className="bg-zinc-50 p-8 rounded-lg border border-zinc-200">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-4">สนใจรับข่าวสารและบทความใหม่ๆ</h2>
-          <p className="text-muted-foreground mb-6">
-            ลงทะเบียนรับข่าวสาร บทความ และโปรโมชันเกี่ยวกับ Smart Home ล่าสุดจากเรา
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-[#2a2014]">สนใจรับข่าวสารและบทความใหม่ๆ</h2>
+          <p className="text-sm sm:text-base text-[#6e5f50] mb-8 leading-relaxed">
+            ลงทะเบียนรับบทวิเคราะห์ เทรนด์เทคโนโลยี และโปรโมชันพิเศษเกี่ยวกับ Luxury Smart Living ก่อนใคร
           </p>
           <div className="max-w-md mx-auto">
             <form className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="อีเมลของคุณ"
-                className="flex h-10 w-full rounded-md border border-zinc-200 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                className="flex h-11 w-full rounded-2xl border border-[#3c280f]/15 bg-white/90 px-4 py-2 text-sm text-[#2a2014] placeholder:text-[#8a7b6c] focus:outline-none focus:ring-2 focus:ring-[#c8f94a]"
                 required
               />
               <button
                 type="submit"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-[#00bbb4] px-4 text-sm font-medium text-black hover:bg-[#e6ed4a] focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                className="inline-flex h-11 shrink-0 items-center justify-center rounded-2xl bg-[#2a2014] px-6 text-sm font-semibold text-[#fbf5e9] hover:bg-[#3d2f20] hover:text-[#c8f94a] transition-colors shadow-sm"
               >
                 สมัครรับข่าวสาร
               </button>

@@ -54,9 +54,9 @@ export default function AudioServicePage() {
               <Image src="https://images.unsplash.com/photo-1516280906200-1d059b5ce1eb?q=80&w=2670&auto=format&fit=crop" width={2670} height={2000}
                    alt="ระบบเสียงอัจฉริยะ" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-[#00bbb4] p-6 rounded-lg shadow-lg">
-              <p className="text-lg font-bold text-black">คุณภาพเสียง</p>
-              <p className="text-3xl font-bold text-black">พรีเมียม</p>
+            <div className="absolute -bottom-4 -right-4 bg-[#2a2014] p-5 sm:p-6 rounded-3xl shadow-xl border border-white/10 text-white">
+              <p className="text-xs text-[#cdbea6] font-medium uppercase tracking-wider">คุณภาพเสียง</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-[#c8f94a]">พรีเมียม</p>
             </div>
           </div>
         </div>
