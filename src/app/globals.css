@@ -1,5 +1,5 @@
-/* Import Prompt font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+/* Import Urbanist (Oasel signature typography) & Prompt (Thai pairing) from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,150 +7,120 @@
 
 @layer base {
   :root {
-    --font-family: 'Prompt', sans-serif;
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --font-family: 'Urbanist', 'Prompt', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     
-    /* New turquoise color variable */
-    --turquoise: 180 100% 37%;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    /* Oasel Warm Desert Modernism Palette */
+    --background: 38 32% 93%;        /* #f4ede2 warm sand */
+    --foreground: 30 35% 12%;        /* #2a2014 deep espresso */
     
-    /* Keep turquoise consistent in dark mode */
-    --turquoise: 180 100% 37%;
+    --card: 42 60% 97%;              /* #fff9ed */
+    --card-foreground: 30 35% 12%;
+    
+    --popover: 42 60% 97%;
+    --popover-foreground: 30 35% 12%;
+    
+    --primary: 30 35% 12%;           /* #2a2014 */
+    --primary-foreground: 45 60% 96%;/* #fbf5e9 */
+    
+    --secondary: 38 25% 90%;         /* soft warm linen */
+    --secondary-foreground: 30 35% 12%;
+    
+    --muted: 35 15% 88%;
+    --muted-foreground: 30 15% 38%;  /* #6e5f50 */
+    
+    --accent: 78 93% 63%;            /* #c8f94a Electric Lime */
+    --accent-foreground: 30 35% 12%;
+    
+    --destructive: 8 75% 42%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 30 20% 84%;            /* rgba(60,40,15,0.14) */
+    --input: 30 20% 84%;
+    --ring: 78 93% 63%;
+    --radius: 1.125rem;              /* 18px */
+    
+    /* Oasel Direct Tokens */
+    --oasel-bg: #f4ede2;
+    --oasel-paper: #faf5ec;
+    --oasel-card: rgba(255, 249, 237, 0.75);
+    --oasel-panel: rgba(250, 243, 230, 0.94);
+    --oasel-ink: #2a2014;
+    --oasel-ink-2: #44362a;
+    --oasel-muted: #6e5f50;
+    --oasel-line: rgba(60, 40, 15, 0.12);
+    --oasel-lime: #c8f94a;
+    --oasel-butter: #f3df86;
+    --oasel-mint: #bfe9b4;
+    --oasel-sand: #ecd2b0;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
-    font-family: 'Prompt', sans-serif;
+    border-color: rgba(60, 40, 15, 0.12);
+    font-family: var(--font-family);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #f4ede2;
+    color: #2a2014;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family);
+    letter-spacing: -0.025em;
+    color: #2a2014;
   }
 }
 
-/* Custom classes for turquoise elements */
-.bg-turquoise {
-  background-color: #00bbb4;
+/* Oasel Tactile Frosted Glass Utilities */
+.oasel-glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 250, 242, 0.35)), rgba(255, 249, 237, 0.72);
+  backdrop-filter: blur(24px) saturate(130%);
+  -webkit-backdrop-filter: blur(24px) saturate(130%);
+  box-shadow: inset 0 0 0 1px rgba(60, 40, 15, 0.08), inset 1px 1px 0 rgba(255, 255, 255, 0.85), 0 8px 30px -8px rgba(70, 44, 14, 0.08);
 }
 
-.text-turquoise {
-  color: #00bbb4;
+.oasel-glass-floating {
+  background: rgba(253, 247, 236, 0.85);
+  backdrop-filter: blur(28px) saturate(135%);
+  -webkit-backdrop-filter: blur(28px) saturate(135%);
+  box-shadow: inset 0 0 0 1px rgba(60, 40, 15, 0.09), inset 1px 1px 0 rgba(255, 255, 255, 0.9), 0 18px 46px -22px rgba(70, 44, 14, 0.18);
 }
 
-.border-turquoise {
-  border-color: #00bbb4;
+.oasel-glass-card {
+  background: rgba(255, 249, 237, 0.7);
+  backdrop-filter: blur(20px) saturate(125%);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
+  box-shadow: inset 0 0 0 1px rgba(60, 40, 15, 0.08), inset 1px 1px 0 rgba(255, 255, 255, 0.8), 0 6px 24px -6px rgba(70, 44, 14, 0.06);
 }
 
-/* Replace yellow button with turquoise */
-.button-turquoise {
-  background-color: #00bbb4;
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.25rem;
-  font-weight: 500;
-  transition: all 0.2s ease-in-out;
+/* Oasel Electric Lime Pill & Badge */
+.oasel-lime-badge {
+  background-color: #c8f94a;
+  color: #1a2404;
+  font-weight: 700;
+  box-shadow: 0 2px 14px -2px rgba(200, 249, 74, 0.5);
 }
 
-.button-turquoise:hover {
-  background-color: #009991;
-}
-
-/* Custom scrollbar styles */
+/* Custom Oasel scrollbar */
 ::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar */
-  height: 8px; /* Height for horizontal scrollbar */
+  width: 7px;
+  height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; /* Transparent background */
+  background: rgba(60, 40, 15, 0.04);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #14b8a6; /* Turquoise color for the scrollbar thumb */
-  border-radius: 4px; /* Rounded corners */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+  background: rgba(60, 40, 15, 0.2);
+  border-radius: 99px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0f948a; /* Darker turquoise on hover */
-}
-
-/* Hide scrollbar when not in use */
-body {
-  scrollbar-width: thin; /* For Firefox */
-  scrollbar-color: #14b8a6 transparent; /* Thumb color and transparent track */
-}
-
-/* Hide scrollbar thumb by default */
-::-webkit-scrollbar-thumb {
-  opacity: 0; /* Initially hidden */
-}
-
-/* Show scrollbar thumb on hover or when scrolling */
-body:hover::-webkit-scrollbar-thumb,
-body:active::-webkit-scrollbar-thumb,
-body:focus::-webkit-scrollbar-thumb {
-  opacity: 1; /* Show scrollbar thumb */
-}
-
-/* Ensure no white line remains */
-::-webkit-scrollbar-corner {
-  background: transparent; /* Remove white corner in some browsers */
-}
-
-/* Minimalist scrollbar for Firefox */
-* {
-  scrollbar-width: thin; /* Thin scrollbar */
-  scrollbar-color: #31d4b1b2 transparent; /* Thumb color and transparent track */
+  background: #c8f94a;
 }

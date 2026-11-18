@@ -2,72 +2,78 @@ import Link from "next/link";
 import { ShieldCheck, Phone, Mail, MapPin } from "lucide-react";
 
 const companyLinks = [
-  { name: "หน้าแรก", href: "/" },
-  { name: "แพ็คเกจติดตั้ง", href: "/packages" },
-  { name: "บริการทั้งหมด", href: "/services" },
-  { name: "ผลงานติดตั้งจริง", href: "/projects" },
-  { name: "คำนวณราคาเบื้องต้น", href: "/calculator" },
-  { name: "เกี่ยวกับเรา", href: "/about" },
+  { name: "Overview (หน้าแรก)", href: "/" },
+  { name: "Tiered Packages (แพ็คเกจติดตั้ง)", href: "/packages" },
+  { name: "All Services (บริการทั้งหมด)", href: "/services" },
+  { name: "Estate Showcase (ผลงานจริง)", href: "/projects" },
+  { name: "Cost Estimator (คำนวณราคา)", href: "/calculator" },
+  { name: "About Studio (เกี่ยวกับเรา)", href: "/about" },
 ];
 
 const serviceLinks = [
-  { name: "ระบบควบคุมแสงสว่าง (Smart Lighting)", href: "/services/lighting" },
-  { name: "ระบบกล้องวงจรปิดอัจฉริยะ (AI CCTV)", href: "/services/cctv" },
-  { name: "ระบบรักษาความปลอดภัย (Security)", href: "/services/security" },
-  { name: "ระบบบ้านอัตโนมัติ (Automation)", href: "/services/automation" },
-  { name: "ระบบเครื่องใช้ไฟฟ้า (Appliances)", href: "/services/appliances" },
-  { name: "ระบบเสียง Multi-Room Audio", href: "/services/audio" },
+  { name: "Smart Lighting (ระบบแสงสว่าง)", href: "/services/lighting" },
+  { name: "AI CCTV 4K (กล้องวงจรปิด)", href: "/services/cctv" },
+  { name: "Smart Security (ความปลอดภัย)", href: "/services/security" },
+  { name: "Home Automation (บ้านอัตโนมัติ)", href: "/services/automation" },
+  { name: "Multi-Room Audio (ระบบเสียง)", href: "/services/audio" },
+  { name: "Smart Appliances (เครื่องใช้ไฟฟ้า)", href: "/services/appliances" },
 ];
 
 const resourceLinks = [
-  { name: "คำถามที่พบบ่อย (FAQ)", href: "/faq" },
-  { name: "คลังความรู้ Smart Home", href: "/knowledge-base" },
-  { name: "บทความและเทคโนโลยี", href: "/blog" },
-  { name: "นโยบายความเป็นส่วนตัว", href: "/privacy" },
-  { name: "ข้อกำหนดและเงื่อนไข", href: "/terms" },
+  { name: "FAQ (คำถามพบบ่อย)", href: "/faq" },
+  { name: "Knowledge Base (คลังความรู้)", href: "/knowledge-base" },
+  { name: "Articles (บทความ)", href: "/blog" },
+  { name: "Privacy Policy (นโยบายความเป็นส่วนตัว)", href: "/privacy" },
+  { name: "Terms of Service (ข้อกำหนดการบริการ)", href: "/terms" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-800 bg-zinc-950 text-zinc-300">
-      <div className="container py-16 md:py-20 lg:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10">
-          {/* Brand & Mission Column */}
+    <footer className="border-t border-[#3c280f]/15 bg-[#1b150f] text-[#f7efe1] mt-16">
+      <div className="container py-16 md:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-5">
-              <span className="text-2xl font-light tracking-tight text-white">
-                Neighbor <span className="font-semibold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">Houses</span>
+            <Link href="/" className="inline-flex items-center gap-2.5 mb-5">
+              <div className="w-8 h-8 rounded-xl bg-[#c8f94a] flex items-center justify-center shrink-0">
+                <span className="font-extrabold text-xs text-[#1a2404]">NH</span>
+              </div>
+              <span className="text-xl font-semibold tracking-tight text-white">
+                Neighbor Houses
               </span>
             </Link>
-            <p className="text-sm text-zinc-400 font-light leading-relaxed max-w-sm mb-6">
-              ผู้นำด้านการออกแบบและติดตั้งระบบบ้านอัจฉริยะ (Luxury Smart Home) สำหรับคฤหาสน์และที่อยู่อาศัยระดับพรีเมียม ผสานงานสถาปัตยกรรมเข้ากับเทคโนโลยีชั้นนำระดับสากล
+            <p className="text-xs sm:text-sm text-[#cdbea6] font-normal leading-relaxed max-w-sm mb-6">
+              ผู้นำด้านการออกแบบและติดตั้งระบบบ้านอัจฉริยะ (Luxury Smart Home) มาตรฐานสถาปัตยกรรมระดับสากล เพื่อสุนทรียภาพแห่งการอยู่อาศัยที่สมบูรณ์แบบ
             </p>
 
-            <div className="space-y-2.5 text-xs text-zinc-400 font-light">
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+            <div className="space-y-2 text-xs text-[#cdbea6]">
+              <div className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-[#c8f94a] shrink-0" />
                 <span>โทรศัพท์: 02-123-4567, 089-123-4567</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-[#c8f94a] shrink-0" />
                 <span>อีเมล: contact@neighborhouses.com</span>
               </div>
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                <span>เลขที่ 123 อาคารสถาปัตย์ ชั้น 18 ถนนสุขุมวิท คลองตัน คลองเตย กรุงเทพฯ 10110</span>
+              <div className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-[#c8f94a] shrink-0 mt-0.5" />
+                <span>123 ถนนสุขุมวิท แขวงคลองตัน เขตคลองเตย กรุงเทพฯ 10110</span>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Site Navigation */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-5">
-              โครงสร้างเว็บไซต์
-            </h3>
-            <ul className="space-y-3">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#c8f94a] mb-4">
+              SITE MAP
+            </h4>
+            <ul className="space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs text-zinc-400 hover:text-white transition-colors font-light">
+                  <Link
+                    href={link.href}
+                    className="text-xs text-[#cdbea6] hover:text-white transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -75,15 +81,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services Links */}
+          {/* Engineering Services */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-5">
-              บริการติดตั้ง
-            </h3>
-            <ul className="space-y-3">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#c8f94a] mb-4">
+              SERVICES
+            </h4>
+            <ul className="space-y-2.5">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs text-zinc-400 hover:text-white transition-colors font-light">
+                  <Link
+                    href={link.href}
+                    className="text-xs text-[#cdbea6] hover:text-white transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -91,43 +100,46 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources & Support */}
+          {/* Support & Warranty */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white mb-5">
-              ข้อมูลและการรับประกัน
-            </h3>
-            <ul className="space-y-3">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#c8f94a] mb-4">
+              RESOURCES
+            </h4>
+            <ul className="space-y-2.5">
               {resourceLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-xs text-zinc-400 hover:text-white transition-colors font-light">
+                  <Link
+                    href={link.href}
+                    className="text-xs text-[#cdbea6] hover:text-white transition-colors"
+                  >
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
 
-            <div className="mt-8 p-4 rounded-xl border border-white/10 bg-white/[0.02]">
-              <div className="flex items-center gap-2 text-emerald-400 mb-1.5">
-                <ShieldCheck className="w-4 h-4" />
-                <span className="text-xs font-medium text-white">รับประกันความพึงพอใจ</span>
+            <div className="mt-6 p-3.5 rounded-2xl bg-white/5 border border-white/10">
+              <div className="flex items-center gap-2 text-[#c8f94a] mb-1">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                <span className="text-xs font-semibold text-white">5-Year Warranty</span>
               </div>
-              <p className="text-[11px] text-zinc-400 font-light leading-snug">
-                บริการ On-Site Support ตรวจเช็คระบบถึงบ้านคุณตลอดอายุการรับประกัน
+              <p className="text-[11px] text-[#cdbea6] leading-tight">
+                ครอบคลุมอุปกรณ์และการบริการ On-Site ตลอดสัญญา
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className="border-t border-zinc-900 py-6 bg-zinc-950/80">
-        <div className="container flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 font-light">
+      {/* Bottom Bar */}
+      <div className="border-t border-white/10 py-5 bg-[#140f0b]">
+        <div className="container flex flex-col md:flex-row justify-between items-center text-xs text-[#9d8e78]">
           <p>© 2025 Neighbor Houses Co., Ltd. All rights reserved.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-zinc-300 transition-colors">
+          <div className="flex gap-5 mt-3 md:mt-0">
+            <Link href="/privacy" className="hover:text-white transition-colors">
               นโยบายความเป็นส่วนตัว
             </Link>
-            <Link href="/terms" className="hover:text-zinc-300 transition-colors">
+            <Link href="/terms" className="hover:text-white transition-colors">
               ข้อกำหนดและเงื่อนไข
             </Link>
           </div>

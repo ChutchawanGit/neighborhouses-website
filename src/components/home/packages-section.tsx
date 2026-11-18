@@ -2,10 +2,11 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Sparkles, ShieldCheck } from "lucide-react";
 
 const packages = [
   {
+    tier: "TIER 01",
     name: "The Estate Essential",
     subtitle: "สำหรับทาวน์โฮมและบ้านเดี่ยวขนาดเริ่มต้น",
     price: "39,900",
@@ -13,7 +14,7 @@ const packages = [
     features: [
       "ระบบควบคุมไฟส่องสว่าง Smart Lighting 5 จุด",
       "กล้องวงจรปิด AI ความละเอียดคมชัด 2 ตัว",
-      "Smart Digital Door Lock สแกนลายนิ้วมือและรหัส 1 ชุด",
+      "Smart Digital Door Lock สแกนลายนิ้วมือ 1 ชุด",
       "Smart Switch กระจกนิรภัยระดับพรีเมียม 3 จุด",
       "ควบคุมสั่งการผ่านแอปพลิเคชันมือถือ 24 ชม.",
       "ติดตั้งฟรีโดยทีมช่างมาตรฐาน พร้อมรับประกัน 1 ปี",
@@ -23,6 +24,7 @@ const packages = [
     cta: "เลือกแพ็คเกจเริ่มต้น",
   },
   {
+    tier: "TIER 02 // RECOMMENDED",
     name: "The Manor Signature",
     subtitle: "สำหรับบ้านเดี่ยวขนาดกลางและครอบครัวยุคใหม่",
     price: "79,900",
@@ -42,6 +44,7 @@ const packages = [
     cta: "เลือกแพ็คเกจยอดนิยม",
   },
   {
+    tier: "TIER 03",
     name: "The Sovereign Bespoke",
     subtitle: "สำหรับคฤหาสน์และบ้านเดี่ยวขนาดใหญ่ (Super Luxury)",
     price: "149,900",
@@ -65,67 +68,88 @@ const packages = [
 
 export function PackagesSection() {
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section className="py-16 md:py-24">
       <div className="container">
-        {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
-          <p className="text-xs font-semibold tracking-[0.25em] text-emerald-700 uppercase mb-3">
-            Transparent Investment
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-950 tracking-tight mb-4">
-            แพ็คเกจติดตั้ง <span className="font-medium">มาตรฐานสากล</span>
-          </h2>
-          <p className="text-base md:text-lg text-zinc-600 font-light leading-relaxed">
-            ราคารวมอุปกรณ์มาตรฐานระดับพรีเมียม ค่าแรงช่างวิศวกร การเซ็ตอัประบบ และการรับประกันอย่างเป็นทางการ ไร้ค่าใช้จ่ายแอบแฝง
-          </p>
+        {/* Section Header Card */}
+        <div className="oasel-glass rounded-3xl p-6 sm:p-10 mb-8 border border-[#3c280f]/10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e8dcce] text-[#44362a] text-[10px] font-bold tracking-widest uppercase mb-3">
+                <Sparkles className="w-3 h-3 text-[#c8f94a]" />
+                <span>DOSSIER 03 // PRICING TIERS</span>
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#2a2014] leading-tight">
+                แพ็คเกจติดตั้ง <span className="font-normal text-[#6e5f50]">มาตรฐานสากล</span>
+              </h2>
+            </div>
+            <p className="text-sm sm:text-base text-[#6e5f50] font-normal max-w-md leading-relaxed">
+              ราคารวมอุปกรณ์มาตรฐานระดับพรีเมียม ค่าแรงช่างวิศวกร การเซ็ตอัประบบ และการรับประกันอย่างเป็นทางการ ไร้ค่าใช้จ่ายแอบแฝง
+            </p>
+          </div>
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
           {packages.map((pkg) => (
-            <div 
-              key={pkg.name} 
-              className={`relative flex flex-col justify-between rounded-3xl p-8 md:p-10 transition-all duration-300 bg-white ${
-                pkg.popular 
-                  ? "border-2 border-emerald-600 shadow-2xl shadow-emerald-950/10 ring-4 ring-emerald-500/10 lg:-translate-y-2" 
-                  : "border border-zinc-200/80 hover:border-zinc-300 hover:shadow-xl"
+            <div
+              key={pkg.name}
+              className={`relative flex flex-col justify-between rounded-3xl p-8 sm:p-9 transition-all duration-300 ${
+                pkg.popular
+                  ? "bg-[#fffdf7] border-2 border-[#2a2014] shadow-2xl ring-4 ring-[#c8f94a]/30 lg:-translate-y-2"
+                  : "oasel-glass-card border border-[#3c280f]/12 hover:shadow-xl hover:-translate-y-0.5"
               }`}
             >
               {pkg.popular && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-medium tracking-widest uppercase shadow-md">
-                    <Sparkles className="w-3 h-3 text-emerald-200" />
-                    <span>Most Popular Choice</span>
+                  <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full bg-[#c8f94a] text-[#1a2404] text-[10px] font-extrabold tracking-widest uppercase shadow-md border border-[#bbf335]">
+                    <Sparkles className="w-3 h-3 text-[#1a2404]" />
+                    <span>MOST POPULAR CHOICE</span>
                   </span>
                 </div>
               )}
 
               <div>
-                <div className="mb-6">
-                  <h3 className="text-2xl font-light text-zinc-950 mb-1">{pkg.name}</h3>
-                  <p className="text-xs text-zinc-500 font-light">{pkg.subtitle}</p>
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-[#6e5f50]">
+                    {pkg.tier}
+                  </span>
+                  {pkg.popular && (
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  )}
                 </div>
 
-                <div className="mb-6 pb-6 border-b border-zinc-100">
+                <h3 className="text-2xl font-semibold text-[#2a2014] mb-1">
+                  {pkg.name}
+                </h3>
+                <p className="text-xs text-[#6e5f50] font-normal mb-6">
+                  {pkg.subtitle}
+                </p>
+
+                {/* Pricing Number */}
+                <div className="mb-6 pb-6 border-b border-[#3c280f]/10">
                   <div className="flex items-baseline">
-                    <span className="text-4xl font-light text-zinc-950">฿{pkg.price}</span>
-                    <span className="text-xs text-zinc-500 ml-2 font-light">สุทธิรวมติดตั้ง</span>
+                    <span className="text-4xl sm:text-5xl font-semibold text-[#2a2014] tracking-tight tabular-nums">
+                      ฿{pkg.price}
+                    </span>
+                    <span className="text-xs text-[#6e5f50] font-medium ml-2">
+                      สุทธิรวมติดตั้ง
+                    </span>
                   </div>
-                  <p className="text-xs text-zinc-600 font-light mt-3 leading-relaxed">
+                  <p className="text-xs text-[#554636] font-normal mt-3 leading-relaxed">
                     {pkg.description}
                   </p>
                 </div>
 
                 {/* Features List */}
                 <div className="mb-8">
-                  <p className="text-xs font-semibold text-zinc-900 uppercase tracking-wider mb-4">
-                    สิ่งที่จะได้รับในแพ็คเกจ:
-                  </p>
-                  <ul className="space-y-3.5">
+                  <span className="text-[10px] font-bold text-[#2a2014] uppercase tracking-wider block mb-4">
+                    SPECIFICATIONS INCLUDED:
+                  </span>
+                  <ul className="space-y-3">
                     {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-xs sm:text-sm text-zinc-700 font-light leading-snug">
-                        <div className="w-4 h-4 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mr-2.5 mt-0.5 shrink-0">
-                          <Check className="w-3 h-3" />
+                      <li key={idx} className="flex items-start text-xs sm:text-sm text-[#44362a] font-normal leading-snug">
+                        <div className="w-4 h-4 rounded-full bg-[#2a2014] text-[#c8f94a] flex items-center justify-center mr-2.5 mt-0.5 shrink-0 shadow-xs">
+                          <Check className="w-2.5 h-2.5 stroke-[3]" />
                         </div>
                         <span>{feature}</span>
                       </li>
@@ -136,12 +160,12 @@ export function PackagesSection() {
 
               {/* Action Button */}
               <div>
-                <Button 
-                  asChild 
-                  className={`w-full py-6 rounded-full text-xs font-medium tracking-wide shadow-sm transition-all ${
-                    pkg.popular 
-                      ? "bg-emerald-600 hover:bg-emerald-700 text-white hover:shadow-md" 
-                      : "bg-zinc-900 hover:bg-zinc-800 text-white"
+                <Button
+                  asChild
+                  className={`w-full py-6 rounded-full text-xs font-semibold tracking-wide transition-all shadow-sm ${
+                    pkg.popular
+                      ? "bg-[#c8f94a] text-[#1a2404] hover:bg-[#bbf335] shadow-md hover:shadow-lg font-bold"
+                      : "bg-[#2a2014] text-[#fbf5e9] hover:bg-[#44362a]"
                   }`}
                 >
                   <Link href={pkg.href}>
@@ -155,16 +179,21 @@ export function PackagesSection() {
         </div>
 
         {/* Comparison Callout */}
-        <div className="mt-16 text-center">
-          <p className="text-sm text-zinc-500 font-light mb-3">
-            ต้องการแพ็คเกจที่ปรับแต่งตามขนาดพื้นที่หรือสถาปัตยกรรมเฉพาะของคุณ?
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild variant="outline" className="rounded-full border-zinc-300 hover:bg-zinc-50 px-6 text-xs">
-              <Link href="/packages/compare">ดูตารางเปรียบเทียบทุกแพ็คเกจ</Link>
+        <div className="mt-8 oasel-glass-card rounded-3xl p-6 border border-[#3c280f]/10 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-left">
+            <span className="text-xs font-bold text-[#2a2014] block">
+              ต้องการแพ็คเกจที่ปรับแต่งตามขนาดพื้นที่เฉพาะ?
+            </span>
+            <span className="text-xs text-[#6e5f50] font-normal block mt-0.5">
+              ทีมวิศวกรพร้อมเข้าสำรวจและออกแบบพิมพ์เขียวระบบให้ตรงกับแปลนบ้านจริง
+            </span>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <Button asChild variant="outline" className="rounded-full border-[#3c280f]/15 bg-white/70 hover:bg-white text-xs font-semibold">
+              <Link href="/packages/compare">ตารางเปรียบเทียบทุกแพ็คเกจ</Link>
             </Button>
-            <Button asChild variant="ghost" className="rounded-full text-emerald-700 hover:text-emerald-800 hover:bg-emerald-50/50 text-xs">
-              <Link href="/calculator">ทดลองคำนวณราคาตามขนาดบ้าน →</Link>
+            <Button asChild className="rounded-full bg-[#2a2014] text-[#fbf5e9] hover:bg-[#44362a] text-xs font-semibold">
+              <Link href="/calculator">ทดลองคำนวณราคา →</Link>
             </Button>
           </div>
         </div>
